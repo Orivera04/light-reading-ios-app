@@ -14,10 +14,13 @@ struct NavbarView<Content: View>: View {
     var body: some View {
         ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
-            VStack {
+            VStack(spacing: 0) {
                 content()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+            .padding(.top, 70)
+            .padding(.horizontal, 5)
+            .background(Color.primaryBackground)
             .overlay(
                 ZStack {
                     HStack {
@@ -42,7 +45,7 @@ struct NavbarView<Content: View>: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 55)
                 .background(
-                    RadialGradient(gradient: Gradient(colors: [.navbarColorBegin, .navbarColorEnd]), center: .center, startRadius: 1, endRadius: 200)
+                    RadialGradient(gradient: Gradient(colors: [Color.navbarColorPrimary, Color.navbarColorSecondary]), center: .center, startRadius: 1, endRadius: 200)
                 )
                 .zIndex(1)
                 .shadow(radius: 0.3)
