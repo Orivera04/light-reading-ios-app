@@ -12,40 +12,84 @@ struct MainView: View {
 
     var body: some View {
         NavbarView(presentSideMenu: $presentSideMenu) {
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: { print("Button tapped!") }) {
-                        Text("Registrar medidor")
-                            .padding(15)
-                            .foregroundColor(Color.text)
-                    }
-                    .background(
-                        RadialGradient(gradient: Gradient(colors: [Color.buttonMain, Color.buttonSecondary]), center: .center, startRadius: 1, endRadius: 100)
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                NavigationStack {
-                    List {
-                        HStack {
-                            Image(systemName: "heart.fill")
-                                .foregroundStyle(.icon)
-                            Text("Medidor de Oscar")
+            NavigationStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        NavigationLink(destination: CreateMeterView()) {
+                            Text("register_meter")
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 15)
+                                .foregroundColor(Color.text)
                         }
-                        .frame(height: 60)
-                        HStack {
-                            Image(systemName: "pencil")
-                                .foregroundColor(.icon)
-                            Text("Medidor de Johana")
-                        }
-                        .frame(height: 60)
+                        .background(
+                            RadialGradient(gradient: Gradient(colors: [Color.buttonMain, Color.buttonSecondary]), center: .center, startRadius: 1, endRadius: 100)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                     }
-                    .scrollContentBackground(.hidden)
-                    .background(Color.primaryBackground)
-                    .navigationTitle("Mis medidores")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    VStack {
+                        HStack {
+                            Text("my_meters")
+                                .font(.title)
+                                .foregroundColor(.primary)
+                                .padding()
+                                .bold()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        List {
+                            VStack(alignment: .leading) {
+                                Text("Medidor 1")
+                                    .font(.headline)
+                                    .padding(.bottom, 10)
+                                HStack {
+                                     Label("80 KWH", systemImage: "bolt")
+                                         .labelStyle(.titleAndIcon)
+                                         .foregroundColor(.green)
+                                     Spacer()
+                                     Label("Oscar", systemImage: "tag")
+                                         .labelStyle(.titleAndIcon)
+                                         .foregroundColor(.gray)
+                                 }
+                                 .font(.caption)
+                            }
+                            VStack(alignment: .leading) {
+                                Text("Medidor 2")
+                                    .font(.headline)
+                                    .padding(.bottom, 10)
+                                HStack {
+                                     Label("143 KWH", systemImage: "bolt")
+                                         .labelStyle(.titleAndIcon)
+                                         .foregroundColor(.yellow)
+                                     Spacer()
+                                     Label("Johana", systemImage: "tag")
+                                         .labelStyle(.titleAndIcon)
+                                         .foregroundColor(.gray)
+                                 }
+                                 .font(.caption)
+                            }
+                            VStack(alignment: .leading) {
+                                Text("Medidor 3")
+                                    .font(.headline)
+                                    .padding(.bottom, 10)
+                                HStack {
+                                     Label("166 KWH", systemImage: "bolt")
+                                         .labelStyle(.titleAndIcon)
+                                         .foregroundColor(.red)
+                                     Spacer()
+                                     Label("Johana", systemImage: "tag")
+                                         .labelStyle(.titleAndIcon)
+                                         .foregroundColor(.gray)
+                                 }
+                                 .font(.caption)
+                            }
+                        }
+                        .scrollContentBackground(.hidden)
+                    }
                 }
+                .background(.primaryBackground)
             }
+
         }
     }
 }

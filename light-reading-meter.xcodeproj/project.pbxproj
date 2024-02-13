@@ -23,6 +23,10 @@
 		2A68D24F2B72990A00DE3359 /* light_reading_meterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68D24E2B72990A00DE3359 /* light_reading_meterTests.swift */; };
 		2A68D2592B72990A00DE3359 /* light_reading_meterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68D2582B72990A00DE3359 /* light_reading_meterUITests.swift */; };
 		2A68D25B2B72990A00DE3359 /* light_reading_meterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68D25A2B72990A00DE3359 /* light_reading_meterUITestsLaunchTests.swift */; };
+		2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */; };
+		2A7485DA2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */; };
+		2A7485DB2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */; };
+		2A7485DC2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,8 @@
 		2A68D2542B72990A00DE3359 /* light-reading-meterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "light-reading-meterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A68D2582B72990A00DE3359 /* light_reading_meterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = light_reading_meterUITests.swift; sourceTree = "<group>"; };
 		2A68D25A2B72990A00DE3359 /* light_reading_meterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = light_reading_meterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		2A45981E2B7729760097F974 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				2A7485D52B7AEFC700E71BF8 /* CreateMeter */,
 				2A0F3E812B767884004DAE71 /* Home */,
 			);
 			path = Features;
@@ -177,6 +184,7 @@
 				2A68D23D2B72990800DE3359 /* light_reading_meterApp.swift */,
 				2A68D2412B72990A00DE3359 /* Assets.xcassets */,
 				2A68D2432B72990A00DE3359 /* Preview Content */,
+				2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */,
 			);
 			path = "light-reading-meter";
 			sourceTree = "<group>";
@@ -204,6 +212,38 @@
 				2A68D25A2B72990A00DE3359 /* light_reading_meterUITestsLaunchTests.swift */,
 			);
 			path = "light-reading-meterUITests";
+			sourceTree = "<group>";
+		};
+		2A7485D52B7AEFC700E71BF8 /* CreateMeter */ = {
+			isa = PBXGroup;
+			children = (
+				2A7485D82B7AF00200E71BF8 /* Views */,
+				2A7485D72B7AEFFC00E71BF8 /* ViewModels */,
+				2A7485D62B7AEFF600E71BF8 /* Models */,
+			);
+			path = CreateMeter;
+			sourceTree = "<group>";
+		};
+		2A7485D62B7AEFF600E71BF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A7485D72B7AEFFC00E71BF8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A7485D82B7AF00200E71BF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +332,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 2A68D2312B72990800DE3359;
 			productRefGroup = 2A68D23B2B72990800DE3359 /* Products */;
@@ -312,6 +353,7 @@
 			files = (
 				2A68D2452B72990A00DE3359 /* Preview Assets.xcassets in Resources */,
 				2A68D2422B72990A00DE3359 /* Assets.xcassets in Resources */,
+				2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7485DA2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */,
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A68D2402B72990800DE3359 /* MainView.swift in Sources */,
 				2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */,
@@ -351,6 +394,7 @@
 				2A68D24F2B72990A00DE3359 /* light_reading_meterTests.swift in Sources */,
 				2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
+				2A7485DB2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */,
 				2A0F3E872B768171004DAE71 /* SideMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7485DC2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */,
 				2A0F3E882B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A68D25B2B72990A00DE3359 /* light_reading_meterUITestsLaunchTests.swift in Sources */,
 				2A68D2592B72990A00DE3359 /* light_reading_meterUITests.swift in Sources */,

@@ -13,7 +13,7 @@ struct SideMenuViewContents: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("Menu")
+                Text("menu")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .foregroundStyle(.black)
                     .padding(.top, 50)
