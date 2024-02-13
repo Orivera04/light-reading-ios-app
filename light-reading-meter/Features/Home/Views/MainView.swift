@@ -38,50 +38,59 @@ struct MainView: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         List {
-                            VStack(alignment: .leading) {
-                                Text("Medidor 1")
-                                    .font(.headline)
-                                    .padding(.bottom, 10)
-                                HStack {
-                                     Label("80 KWH", systemImage: "bolt")
-                                         .labelStyle(.titleAndIcon)
-                                         .foregroundColor(.green)
-                                     Spacer()
-                                     Label("Oscar", systemImage: "tag")
-                                         .labelStyle(.titleAndIcon)
-                                         .foregroundColor(.gray)
-                                 }
-                                 .font(.caption)
+                            NavigationLink(destination: MeterView()) {
+                                VStack(alignment: .leading) {
+                                    Text("Medidor 1")
+                                        .font(.headline)
+                                        .padding(.bottom, 10)
+                                    HStack {
+                                        Label("80 KWH", systemImage: "bolt")
+                                            .labelStyle(.titleAndIcon)
+                                            .foregroundColor(.green)
+                                        Spacer()
+                                        Label("Oscar", systemImage: "tag")
+                                            .labelStyle(.titleAndIcon)
+                                            .foregroundColor(.gray)
+                                            .padding(.horizontal, 15)
+                                    }
+                                    .font(.caption)
+                                }
                             }
-                            VStack(alignment: .leading) {
-                                Text("Medidor 2")
-                                    .font(.headline)
-                                    .padding(.bottom, 10)
-                                HStack {
-                                     Label("143 KWH", systemImage: "bolt")
-                                         .labelStyle(.titleAndIcon)
-                                         .foregroundColor(.yellow)
-                                     Spacer()
-                                     Label("Johana", systemImage: "tag")
-                                         .labelStyle(.titleAndIcon)
-                                         .foregroundColor(.gray)
-                                 }
-                                 .font(.caption)
+                            NavigationLink(destination: MeterView()) {
+                                VStack(alignment: .leading) {
+                                    Text("Medidor 2")
+                                        .font(.headline)
+                                        .padding(.bottom, 10)
+                                    HStack {
+                                        Label("143 KWH", systemImage: "bolt")
+                                            .labelStyle(.titleAndIcon)
+                                            .foregroundColor(.yellow)
+                                        Spacer()
+                                        Label("Johana", systemImage: "tag")
+                                            .labelStyle(.titleAndIcon)
+                                            .foregroundColor(.gray)
+                                            .padding(.horizontal, 15)
+                                    }
+                                    .font(.caption)
+                                }
                             }
-                            VStack(alignment: .leading) {
-                                Text("Medidor 3")
-                                    .font(.headline)
-                                    .padding(.bottom, 10)
-                                HStack {
-                                     Label("166 KWH", systemImage: "bolt")
-                                         .labelStyle(.titleAndIcon)
-                                         .foregroundColor(.red)
-                                     Spacer()
-                                     Label("Johana", systemImage: "tag")
-                                         .labelStyle(.titleAndIcon)
-                                         .foregroundColor(.gray)
-                                 }
-                                 .font(.caption)
+                            NavigationLink(destination: MeterView()) {
+                                VStack(alignment: .leading) {
+                                    Text("Medidor 3")
+                                        .font(.headline)
+                                        .padding(.bottom, 10)
+                                    HStack {
+                                        Label("166 KWH", systemImage: "bolt")
+                                            .labelStyle(.titleAndIcon)
+                                            .foregroundColor(.red)
+                                        Spacer()
+                                        Label("Johana", systemImage: "tag")
+                                            .labelStyle(.titleAndIcon)
+                                            .foregroundColor(.gray)
+                                            .padding(.horizontal, 15)
+                                    }
+                                    .font(.caption)
+                                }
                             }
                         }
                         .scrollContentBackground(.hidden)
