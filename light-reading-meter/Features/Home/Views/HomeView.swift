@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
     @State var presentSideMenu = false
 
     var body: some View {
@@ -15,19 +15,18 @@ struct MainView: View {
             NavigationStack {
                 VStack {
                     HStack {
-                        Spacer()
                         NavigationLink(destination: CreateMeterView()) {
                             Text("register_meter")
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 15)
-                                .foregroundColor(Color.text)
+                                .foregroundColor(Color.textColorPrimary)
                         }
                         .background(
                             RadialGradient(gradient: Gradient(colors: [Color.buttonMain, Color.buttonSecondary]), center: .center, startRadius: 1, endRadius: 100)
                         )
                         .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                     VStack {
                         HStack {
                             Text("my_meters")
@@ -69,7 +68,6 @@ struct MainView: View {
                                         Label("Johana", systemImage: "tag")
                                             .labelStyle(.titleAndIcon)
                                             .foregroundColor(.gray)
-                                            .padding(.horizontal, 15)
                                     }
                                     .font(.caption)
                                 }
@@ -87,7 +85,6 @@ struct MainView: View {
                                         Label("Johana", systemImage: "tag")
                                             .labelStyle(.titleAndIcon)
                                             .foregroundColor(.gray)
-                                            .padding(.horizontal, 15)
                                     }
                                     .font(.caption)
                                 }
@@ -98,13 +95,12 @@ struct MainView: View {
                 }
                 .background(.primaryBackground)
             }
-
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        HomeView()
     }
 }

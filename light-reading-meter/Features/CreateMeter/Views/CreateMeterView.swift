@@ -40,22 +40,19 @@ struct CreateMeterView: View {
                     Section(header: Text("maximum_consumption")) {
                         Stepper("\(monthlyConsumption) KWH", value: $monthlyConsumption, in: 0...1000)
                     }
-                    Section {
-                        Button(action: { print("_") }) {
-                            Text("save")
-                                .padding(.horizontal, 45)
-                                .padding(.vertical, 15)
-                                .foregroundColor(Color.text)
-                        }
-                        .background(
-                            RadialGradient(gradient: Gradient(colors: [Color.buttonMain, Color.buttonSecondary]), center: .center, startRadius: 1, endRadius: 100)
-                        )
-                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    }
-                    .listRowBackground(Color.clear)
                 }
             }
+            Button(action: { print("_") }) {
+                Text("save")
+                    .padding(.horizontal, 45)
+                    .padding(.vertical, 15)
+                    .foregroundColor(.white)
+            }
+            .background(
+                RadialGradient(gradient: Gradient(colors: [Color.buttonMain, Color.buttonSecondary]), center: .center, startRadius: 1, endRadius: 100)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+            .frame(maxWidth: .infinity, alignment: .center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(.primaryBackground)

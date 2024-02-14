@@ -11,7 +11,7 @@ import SwiftUI
 struct light_reading_meterApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            HomeView()
         }
     }
 }

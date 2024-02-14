@@ -4,13 +4,46 @@
     "%lld KWH" : {
 
     },
+    "00:16:64" : {
+
+    },
+    "10/11/1997" : {
+
+    },
+    "12/02/2024" : {
+
+    },
+    "13/02/2024" : {
+
+    },
+    "14/02/2024" : {
+
+    },
+    "78 KWH" : {
+
+    },
     "80 KWH" : {
+
+    },
+    "120 KWH" : {
 
     },
     "143 KWH" : {
 
     },
+    "150 KWH" : {
+
+    },
     "166 KWH" : {
+
+    },
+    "1663 KWH" : {
+
+    },
+    "1665 KWH" : {
+
+    },
+    "1675 KWH" : {
 
     },
     "basic_data" : {
@@ -47,8 +80,94 @@
         }
       }
     },
+    "current_reading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current reading"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectura actual"
+          }
+        }
+      }
+    },
+    "fill_data" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fill the data"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rellena los datos"
+          }
+        }
+      }
+    },
     "Johana" : {
 
+    },
+    "kwH" : {
+
+    },
+    "KWH" : {
+
+    },
+    "last_billing_period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Billing Period"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultimo corte"
+          }
+        }
+      }
+    },
+    "last_consumptions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last consumptions"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultimos consumos"
+          }
+        }
+      }
+    },
+    "last_invoice" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last invoice"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultima lectura"
+          }
+        }
+      }
     },
     "maximum_consumption" : {
       "extractionState" : "manual",
@@ -127,8 +246,89 @@
         }
       }
     },
+    "new_billing_cycle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New billing cycle"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo corte"
+          }
+        }
+      }
+    },
+    "new_consumption" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New reading"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva lectura"
+          }
+        }
+      }
+    },
+    "new_reading" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New reading"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva lectura"
+          }
+        }
+      }
+    },
+    "open_camera" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open camera"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir cmara"
+          }
+        }
+      }
+    },
     "Oscar" : {
 
+    },
+    "reading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectura"
+          }
+        }
+      }
     },
     "register_meter" : {
       "localizations" : {
@@ -163,6 +363,38 @@
         }
       }
     },
+    "save_new_billing_cycle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save as new billing cycle"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar como nuevo corte"
+          }
+        }
+      }
+    },
+    "select_date" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a date"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una fecha"
+          }
+        }
+      }
+    },
     "tag" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -179,9 +411,6 @@
           }
         }
       }
-    },
-    "Test" : {
-
     }
   },
   "version" : "1.0"
