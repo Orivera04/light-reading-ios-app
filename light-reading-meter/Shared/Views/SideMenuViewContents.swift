@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SideMenuViewContents: View {
     @Binding var presentSideMenu: Bool
-       
+
     var body: some View {
         ZStack {
             VStack {
@@ -24,4 +24,3 @@ struct SideMenuViewContents: View {
         .background(.white)
     }
 }
-

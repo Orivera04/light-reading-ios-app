@@ -10,7 +10,7 @@ import SwiftUI
 struct MeterView: View {
     @State private var isTextVisible = false
     @State private var isFlickering = false
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -81,7 +81,7 @@ struct MeterView: View {
                             .foregroundColor(.blue)
                             .padding(12)
                     }
-                    
+
                     Text("150 KWH")
                         .font(.callout)
                         .foregroundColor(.gray)
@@ -103,7 +103,7 @@ struct MeterView: View {
                             .foregroundColor(.blue)
                             .padding(12)
                     }
-                    
+
                     Text("120 KWH")
                         .font(.callout)
                         .foregroundColor(.gray)
@@ -115,7 +115,7 @@ struct MeterView: View {
                 .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
             }
             .padding(10)
-           
+
             VStack {
                 HStack {
                     NavigationLink(destination: NewReadingView()) {
@@ -131,7 +131,7 @@ struct MeterView: View {
                     .padding(.horizontal, 10)
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                
+
                 VStack {
                     HStack {
                         Text("last_consumptions")

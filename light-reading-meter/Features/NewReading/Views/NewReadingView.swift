@@ -12,7 +12,7 @@ struct NewReadingView: View {
     @State private var newCycle: Bool = false
     @State private var date: Date = Date()
 
-    
+
     var body: some View {
         VStack {
             HStack {

@@ -11,7 +11,7 @@ struct SideMenuView<RenderView: View>: View {
     @Binding var isShowing: Bool
        var direction: Edge
        @ViewBuilder  var content: RenderView
-       
+
        var body: some View {
            ZStack(alignment: .leading) {
                if isShowing {

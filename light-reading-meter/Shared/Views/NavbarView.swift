@@ -56,7 +56,7 @@ struct NavbarView<Content: View>: View {
         }
         .frame(maxWidth: .infinity)
     }
-    
+
     @ViewBuilder
     private func SideMenu() -> some View {
         SideMenuView(isShowing: $presentSideMenu, direction: .leading) {
@@ -65,4 +65,3 @@ struct NavbarView<Content: View>: View {
         }
     }
 }
-
