@@ -64,7 +64,7 @@ struct MeterView: View {
                         .foregroundColor(.secondary)
                         .padding(.horizontal, 12)
                 }
-                .frame(width: 120, height: 130)
+                .frame(height: 130)
                 .background(.backgrounCardDefault)
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
@@ -87,7 +87,7 @@ struct MeterView: View {
                         .foregroundColor(.gray)
                         .padding(.horizontal, 12)
                 }
-                .frame(width: 120, height: 130)
+                .frame(height: 130)
                 .background(.backgrounCardDefault)
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
@@ -109,7 +109,7 @@ struct MeterView: View {
                         .foregroundColor(.gray)
                         .padding(.horizontal, 12)
                 }
-                .frame(width: 120, height: 130)
+                .frame(height: 130)
                 .background(.backgrounCardDefault)
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
