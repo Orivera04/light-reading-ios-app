@@ -46,6 +46,22 @@
     "1675 KWH" : {
 
     },
+    "actions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actions"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acciones"
+          }
+        }
+      }
+    },
     "basic_data" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,23 +79,6 @@
         }
       }
     },
-    "create_meter" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create Meter"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar medidor"
-          }
-        }
-      }
-    },
     "current_reading" : {
       "localizations" : {
         "en" : {
@@ -92,6 +91,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lectura actual"
+          }
+        }
+      }
+    },
+    "delete" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        }
+      }
+    },
+    "edit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         }
       }
@@ -208,6 +239,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menu"
+          }
+        }
+      }
+    },
+    "meter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meter"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medidor"
           }
         }
       }

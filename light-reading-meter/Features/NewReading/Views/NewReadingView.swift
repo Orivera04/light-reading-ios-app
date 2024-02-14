@@ -75,6 +75,25 @@ struct NewReadingView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(.primaryBackground)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    Button(action: {
+                        print("_")
+                    }) {
+                        Label("edit", systemImage: "pencil")
+                    }
+                    Button(action: {
+                        print("_")
+                    }) {
+                        Label("delete", systemImage: "trash")
+                    }
+                }
+                label: {
+                    Label("actions", systemImage: "ellipsis.circle")
+                }
+            }
+        }
     }
 }
 

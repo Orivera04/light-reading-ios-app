@@ -15,7 +15,7 @@ struct CreateMeterView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("create_meter")
+                Text("meter")
                     .font(.title)
                     .foregroundColor(.primary)
                     .padding()
