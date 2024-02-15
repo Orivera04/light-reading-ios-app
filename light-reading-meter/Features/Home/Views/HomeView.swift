@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  light-reading-meter
 //
 //  Created by Oscar Rivera Moreira on 6/2/24.
@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var presentSideMenu = false
+    @StateObject var homeViewModel = HomeViewModel()
 
     var body: some View {
         NavbarView(presentSideMenu: $presentSideMenu) {
@@ -36,65 +37,77 @@ struct HomeView: View {
                                 .bold()
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        List {
-                            NavigationLink(destination: MeterView()) {
-                                VStack(alignment: .leading) {
-                                    Text("Medidor 1")
+                        if homeViewModel.myMeters.isEmpty {
+                            List {
+                                HStack {
+                                    Image(systemName: "exclamationmark.triangle")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 50, height: 50)
+                                        .padding()
+                                        .foregroundColor(.gray)
+                                    
+                                    Text("no_meters_found")
                                         .font(.headline)
-                                        .padding(.bottom, 10)
-                                    HStack {
-                                        Label("80 KWH", systemImage: "bolt")
-                                            .labelStyle(.titleAndIcon)
-                                            .foregroundColor(.green)
-                                        Spacer()
-                                        Label("Oscar", systemImage: "tag")
-                                            .labelStyle(.titleAndIcon)
-                                            .foregroundColor(.gray)
-                                            .padding(.horizontal, 15)
-                                    }
-                                    .font(.caption)
-                                }
-                            }
-                            NavigationLink(destination: MeterView()) {
-                                VStack(alignment: .leading) {
-                                    Text("Medidor 2")
-                                        .font(.headline)
-                                        .padding(.bottom, 10)
-                                    HStack {
-                                        Label("143 KWH", systemImage: "bolt")
-                                            .labelStyle(.titleAndIcon)
-                                            .foregroundColor(.yellow)
-                                        Spacer()
-                                        Label("Johana", systemImage: "tag")
-                                            .labelStyle(.titleAndIcon)
-                                            .foregroundColor(.gray)
-                                    }
-                                    .font(.caption)
-                                }
-                            }
-                            NavigationLink(destination: MeterView()) {
-                                VStack(alignment: .leading) {
-                                    Text("Medidor 3")
-                                        .font(.headline)
-                                        .padding(.bottom, 10)
-                                    HStack {
-                                        Label("166 KWH", systemImage: "bolt")
-                                            .labelStyle(.titleAndIcon)
-                                            .foregroundColor(.red)
-                                        Spacer()
-                                        Label("Johana", systemImage: "tag")
-                                            .labelStyle(.titleAndIcon)
-                                            .foregroundColor(.gray)
-                                    }
-                                    .font(.caption)
+                                        .foregroundColor(.gray)
                                 }
                             }
                         }
-                        .scrollContentBackground(.hidden)
+                        else {
+                            List(homeViewModel.myMeters) { meter in
+                                NavigationLink(destination: MeterView()) {
+                                    VStack(alignment: .leading) {
+                                        Text(meter.name)
+                                            .font(.headline)
+                                            .padding(.bottom, 10)
+                                        HStack {
+                                            Label(meter.kilowattHours, systemImage: "bolt")
+                                                .labelStyle(.titleAndIcon)
+                                                .foregroundColor(colorForKWh(kWh: meter.kWh, threshold: meter.desiredMonthlyKWH))
+                                            Spacer()
+                                            Label(meter.tag, systemImage: "tag")
+                                                .labelStyle(.titleAndIcon)
+                                                .foregroundColor(.gray)
+                                                .padding(.horizontal, 15)
+                                        }
+                                        .font(.caption)
+                                    }
+                                }
+                
+                            }
+                            .scrollContentBackground(.hidden)
+                        }
                     }
+                    .background(.primaryBackground)
                 }
                 .background(.primaryBackground)
             }
+        }
+        .alert(isPresented: $homeViewModel.showErrorAlert) {
+            Alert(
+               title: Text("Error"),
+               message: homeViewModel.errorMessage.map { Text($0) },
+               dismissButton: .default(Text("OK")) {
+                   homeViewModel.showErrorAlert = false
+               }
+           )
+        }
+        .overlay {
+            if homeViewModel.isLoading {
+                LoaderView()
+            }
+        }
+    }
+    
+    private func colorForKWh(kWh: Int, threshold: Int) -> Color {
+        let percentage = Double(kWh) / Double(threshold)
+        
+        if percentage <= Constants.RED_THRESHOLD_METER {
+            return .green
+        } else if percentage <= Constants.YELLOW_THRESHOLD_METER {
+            return .yellow
+        } else {
+            return .red
         }
     }
 }
