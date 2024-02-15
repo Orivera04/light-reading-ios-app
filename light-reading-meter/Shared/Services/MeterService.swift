@@ -8,11 +8,11 @@
 import Foundation
 
 class MeterService {
-    private let apiManager = APIManager.shared
+    private let apiClient = APIClient.shared
     static let shared = MeterService()
     
     func getMeters(completion: @escaping (Bool, [Meter], String?) -> ()) {
-        apiManager.call(endpoint: "todos", method: .GET, params: nil, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "todos", method: .GET, params: nil, httpHeader: .none) { success, data in
             guard success, let data = data else {
                 completion(false, [], "Error: Meter GET Request failed")
                 return

@@ -92,6 +92,11 @@ struct HomeView: View {
                }
            )
         }
+        .overlay {
+            if homeViewModel.isLoading {
+                LoaderView()
+            }
+        }
     }
     
     private func colorForKWh(kWh: Int, threshold: Int) -> Color {

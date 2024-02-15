@@ -170,6 +170,23 @@
         }
       }
     },
+    "loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargando"
+          }
+        }
+      }
+    },
     "maximum_consumption" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -293,12 +310,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New reading"
+            "value" : "L"
           }
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Nueva lectura"
           }
         }
