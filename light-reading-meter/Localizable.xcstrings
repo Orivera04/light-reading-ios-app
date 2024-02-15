@@ -7,40 +7,10 @@
     "00:16:64" : {
 
     },
-    "10/11/1997" : {
-
-    },
-    "12/02/2024" : {
-
-    },
-    "13/02/2024" : {
-
-    },
     "14/02/2024" : {
 
     },
-    "78 KWH" : {
-
-    },
     "80 KWH" : {
-
-    },
-    "120 KWH" : {
-
-    },
-    "143 KWH" : {
-
-    },
-    "150 KWH" : {
-
-    },
-    "166 KWH" : {
-
-    },
-    "1663 KWH" : {
-
-    },
-    "1665 KWH" : {
 
     },
     "1675 KWH" : {
@@ -127,6 +97,9 @@
         }
       }
     },
+    "Error" : {
+
+    },
     "fill_data" : {
       "localizations" : {
         "en" : {
@@ -142,9 +115,6 @@
           }
         }
       }
-    },
-    "Johana" : {
-
     },
     "kwH" : {
 
@@ -216,15 +186,6 @@
           }
         }
       }
-    },
-    "Medidor 1" : {
-
-    },
-    "Medidor 2" : {
-
-    },
-    "Medidor 3" : {
-
     },
     "menu" : {
       "extractionState" : "manual",
@@ -343,6 +304,20 @@
         }
       }
     },
+    "no_meters_found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No meters found"
+          }
+        }
+      }
+    },
+    "OK" : {
+
+    },
     "open_camera" : {
       "localizations" : {
         "en" : {
@@ -358,9 +333,6 @@
           }
         }
       }
-    },
-    "Oscar" : {
-
     },
     "reading" : {
       "localizations" : {
@@ -439,6 +411,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecciona una fecha"
+          }
+        }
+      }
+    },
+    "something_went_wrong" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salio mal"
           }
         }
       }
