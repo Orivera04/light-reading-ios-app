@@ -23,7 +23,6 @@ class HomeViewModel: ObservableObject {
     func fetchMeters() {
         MeterService.shared.getMeters { [weak self] success, meters, error in
             DispatchQueue.main.async {
-                sleep(1)
                 self?.isLoading = false
                 
                 if success {

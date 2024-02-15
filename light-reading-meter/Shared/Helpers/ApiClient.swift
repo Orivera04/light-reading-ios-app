@@ -29,6 +29,22 @@ class APIClient {
 
     private init() {}
     
+    func call(endpoint: String, method: HTTPMethod, params: [String: String]?, httpHeader: HTTPHeaderFields, complete: @escaping (Bool, Data?) -> ()) {
+        let urlString = baseURL + endpoint
+        
+        guard let url = URL(string: urlString) else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        let request = buildRequest(url: url, method: method, params: params, httpHeader: httpHeader)
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { [self] data, response, error in
+            self.handleResponse(data: data, response: response, error: error, complete: complete)
+        }.resume()
+    }
+    
     func buildRequest(url: URL, method: HTTPMethod, params: [String: String]?, httpHeader: HTTPHeaderFields) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
@@ -69,22 +85,7 @@ class APIClient {
             complete(false, nil)
             return
         }
+        
         complete(true, data)
-    }
-
-    func call(endpoint: String, method: HTTPMethod, params: [String: String]?, httpHeader: HTTPHeaderFields, complete: @escaping (Bool, Data?) -> ()) {
-        let urlString = baseURL + endpoint
-        
-        guard let url = URL(string: urlString) else {
-            print("Error: cannot create URL")
-            return
-        }
-        
-        let request = buildRequest(url: url, method: method, params: params, httpHeader: httpHeader)
-        
-        let session = URLSession.shared
-        session.dataTask(with: request) { [self] data, response, error in
-            self.handleResponse(data: data, response: response, error: error, complete: complete)
-        }.resume()
     }
 }
