@@ -50,6 +50,7 @@
 		2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */; };
 		2A7485DA2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */; };
 		2ADB8EE82B7C598300C6D91E /* NewReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* NewReadingView.swift */; };
+		5D03C3FD2B7BD6530060E506 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03C3FC2B7BD6530060E506 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeterView.swift; sourceTree = "<group>"; };
 		2ADB8EE72B7C598300C6D91E /* NewReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReadingView.swift; sourceTree = "<group>"; };
+		5D03C3FC2B7BD6530060E506 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				2ADB8EE32B7C595700C6D91E /* NewReading */,
+				5D03C3F82B7BD5CB0060E506 /* Login */,
 				2A4E09FC2B7BC45E007161FD /* Meter */,
 				2A7485D52B7AEFC700E71BF8 /* CreateMeter */,
 				2A0F3E812B767884004DAE71 /* Home */,
@@ -387,6 +390,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5D03C3F82B7BD5CB0060E506 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5D03C3FB2B7BD6120060E506 /* Views */,
+				5D03C3FA2B7BD5FF0060E506 /* ViewModels */,
+				5D03C3F92B7BD5F30060E506 /* Models */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5D03C3F92B7BD5F30060E506 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D03C3FA2B7BD5FF0060E506 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5D03C3FB2B7BD6120060E506 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D03C3FC2B7BD6530060E506 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -537,6 +572,7 @@
 				2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2A6985C22B7E615900715226 /* LoaderView.swift in Sources */,
 				2ADB8EE82B7C598300C6D91E /* NewReadingView.swift in Sources */,
+				5D03C3FD2B7BD6530060E506 /* LoginView.swift in Sources */,
 				2A0F3E8A2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
