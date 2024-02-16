@@ -24,7 +24,7 @@ struct NewReadingView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                NavigationLink(destination: CreateMeterView()) {
+                NavigationLink(destination: ManageMeterView(meter: nil)) {
                     Text("open_camera")
                         .padding(.horizontal, 20)
                         .padding(.vertical, 15)

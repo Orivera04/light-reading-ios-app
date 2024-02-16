@@ -1,5 +1,5 @@
 //
-//  CreateMeterView.swift
+//  ManageMeterView.swift
 //  light-reading-meter
 //
 //  Created by Oscar Rivera Moreira on 12/2/24.
@@ -7,11 +7,18 @@
 
 import SwiftUI
 
-struct CreateMeterView: View {
-    @State private var name: String = ""
-    @State private var tag: String = ""
-    @State private var monthlyConsumption: Int = 100
-
+struct ManageMeterView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject private var viewModel: AdministrationMeterViewModel
+    
+    init(meter: Meter?) {
+        if let meter = meter {
+            _viewModel = StateObject(wrappedValue: AdministrationMeterViewModel(meter: meter))
+        } else {
+            _viewModel = StateObject(wrappedValue: AdministrationMeterViewModel())
+        }
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -28,21 +35,21 @@ struct CreateMeterView: View {
                         HStack {
                             Image(systemName: "gauge")
                                 .foregroundColor(Color.icon)
-                            TextField("name", text: $name)
+                            TextField("name", text: $viewModel.meter.name)
                         }
                         HStack {
                             Image(systemName: "tag")
                                 .foregroundColor(.icon)
-                            TextField("tag", text: $tag)
+                            TextField("tag", text: $viewModel.meter.tag)
                         }
                     }
 
                     Section(header: Text("maximum_consumption")) {
-                        Stepper("\(monthlyConsumption) KWH", value: $monthlyConsumption, in: 0...1000)
+                        Stepper("\(viewModel.meter.desiredMonthlyKWH) KWH", value: $viewModel.meter.desiredMonthlyKWH, in: 0...1000)
                     }
                 }
             }
-            Button(action: { print("_") }) {
+            Button(action: { viewModel.manageMeter() }) {
                 Text("save")
                     .padding(.horizontal, 45)
                     .padding(.vertical, 15)
@@ -56,9 +63,17 @@ struct CreateMeterView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(.primaryBackground)
+        .alert(isPresented: $viewModel.showMessage) {
+            Alert(
+               title: Text(viewModel.messageTitle),
+               message: Text(viewModel.messageBody),
+               dismissButton: .default(Text("OK")) {
+                   if viewModel.isSuccess {
+                       presentationMode.wrappedValue.dismiss()
+                   }
+               }
+           )
+        }
     }
 }
 
-#Preview {
-    CreateMeterView()
-}

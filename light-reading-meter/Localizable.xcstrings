@@ -97,7 +97,7 @@
         }
       }
     },
-    "Error" : {
+    "error" : {
 
     },
     "fill_data" : {
@@ -115,6 +115,9 @@
           }
         }
       }
+    },
+    "invalid_data" : {
+
     },
     "kwH" : {
 
@@ -448,6 +451,9 @@
           }
         }
       }
+    },
+    "success" : {
+
     },
     "tag" : {
       "extractionState" : "manual",

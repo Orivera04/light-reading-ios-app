@@ -9,14 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     @State var presentSideMenu = false
-    @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
         NavbarView(presentSideMenu: $presentSideMenu) {
             NavigationStack {
                 VStack {
                     HStack {
-                        NavigationLink(destination: CreateMeterView()) {
+                        NavigationLink(destination: ManageMeterView(meter: nil)) {
                             Text("register_meter")
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 15)
@@ -37,7 +37,7 @@ struct HomeView: View {
                                 .bold()
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        if homeViewModel.myMeters.isEmpty {
+                        if viewModel.myMeters.isEmpty {
                             List {
                                 HStack {
                                     Image(systemName: "exclamationmark.triangle")
@@ -54,7 +54,7 @@ struct HomeView: View {
                             }
                         }
                         else {
-                            List(homeViewModel.myMeters) { meter in
+                            List(viewModel.myMeters) { meter in
                                 NavigationLink(destination: MeterView()) {
                                     VStack(alignment: .leading) {
                                         Text(meter.name)
@@ -83,17 +83,17 @@ struct HomeView: View {
                 .background(.primaryBackground)
             }
         }
-        .alert(isPresented: $homeViewModel.showErrorAlert) {
+        .alert(isPresented: $viewModel.showErrorAlert) {
             Alert(
-               title: Text("Error"),
-               message: homeViewModel.errorMessage.map { Text($0) },
+               title: Text("error"),
+               message: viewModel.errorMessage.map { Text($0) },
                dismissButton: .default(Text("OK")) {
-                   homeViewModel.showErrorAlert = false
+                   viewModel.showErrorAlert = false
                }
            )
         }
         .overlay {
-            if homeViewModel.isLoading {
+            if viewModel.isLoading {
                 LoaderView()
             }
         }

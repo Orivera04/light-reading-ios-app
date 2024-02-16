@@ -17,4 +17,8 @@ struct Meter: Identifiable, Codable {
     var kilowattHours: String {
         return "\(Int(kWh)) KWH"
     }
+    
+    var isValid: Bool {
+        return !name.isEmpty && !tag.isEmpty && desiredMonthlyKWH > 0
+    }
 }

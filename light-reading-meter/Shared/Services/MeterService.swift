@@ -34,4 +34,37 @@ class MeterService {
             }
         }
     }
+    
+    func saveMeter(meter: Meter, completion: @escaping (Bool, String?) -> ()) {
+        
+        let deserializedMeter: [String: String] = [
+            "id": meter.id.uuidString,
+            "name": meter.name,
+            "kWh": String(meter.kWh),
+            "tag": meter.tag,
+            "desiredMonthlyKWH": String(meter.desiredMonthlyKWH)
+        ]
+        
+        apiClient.call(endpoint: "todos", method: .POST, params: deserializedMeter, httpHeader: .none) { success, data in
+            guard success, let data = data else {
+                completion(false, "Error: Meter Post Request failed")
+                return
+            }
+            
+            do {
+                // TODO: Implement this when the backend is ready.
+                // let response = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
+                
+                let response: [String: String] = [
+                    "message": "Meter created successfully",
+                    "translationKey": "meter_created_successfully",
+                    "ok": "true"
+                ]
+                
+                completion(true, response["message"])
+            } catch {
+                completion(false, "Error: Parsing Meter failed")
+            }
+        }
+    }
 }
