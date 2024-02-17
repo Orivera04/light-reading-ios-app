@@ -51,6 +51,8 @@
 		2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */; };
 		2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */; };
 		2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4ED82B7FD36000957030 /* ContentView.swift */; };
+		2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDA2B8058BA00957030 /* Reading.swift */; };
+		2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */; };
 		2ADB8EE82B7C598300C6D91E /* NewReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* NewReadingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMeterView.swift; sourceTree = "<group>"; };
 		2ACE4ED82B7FD36000957030 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2ACE4EDA2B8058BA00957030 /* Reading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
+		2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterViewModel.swift; sourceTree = "<group>"; };
 		2ADB8EE72B7C598300C6D91E /* NewReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +233,7 @@
 		2A4E09FE2B7BC479007161FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 		2A4E09FF2B7BC486007161FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2ACE4EDA2B8058BA00957030 /* Reading.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */,
 				2A4E0A012B7BC577007161FD /* MeterView.swift in Sources */,
 				2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */,
 				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
@@ -545,6 +552,7 @@
 				2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */,
 				2A6985C22B7E615900715226 /* LoaderView.swift in Sources */,
 				2ADB8EE82B7C598300C6D91E /* NewReadingView.swift in Sources */,
+				2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */,
 				2A0F3E8A2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

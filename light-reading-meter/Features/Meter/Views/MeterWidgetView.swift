@@ -3,11 +3,16 @@ import SwiftUI
 struct MeterWidgetView: View {
     @State private var isTextVisible = false
     @State private var isFlickering = false
+    @State private var viewModel: MeterViewModel
+    
+    init(viewModel: MeterViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         HStack {
             if isTextVisible {
-                Text("00:16:64")
+                Text(formatedReading(kWh: viewModel.meter.currentReading))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .font(.custom("DigitalNumbers-Regular", size: 40))
                     .foregroundColor(.black)
@@ -38,8 +43,16 @@ struct MeterWidgetView: View {
             }
         }
     }
-}
+    
+    private func formatedReading(kWh: Int?) -> String {
+        guard let kWh = kWh else { return "00:00:00" }
 
-#Preview {
-    MeterWidgetView()
+        let paddedString = String(format: "%06d", kWh)
+        let components = [
+            paddedString.prefix(2),
+            paddedString.dropFirst(2).prefix(2),
+            paddedString.suffix(2)
+        ]
+        return components.joined(separator: ":")
+    }
 }

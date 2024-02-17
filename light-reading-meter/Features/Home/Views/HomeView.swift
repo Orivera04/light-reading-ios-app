@@ -52,15 +52,15 @@ struct HomeView: View {
                 }
                 else {
                     List(viewModel.myMeters) { meter in
-                        NavigationLink(destination: MeterView()) {
+                        NavigationLink(destination: MeterView(id: meter.id)) {
                             VStack(alignment: .leading) {
                                 Text(meter.name)
                                     .font(.headline)
                                     .padding(.bottom, 10)
                                 HStack {
-                                    Label(meter.kilowattHours, systemImage: "bolt")
+                                    Label(meter.currentReadingString, systemImage: "bolt")
                                         .labelStyle(.titleAndIcon)
-                                        .foregroundColor(colorForKWh(kWh: meter.kWh, threshold: meter.desiredMonthlyKWH))
+                                        .foregroundColor(colorForKWh(kWh: meter.currentReading ?? 0, threshold: meter.desiredMonthlyKWH))
                                     Spacer()
                                     Label(meter.tag, systemImage: "tag")
                                         .labelStyle(.titleAndIcon)

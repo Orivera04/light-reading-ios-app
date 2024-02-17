@@ -4,18 +4,6 @@
     "%lld KWH" : {
 
     },
-    "00:16:64" : {
-
-    },
-    "14/02/2024" : {
-
-    },
-    "80 KWH" : {
-
-    },
-    "1675 KWH" : {
-
-    },
     "actions" : {
       "localizations" : {
         "en" : {
@@ -268,6 +256,9 @@
         }
       }
     },
+    "meter_deleted" : {
+
+    },
     "my_meters" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -383,6 +374,9 @@
           }
         }
       }
+    },
+    "no_readings_found" : {
+
     },
     "ok" : {
 

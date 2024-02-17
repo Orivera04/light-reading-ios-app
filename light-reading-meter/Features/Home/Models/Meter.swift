@@ -11,13 +11,38 @@ struct Meter: Identifiable, Codable {
     // Properties
     var id = UUID()
     var name: String
-    var kWh: Int
     var tag: String
+    var lastBillingPeriod: Date?
+    var lastInvoice: Date?
+    var currentReading: Int?
     var desiredMonthlyKWH: Int
+    var lastReadings: [Reading]?
     
     // Decorators
-    var kilowattHours: String {
-        return "\(Int(kWh)) KWH"
+    var currentReadingString: String {
+        return "\(Int(currentReading ?? 0)) KWH"
+    }
+    
+    var lastBillingPeriodString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let lastBillingPeriod = lastBillingPeriod {
+            return dateFormatter.string(from: lastBillingPeriod)
+        } else {
+            return ""
+        }
+    }
+    
+    var lastInvoiceString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let lastInvoice = lastInvoice {
+            return dateFormatter.string(from: lastInvoice)
+        } else {
+            return ""
+        }
     }
     
     // Validations

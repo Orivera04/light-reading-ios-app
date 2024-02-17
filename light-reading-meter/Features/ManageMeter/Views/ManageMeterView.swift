@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ManageMeterView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @State private var redirectToHome: Bool = false
     @StateObject private var viewModel: AdministrationMeterViewModel
     
     init(meter: Meter?) {
@@ -68,13 +68,13 @@ struct ManageMeterView: View {
                title: Text(viewModel.messageTitle),
                message: Text(viewModel.messageBody),
                dismissButton: .default(Text("ok")) {
-                   if viewModel.isSuccess {
-                       presentationMode.wrappedValue.dismiss()
-                   }
+                   redirectToHome = viewModel.isSuccess
                }
            )
         }
-        .navigationDestination(isPresented: $viewModel.isSuccess, destination: { HomeView() })
+        NavigationLink(destination: HomeView(), isActive: $redirectToHome) {
+            EmptyView()
+        }
     }
 }
 

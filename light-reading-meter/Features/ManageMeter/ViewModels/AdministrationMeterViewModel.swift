@@ -16,7 +16,7 @@ class AdministrationMeterViewModel: ObservableObject {
     @Published var isSuccess: Bool = false
     
     init() {
-        self.meter = Meter(name: "", kWh: 0, tag: "", desiredMonthlyKWH: 150)
+        self.meter = Meter(name: "", tag: "", currentReading: 0, desiredMonthlyKWH: 150, lastReadings: [])
     }
     
     init(meter: Meter) {
