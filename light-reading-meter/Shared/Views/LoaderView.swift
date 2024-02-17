@@ -10,9 +10,6 @@ import SwiftUI
 struct LoaderView: View {
     var body: some View {
         ZStack {
-              Color.black.opacity(0.4)
-                  .edgesIgnoringSafeArea(.all)
-              
               VStack {
                   ProgressView()
                       .progressViewStyle(CircularProgressViewStyle(tint: .textColorSecondary))
@@ -27,6 +24,8 @@ struct LoaderView: View {
               .background(
                   RoundedRectangle(cornerRadius: 16)
                       .foregroundColor(Color.backgrounCardDefault.opacity(0.8))
+                      .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 5)
+
               )
         }
     }

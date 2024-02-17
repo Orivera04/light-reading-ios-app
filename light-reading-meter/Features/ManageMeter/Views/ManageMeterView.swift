@@ -67,13 +67,17 @@ struct ManageMeterView: View {
             Alert(
                title: Text(viewModel.messageTitle),
                message: Text(viewModel.messageBody),
-               dismissButton: .default(Text("OK")) {
+               dismissButton: .default(Text("ok")) {
                    if viewModel.isSuccess {
                        presentationMode.wrappedValue.dismiss()
                    }
                }
            )
         }
+        NavigationLink(destination: HomeView(), isActive: $viewModel.isSuccess) {
+            EmptyView()
+        }
+        .isDetailLink(false)
     }
 }
 

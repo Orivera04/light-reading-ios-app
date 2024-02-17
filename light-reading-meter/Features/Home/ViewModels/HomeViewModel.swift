@@ -24,7 +24,6 @@ class HomeViewModel: ObservableObject {
         MeterService.shared.getMeters { [weak self] success, meters, error in
             DispatchQueue.main.async {
                 self?.isLoading = false
-                
                 if success {
                     self?.myMeters = meters
                 } else {

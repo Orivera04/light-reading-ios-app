@@ -27,7 +27,7 @@ class AdministrationMeterViewModel: ObservableObject {
         guard self.meter.isValid else {
            print("Invalid meter data")
            self.messageTitle = NSLocalizedString("error", comment: "")
-           self.messageBody = NSLocalizedString("invalid_data", comment: "")
+           self.messageBody =  self.meter.showModelErrors
            self.showMessage = true
            
            return
