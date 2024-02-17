@@ -74,10 +74,7 @@ struct ManageMeterView: View {
                }
            )
         }
-        NavigationLink(destination: HomeView(), isActive: $viewModel.isSuccess) {
-            EmptyView()
-        }
-        .isDetailLink(false)
+        .navigationDestination(isPresented: $viewModel.isSuccess, destination: { HomeView() })
     }
 }
 
