@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct ManageReadingView: View {
-    @State private var redirectToHome: Bool = false
-    @State private var isNewRecord: Bool
+    private var isNewRecord: Bool = false
+    private var meterId: UUID = UUID()
+
+    @State private var redirectToMeter: Bool = false
     @StateObject private var viewModel: ManageReadingViewModel
-   
-    init(reading: Reading?, isNewRecord: Bool) {
+
+    init(reading: Reading?, meterId: UUID, isNewRecord: Bool) {
         if let reading = reading {
             _viewModel = StateObject(wrappedValue: ManageReadingViewModel(reading: reading))
         } else {
-            _viewModel = StateObject(wrappedValue: ManageReadingViewModel())
+            _viewModel = StateObject(wrappedValue: ManageReadingViewModel(meterId: meterId))
         }
-        
+
+        self.meterId = meterId
         self.isNewRecord = isNewRecord
     }
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -33,7 +36,7 @@ struct ManageReadingView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                NavigationLink(destination: ManageMeterView(meter: nil)) {
+                NavigationLink(destination: ManageMeterView(meter: nil, isNewRecord: true)) {
                     Text("open_camera")
                         .padding(.horizontal, 20)
                         .padding(.vertical, 15)
@@ -53,7 +56,7 @@ struct ManageReadingView: View {
                             Image(systemName: "bolt")
                                 .foregroundColor(Color.icon)
                             TextField("reading", value: $viewModel.reading.kWhReading, formatter: NumberFormatter())
-                            Text("KWH")
+                            Text("kwh")
                         }
                         HStack {
                             Image(systemName: "calendar")
@@ -65,11 +68,11 @@ struct ManageReadingView: View {
                     }
 
                     Section(header: Text("new_billing_cycle")) {
-                        Toggle("save_new_billing_cycle", isOn: $viewModel.reading.isLastCicle)
+                        Toggle("save_new_billing_cycle", isOn: $viewModel.reading.isLastCycle)
                     }
                 }
             }
-            Button(action: { viewModel.manageReading() }) {
+            Button(action: { viewModel.manageReading(isNewRecord: isNewRecord) }) {
                 Text("save")
                     .padding(.horizontal, 45)
                     .padding(.vertical, 15)
@@ -87,9 +90,7 @@ struct ManageReadingView: View {
             if !self.isNewRecord {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
-                            Button(action: {
-                                print("_")
-                            }) {
+                            Button(action: viewModel.deleteMeter) {
                                 Label("delete", systemImage: "trash")
                             }
                         }
@@ -104,12 +105,17 @@ struct ManageReadingView: View {
                title: Text(viewModel.messageTitle),
                message: Text(viewModel.messageBody),
                dismissButton: .default(Text("ok")) {
-                   redirectToHome = viewModel.isSuccess
+                   redirectToMeter = viewModel.isSuccess || viewModel.isSuccessDeleted
                }
            )
         }
-        NavigationLink(destination: HomeView(), isActive: $redirectToHome) {
-            EmptyView()
+        .navigationDestination(isPresented: $redirectToMeter) {
+            MeterView(id: meterId)
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoaderView()
+            }
         }
     }
 }

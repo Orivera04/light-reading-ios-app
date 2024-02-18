@@ -39,12 +39,12 @@ class MeterService {
         apiClient.call(endpoint: "todos/\(id)", method: .GET, params: nil, httpHeader: .none) { success, data in
             
             let fakeReadings = [
-                Reading(kWhReading: 1633, acumulatedkWhReading: 33, dateOfReading: Date(), isLastCicle: true),
-                Reading(kWhReading: 1630, acumulatedkWhReading: 30, dateOfReading: Date(), isLastCicle: false)
+                Reading(meterId: UUID(), kWhReading: 1633, accumulatedkWhReading: 33, dateOfReading: Date(), isLastCycle: true),
+                Reading(meterId: UUID(), kWhReading: 1630, accumulatedkWhReading: 30, dateOfReading: Date(), isLastCycle: false)
             ]
             
-            let fakeMeter = Meter(name: "Medidor de casa", tag: "Oscar", lastBillingPeriod: Date(), lastInvoice: Date(), currentReading: 30, desiredMonthlyKWH: 150, lastReadings: fakeReadings)
-            
+            let fakeMeter = Meter(name: "Medidor de casa", tag: "Oscar", lastBillingKwh: 1660, lastInvoice: Date(), currentReading: 30, desiredMonthlyKWH: 150, lastReadings: fakeReadings)
+
             completion(true, fakeMeter, nil)
             return
             
@@ -102,9 +102,20 @@ class MeterService {
             "desiredMonthlyKWH": String(meter.desiredMonthlyKWH)
         ]
         
-        apiClient.call(endpoint: "todos/\(meter.id)", method: .POST, params: deserializedMeter, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "todos/\(meter.id)", method: .PUT, params: deserializedMeter, httpHeader: .none) { success, data in
+            
+            let response: [String: String] = [
+                "message": "Meter updated successfully",
+                "translationKey": "meter_updated_successfully",
+                "ok": "true"
+            ]
+
+            completion(true, response["message"])
+
+            return
+            
             guard success, let data = data else {
-                completion(false, "Error: Meter Post Request failed")
+                completion(false, "Error: Meter Put Request failed")
                 return
             }
             

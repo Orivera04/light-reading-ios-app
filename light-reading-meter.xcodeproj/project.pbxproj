@@ -30,7 +30,7 @@
 		2A6985BE2B7E5A7700715226 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2A6985BD2B7E5A7700715226 /* Staging.xcconfig */; };
 		2A6985C02B7E5A8A00715226 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2A6985BF2B7E5A8A00715226 /* Production.xcconfig */; };
 		2A6985C22B7E615900715226 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C12B7E615900715226 /* LoaderView.swift */; };
-		2A6985C42B7EB7D500715226 /* AdministrationMeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C32B7EB7D500715226 /* AdministrationMeterViewModel.swift */; };
+		2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */; };
 		2A6FB0562B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
 		2A6FB0572B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
 		2A6FB0582B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
@@ -56,6 +56,7 @@
 		2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDA2B8058BA00957030 /* Reading.swift */; };
 		2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */; };
 		2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */; };
+		2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +99,7 @@
 		2A6985BD2B7E5A7700715226 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		2A6985BF2B7E5A8A00715226 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		2A6985C12B7E615900715226 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		2A6985C32B7EB7D500715226 /* AdministrationMeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationMeterViewModel.swift; sourceTree = "<group>"; };
+		2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMeterViewModel.swift; sourceTree = "<group>"; };
 		2A6FB0552B7D22670002F050 /* Meter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		2ACE4EDA2B8058BA00957030 /* Reading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
 		2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterViewModel.swift; sourceTree = "<group>"; };
 		2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageReadingView.swift; sourceTree = "<group>"; };
+		2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */,
 				2A6FB06E2B7DA6690002F050 /* Constants.swift */,
+				2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -359,7 +362,7 @@
 		2A7485D72B7AEFFC00E71BF8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2A6985C32B7EB7D500715226 /* AdministrationMeterViewModel.swift */,
+				2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -547,12 +550,13 @@
 				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
 				2A66838B2B818F71009312B7 /* ManageReadingViewModel.swift in Sources */,
 				2A6FB0672B7D7D1C0002F050 /* MeterService.swift in Sources */,
-				2A6985C42B7EB7D500715226 /* AdministrationMeterViewModel.swift in Sources */,
+				2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */,
 				2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */,
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A6FB0562B7D22670002F050 /* Meter.swift in Sources */,
+				2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */,
 				2A68D2402B72990800DE3359 /* HomeView.swift in Sources */,
 				2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */,
 				2A6FB0622B7D709C0002F050 /* MeterWidgetView.swift in Sources */,

@@ -24,9 +24,10 @@ struct MeterView: View {
                 }
                 VStack {
                     HStack {
-                        MeterCardView(title: NSLocalizedString("last_billing_period", comment: ""), icon: "clock", value: viewModel.meter.lastBillingPeriodString)
-                            .frame(width: geometry.size.width * 0.31)
                         MeterCardView(title: NSLocalizedString("last_invoice", comment: ""), icon: "calendar", value: viewModel.meter.lastInvoiceString)
+                            .frame(width: geometry.size.width * 0.31)
+
+                        MeterCardView(title: NSLocalizedString("last_reading", comment: ""), icon: "clock", value: viewModel.meter.lastBillingKwhString)
                             .frame(width: geometry.size.width * 0.31)
                         MeterCardView(title: NSLocalizedString("current_reading", comment: ""), icon: "bolt", value: viewModel.meter.currentReadingString)
                             .frame(width: geometry.size.width * 0.31)
@@ -34,7 +35,7 @@ struct MeterView: View {
                     .padding(5)
                     VStack {
                         HStack {
-                            NavigationLink(destination: ManageReadingView(reading: nil, isNewRecord: true)) {
+                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true)) {
                                 Text("new_consumption")
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 15)
@@ -58,7 +59,7 @@ struct MeterView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             if let readings = viewModel.meter.lastReadings {
                                 List(readings) { reading in
-                                    NavigationLink(destination: ManageReadingView(reading: reading, isNewRecord: false)) {
+                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false)) {
                                         VStack(alignment: .leading) {
                                             Text(reading.kilowatsReadingString)
                                                 .font(.headline)
@@ -66,7 +67,7 @@ struct MeterView: View {
                                             HStack {
                                                 Label(reading.kilowatsAcumulatedReadingString, systemImage: "bolt")
                                                     .labelStyle(.titleAndIcon)
-                                                    .foregroundColor(.red)
+                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredMonthlyKWH))
                                                 Spacer()
                                                 Label(reading.dateOfReadingString, systemImage: "calendar")
                                                     .labelStyle(.titleAndIcon)
@@ -121,11 +122,11 @@ struct MeterView: View {
                 }
             }
             .background(.primaryBackground)
-            NavigationLink(destination: ManageMeterView(meter: viewModel.meter), isActive: $redirectToMeter) {
-                EmptyView()
+            .navigationDestination(isPresented: $redirectToMeter) {
+                ManageMeterView(meter: viewModel.meter, isNewRecord: false)
             }
-            NavigationLink(destination: HomeView(), isActive: $redirectToHome) {
-                EmptyView()
+            .navigationDestination(isPresented: $redirectToHome) {
+                HomeView()
             }
         }
         .alert(isPresented: $viewModel.showMessage) {
@@ -136,6 +137,11 @@ struct MeterView: View {
                    redirectToHome = viewModel.isSucessDeleted
                }
            )
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoaderView()
+            }
         }
     }
 }

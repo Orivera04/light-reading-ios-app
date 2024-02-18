@@ -16,7 +16,7 @@ struct MeterWidgetView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .font(.custom("DigitalNumbers-Regular", size: 40))
                     .foregroundColor(.black)
-                Text("kwH")
+                Text("kwh")
                     .padding(.trailing, 15)
                     .foregroundColor(.white)
                     .font(.title)

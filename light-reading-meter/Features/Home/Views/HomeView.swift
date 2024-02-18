@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             HStack {
-                NavigationLink(destination: ManageMeterView(meter: nil)) {
+                NavigationLink(destination: ManageMeterView(meter: nil, isNewRecord: true)) {
                     Text("register_meter")
                         .padding(.horizontal, 20)
                         .padding(.vertical, 15)
@@ -60,7 +60,7 @@ struct HomeView: View {
                                 HStack {
                                     Label(meter.currentReadingString, systemImage: "bolt")
                                         .labelStyle(.titleAndIcon)
-                                        .foregroundColor(colorForKWh(kWh: meter.currentReading ?? 0, threshold: meter.desiredMonthlyKWH))
+                                        .foregroundColor(ColorsStyle.colorForKWh(kWh: meter.currentReading ?? 0, threshold: meter.desiredMonthlyKWH))
                                     Spacer()
                                     Label(meter.tag, systemImage: "tag")
                                         .labelStyle(.titleAndIcon)
@@ -92,18 +92,6 @@ struct HomeView: View {
             }
         }
         .background(.primaryBackground)
-    }
-    
-    private func colorForKWh(kWh: Int, threshold: Int) -> Color {
-        let percentage = Double(kWh) / Double(threshold)
-        
-        if percentage <= Constants.RED_THRESHOLD_METER {
-            return .green
-        } else if percentage <= Constants.YELLOW_THRESHOLD_METER {
-            return .yellow
-        } else {
-            return .red
-        }
     }
 }
 

@@ -8,7 +8,6 @@
 import Foundation
 
 class MeterViewModel: ObservableObject {
-    
     @Published var meter: Meter
     @Published var showMessage: Bool = false
     @Published var messageTitle: String = ""
@@ -17,15 +16,17 @@ class MeterViewModel: ObservableObject {
     @Published var isSucessDeleted: Bool = false
     
     init(id: UUID) {
-        self.isLoading = true
-        self.meter = Meter(name: "", tag: "", lastBillingPeriod: nil, lastInvoice: nil, currentReading: nil, desiredMonthlyKWH: 0, lastReadings: nil)
+        self.meter = Meter()
 
         fetchMeter(id: id)
     }
     
-    func fetchMeter(id: UUID)  {
+    func fetchMeter(id: UUID) {
+        self.isLoading = true
+
         MeterService.shared.getMeterById(id: id) { [weak self] success, meter, error in
             DispatchQueue.main.async {
+                sleep(1)
                 self?.isLoading = false
                 if success {
                     self?.meter = meter!
@@ -42,8 +43,11 @@ class MeterViewModel: ObservableObject {
     
     
     func deleteMeter(id: UUID) {
+        self.isLoading = true
+        
         MeterService.shared.deleteMeterById(id: id) { [weak self] success, error in
             DispatchQueue.main.async {
+                sleep(1)
                 self?.isLoading = false
                 self?.isSucessDeleted = success
                 self?.showMessage = true

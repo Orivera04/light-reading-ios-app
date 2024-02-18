@@ -12,26 +12,37 @@ struct Meter: Identifiable, Codable {
     var id = UUID()
     var name: String
     var tag: String
-    var lastBillingPeriod: Date?
+    var lastBillingKwh: Int?
     var lastInvoice: Date?
     var currentReading: Int?
     var desiredMonthlyKWH: Int
     var lastReadings: [Reading]?
     
+    // Constructor
+    init(name: String = "",
+         tag: String = "",
+         lastBillingKwh: Int? = nil,
+         lastInvoice: Date? = nil,
+         currentReading: Int? = nil,
+         desiredMonthlyKWH: Int = 0,
+         lastReadings: [Reading]? = nil) {
+
+        self.name = name
+        self.tag = tag
+        self.lastBillingKwh = lastBillingKwh
+        self.lastInvoice = lastInvoice
+        self.currentReading = currentReading
+        self.desiredMonthlyKWH = desiredMonthlyKWH
+        self.lastReadings = lastReadings
+    }
+
     // Decorators
     var currentReadingString: String {
         return "\(Int(currentReading ?? 0)) KWH"
     }
     
-    var lastBillingPeriodString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let lastBillingPeriod = lastBillingPeriod {
-            return dateFormatter.string(from: lastBillingPeriod)
-        } else {
-            return ""
-        }
+    var lastBillingKwhString: String {
+        return "\(Int(lastBillingKwh ?? 0)) KWH"
     }
     
     var lastInvoiceString: String {
@@ -61,6 +72,11 @@ struct Meter: Identifiable, Codable {
             errorMessages.append(NSLocalizedString("tag_is_empty", comment: ""))
         }
        
+        if desiredMonthlyKWH <= 0 {
+            errorMessages.append(NSLocalizedString("invalid_desired_kwh_monthly", comment: ""))
+        }
+
+
         return errorMessages
     }
        

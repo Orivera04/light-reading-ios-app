@@ -134,11 +134,39 @@
         }
       }
     },
-    "kwH" : {
-
+    "invalid_desired_kwh_monthly" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The desired kwh monthly is invalid."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los kwh deseados de el mes son inválidos."
+          }
+        }
+      }
     },
-    "KWH" : {
-
+    "kwh" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwh"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Kwh"
+          }
+        }
+      }
     },
     "kwh_is_not_valid" : {
       "localizations" : {
@@ -150,13 +178,14 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "La lectura de KWH no es correcta."
           }
         }
       }
     },
     "last_billing_period" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -166,7 +195,7 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Ultimo corte"
           }
         }
@@ -194,6 +223,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Last invoice"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultima lectura"
+          }
+        }
+      }
+    },
+    "last_reading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last reading"
           }
         },
         "es-419" : {
@@ -332,7 +378,7 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "El nombre esta vacío."
           }
         }
@@ -381,7 +427,7 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Nueva lectura"
           }
         }
@@ -405,10 +451,36 @@
       }
     },
     "no_readings_found" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No readings found."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se encontraron lecturas."
+          }
+        }
+      }
     },
     "ok" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
     },
     "open_camera" : {
       "localizations" : {
@@ -438,6 +510,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lectura"
+          }
+        }
+      }
+    },
+    "reading_deleted" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The reading was deleted"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La lectura fue eliminada."
           }
         }
       }
@@ -567,7 +655,7 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "La etiqueta esta vacía."
           }
         }

@@ -49,8 +49,17 @@ class ReadingService {
         ]
         
         apiClient.call(endpoint: "todos/\(reading.id)", method: .PUT, params: deserializedReading, httpHeader: .none) { success, data in
+            let response: [String: String] = [
+                "message": "Reading updated successfully",
+                "translationKey": "reading_updated_successfully",
+                "ok": "true"
+            ]
+
+            completion(true, response["message"])
+            return
+            
             guard success, let data = data else {
-                completion(false, "Error: Reading Post Request failed")
+                completion(false, "Error: Reading Put Request failed")
                 return
             }
             

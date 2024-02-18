@@ -10,18 +10,32 @@ import Foundation
 struct Reading: Identifiable, Codable {
     // Properties
     var id = UUID()
-    var kWhReading: Int = 0
-    var acumulatedkWhReading = 0
+    var meterId: UUID
+    var kWhReading: Int
+    var accumulatedkWhReading: Int
     var dateOfReading: Date
-    var isLastCicle: Bool
-    
+    var isLastCycle: Bool
+
+    // Constructor
+    init(meterId: UUID = UUID(),
+            kWhReading: Int = 0,
+            accumulatedkWhReading: Int = 0,
+            dateOfReading: Date = Date(),
+            isLastCycle: Bool = false) {
+       self.meterId = meterId
+       self.kWhReading = kWhReading
+       self.accumulatedkWhReading = accumulatedkWhReading
+       self.dateOfReading = dateOfReading
+       self.isLastCycle = isLastCycle
+    }
+
     // Decorators
     var kilowatsReadingString: String {
         return "\(Int(kWhReading)) KWH"
     }
     
     var kilowatsAcumulatedReadingString: String {
-        return "\(Int(acumulatedkWhReading)) KWH"
+        return "\(Int(accumulatedkWhReading)) KWH"
     }
     
     var dateOfReadingString: String {

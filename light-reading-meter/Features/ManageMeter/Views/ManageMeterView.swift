@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ManageMeterView: View {
+    private var isNewRecord: Bool = false
     @State private var redirectToHome: Bool = false
-    @StateObject private var viewModel: AdministrationMeterViewModel
-    
-    init(meter: Meter?) {
+    @StateObject private var viewModel: ManageMeterViewModel
+
+    init(meter: Meter?, isNewRecord: Bool) {
         if let meter = meter {
-            _viewModel = StateObject(wrappedValue: AdministrationMeterViewModel(meter: meter))
+            _viewModel = StateObject(wrappedValue: ManageMeterViewModel(meter: meter))
         } else {
-            _viewModel = StateObject(wrappedValue: AdministrationMeterViewModel())
+            _viewModel = StateObject(wrappedValue: ManageMeterViewModel())
         }
+
+        self.isNewRecord = isNewRecord
     }
     
     var body: some View {
@@ -49,7 +52,7 @@ struct ManageMeterView: View {
                     }
                 }
             }
-            Button(action: { viewModel.manageMeter() }) {
+            Button(action: { viewModel.manageMeter(isNewRecord: isNewRecord) }) {
                 Text("save")
                     .padding(.horizontal, 45)
                     .padding(.vertical, 15)
@@ -72,8 +75,13 @@ struct ManageMeterView: View {
                }
            )
         }
-        NavigationLink(destination: HomeView(), isActive: $redirectToHome) {
-            EmptyView()
+        .navigationDestination(isPresented: $redirectToHome) {
+            HomeView()
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoaderView()
+            }
         }
     }
 }
