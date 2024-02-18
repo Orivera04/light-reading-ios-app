@@ -39,8 +39,8 @@ class MeterService {
         apiClient.call(endpoint: "todos/\(id)", method: .GET, params: nil, httpHeader: .none) { success, data in
             
             let fakeReadings = [
-                Reading(kWhReading: 1633, acumulatedkWhReading: 33, dateOfReading: Date()),
-                Reading(kWhReading: 1630, acumulatedkWhReading: 30, dateOfReading: Date())
+                Reading(kWhReading: 1633, acumulatedkWhReading: 33, dateOfReading: Date(), isLastCicle: true),
+                Reading(kWhReading: 1630, acumulatedkWhReading: 30, dateOfReading: Date(), isLastCicle: false)
             ]
             
             let fakeMeter = Meter(name: "Medidor de casa", tag: "Oscar", lastBillingPeriod: Date(), lastInvoice: Date(), currentReading: 30, desiredMonthlyKWH: 150, lastReadings: fakeReadings)

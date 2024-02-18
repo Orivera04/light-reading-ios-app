@@ -140,6 +140,22 @@
     "KWH" : {
 
     },
+    "kwh_is_not_valid" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The reading of KWH is not right."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "La lectura de KWH no es correcta."
+          }
+        }
+      }
+    },
     "last_billing_period" : {
       "localizations" : {
         "en" : {
@@ -257,7 +273,20 @@
       }
     },
     "meter_deleted" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The meter was deleted"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El medidor fue eliminado."
+          }
+        }
+      }
     },
     "my_meters" : {
       "extractionState" : "manual",

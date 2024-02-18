@@ -1,33 +1,33 @@
 //
-//  ManageMeterViewModel.swift
+//  ReadingViewModel.swift
 //  light-reading-meter
 //
-//  Created by Oscar Rivera Moreira on 15/2/24.
+//  Created by Oscar Rivera Moreira on 17/2/24.
 //
 
 import Foundation
 
-class AdministrationMeterViewModel: ObservableObject {
-    @Published var meter: Meter
+class ManageReadingViewModel: ObservableObject {
+    @Published var reading: Reading
     @Published var showMessage: Bool = false
     @Published var messageTitle: String = ""
     @Published var messageBody: String = ""
     @Published var isLoading: Bool = false
     @Published var isSuccess: Bool = false
-    
+
     init() {
-        self.meter = Meter(name: "", tag: "", currentReading: 0, desiredMonthlyKWH: 150, lastReadings: [])
+        self.reading = Reading(kWhReading: 0, dateOfReading: Date(), isLastCicle: false)
     }
     
-    init(meter: Meter) {
-        self.meter = meter
+    init(reading: Reading) {
+        self.reading = reading
     }
     
-    func manageMeter() {
-        guard self.meter.isValid else {
-           print("Invalid meter data")
+    func manageReading() {
+        guard self.reading.isValid else {
+           print("Invalid reading data")
            self.messageTitle = NSLocalizedString("error", comment: "")
-           self.messageBody =  self.meter.showModelErrors
+           self.messageBody =  self.reading.showModelErrors
            self.showMessage = true
            
            return
@@ -35,11 +35,12 @@ class AdministrationMeterViewModel: ObservableObject {
         
         self.isLoading = true
         
-        MeterService.shared.saveMeter(meter: self.meter) { success, message in
+        ReadingService.shared.saveReading(reading: reading) { success, message in
             DispatchQueue.main.async {
                 self.isLoading = false
                 self.showMessage = true
                 self.messageBody = message ?? ""
+                
                 self.messageTitle = success ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
                 self.isSuccess = success
                 
