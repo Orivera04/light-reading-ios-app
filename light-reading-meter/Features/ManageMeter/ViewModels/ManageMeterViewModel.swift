@@ -14,15 +14,15 @@ class ManageMeterViewModel: ObservableObject {
     @Published var messageBody: String = ""
     @Published var isLoading: Bool = false
     @Published var isSuccess: Bool = false
-    
+
     init() {
         self.meter = Meter()
     }
-    
+
     init(meter: Meter) {
         self.meter = meter
     }
-    
+
     func manageMeter(isNewRecord: Bool) {
         if isNewRecord {
             saveNewMeter()
@@ -36,24 +36,19 @@ class ManageMeterViewModel: ObservableObject {
     func saveNewMeter() {
         guard self.meter.isValid else {
             print("Invalid meter data")
-            self.messageTitle = NSLocalizedString("error", comment: "")
-            self.messageBody =  self.meter.showModelErrors
-            self.showMessage = true
+            showMessage(isSuccessMessage: false, body: self.meter.showModelErrors)
 
-           return
+            return
         }
 
         self.isLoading = true
 
         MeterService.shared.saveMeter(meter: self.meter) { success, message in
             DispatchQueue.main.async {
-                sleep(1)
                 self.isLoading = false
-                self.showMessage = true
-                self.messageBody = message ?? ""
-                self.messageTitle = success ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
                 self.isSuccess = success
 
+                self.showMessage(isSuccessMessage: success, body: message ?? "")
                 if !success {
                     print("Error: \(message ?? "Unknown error")")
                 }
@@ -64,28 +59,29 @@ class ManageMeterViewModel: ObservableObject {
     func updateNewMeter() {
         guard self.meter.isValid else {
             print("Invalid meter data")
-            self.messageTitle = NSLocalizedString("error", comment: "")
-            self.messageBody =  self.meter.showModelErrors
-            self.showMessage = true
+            showMessage(isSuccessMessage: false, body: self.meter.showModelErrors)
 
-           return
+            return
         }
 
         self.isLoading = true
 
         MeterService.shared.updateMeter(meter: self.meter) { success, message in
             DispatchQueue.main.async {
-                sleep(1)
                 self.isLoading = false
-                self.showMessage = true
-                self.messageBody = message ?? ""
-                self.messageTitle = success ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
                 self.isSuccess = success
 
+                self.showMessage(isSuccessMessage: success, body: message ?? "")
                 if !success {
                     print("Error: \(message ?? "Unknown error")")
                 }
            }
        }
+    }
+
+    func showMessage(isSuccessMessage: Bool, body: String) {
+        self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
+        self.messageBody = body
+        self.showMessage = true
     }
 }

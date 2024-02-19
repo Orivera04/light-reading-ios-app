@@ -57,6 +57,7 @@
 		2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */; };
 		2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */; };
 		2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */; };
+		2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterViewModel.swift; sourceTree = "<group>"; };
 		2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageReadingView.swift; sourceTree = "<group>"; };
 		2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStyle.swift; sourceTree = "<group>"; };
+		2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		2A45981F2B7729CE0097F974 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2AF0593B2B82E13A003D9D3E /* Models */,
 				2A6FB0652B7D7D000002F050 /* Services */,
 				2A4598202B7729F30097F974 /* Views */,
 				2A4598212B772A000097F974 /* Helpers */,
@@ -408,6 +411,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2AF0593B2B82E13A003D9D3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,6 +572,7 @@
 				2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */,
 				2A6FB0622B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */,
+				2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */,
 				2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */,
 				2A6985C22B7E615900715226 /* LoaderView.swift in Sources */,
 				2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */,

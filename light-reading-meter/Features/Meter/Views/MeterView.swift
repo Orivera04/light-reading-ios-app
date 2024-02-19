@@ -11,11 +11,11 @@ struct MeterView: View {
     @State private var redirectToMeter: Bool = false
     @State private var redirectToHome: Bool = false
     @StateObject var viewModel: MeterViewModel
-    
+
     init(id: UUID) {
         _viewModel = StateObject(wrappedValue: MeterViewModel(id: id))
     }
-    
+
     var body: some View {
         GeometryReader{ geometry in
             VStack {
@@ -89,7 +89,7 @@ struct MeterView: View {
                                             .frame(width: 50, height: 50)
                                             .padding()
                                             .foregroundColor(.gray)
-                                        
+
                                         Text("no_readings_found")
                                             .font(.headline)
                                             .foregroundColor(.gray)

@@ -21,7 +21,7 @@ struct ManageMeterView: View {
 
         self.isNewRecord = isNewRecord
     }
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -85,4 +85,3 @@ struct ManageMeterView: View {
         }
     }
 }
-

@@ -17,14 +17,14 @@ struct Meter: Identifiable, Codable {
     var currentReading: Int?
     var desiredMonthlyKWH: Int
     var lastReadings: [Reading]?
-    
+
     // Constructor
     init(name: String = "",
          tag: String = "",
          lastBillingKwh: Int? = nil,
          lastInvoice: Date? = nil,
          currentReading: Int? = nil,
-         desiredMonthlyKWH: Int = 0,
+         desiredMonthlyKWH: Int = 150,
          lastReadings: [Reading]? = nil) {
 
         self.name = name
@@ -40,38 +40,38 @@ struct Meter: Identifiable, Codable {
     var currentReadingString: String {
         return "\(Int(currentReading ?? 0)) KWH"
     }
-    
+
     var lastBillingKwhString: String {
         return "\(Int(lastBillingKwh ?? 0)) KWH"
     }
-    
+
     var lastInvoiceString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
+
         if let lastInvoice = lastInvoice {
             return dateFormatter.string(from: lastInvoice)
         } else {
             return ""
         }
     }
-    
+
     // Validations
     var isValid: Bool {
         return !name.isEmpty && !tag.isEmpty && desiredMonthlyKWH > 0
     }
-    
+
     var errors: [String] {
         var errorMessages: [String] = []
-       
+
         if name.isEmpty {
             errorMessages.append(NSLocalizedString("name_is_empty", comment: ""))
         }
-       
+
         if tag.isEmpty {
             errorMessages.append(NSLocalizedString("tag_is_empty", comment: ""))
         }
-       
+
         if desiredMonthlyKWH <= 0 {
             errorMessages.append(NSLocalizedString("invalid_desired_kwh_monthly", comment: ""))
         }
@@ -79,7 +79,7 @@ struct Meter: Identifiable, Codable {
 
         return errorMessages
     }
-       
+
     var showModelErrors: String {
         return errors.joined(separator: "\n")
     }

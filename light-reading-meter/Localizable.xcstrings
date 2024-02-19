@@ -319,6 +319,7 @@
       }
     },
     "meter_deleted" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -515,6 +516,7 @@
       }
     },
     "reading_deleted" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

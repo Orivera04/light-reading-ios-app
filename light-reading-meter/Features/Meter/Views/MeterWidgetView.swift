@@ -4,11 +4,11 @@ struct MeterWidgetView: View {
     @State private var isTextVisible = false
     @State private var isFlickering = false
     @State private var viewModel: MeterViewModel
-    
+
     init(viewModel: MeterViewModel) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         HStack {
             if isTextVisible {
@@ -43,7 +43,7 @@ struct MeterWidgetView: View {
             }
         }
     }
-    
+
     private func formatedReading(kWh: Int?) -> String {
         guard let kWh = kWh else { return "00:00:00" }
 

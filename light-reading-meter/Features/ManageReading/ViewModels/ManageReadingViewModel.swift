@@ -20,11 +20,12 @@ class ManageReadingViewModel: ObservableObject {
     init(meterId: UUID) {
         self.reading = Reading()
     }
-    
+
+    // Previous Record
     init(reading: Reading) {
         self.reading = reading
     }
-    
+
     func manageReading(isNewRecord: Bool) {
         if isNewRecord {
             saveNewReading()
@@ -33,13 +34,11 @@ class ManageReadingViewModel: ObservableObject {
             updateReading()
         }
     }
-    
+
     func saveNewReading() {
-        guard self.reading.isValid else {
+        guard reading.isValid else {
             print("Invalid reading data")
-            self.messageTitle = NSLocalizedString("error", comment: "")
-            self.messageBody =  self.reading.showModelErrors
-            self.showMessage = true
+            showMessage(isSuccessMessage: false, body: reading.showModelErrors)
 
             return
         }
@@ -48,13 +47,10 @@ class ManageReadingViewModel: ObservableObject {
 
         ReadingService.shared.saveReading(reading: reading) { success, message in
             DispatchQueue.main.async {
-                sleep(1)
                 self.isLoading = false
-                self.showMessage = true
-                self.messageBody = message ?? ""
-
-                self.messageTitle = success ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
                 self.isSuccess = success
+
+                self.showMessage(isSuccessMessage: success, body: message ?? "")
 
                 if !success {
                     print("Error: \(message ?? "Unknown error")")
@@ -62,13 +58,11 @@ class ManageReadingViewModel: ObservableObject {
             }
        }
     }
-    
+
     func updateReading() {
         guard self.reading.isValid else {
             print("Invalid reading data")
-            self.messageTitle = NSLocalizedString("error", comment: "")
-            self.messageBody =  self.reading.showModelErrors
-            self.showMessage = true
+            self.showMessage(isSuccessMessage: false, body: self.reading.showModelErrors)
 
             return
         }
@@ -77,13 +71,10 @@ class ManageReadingViewModel: ObservableObject {
 
         ReadingService.shared.updateReading(reading: reading) { success, message in
             DispatchQueue.main.async {
-                sleep(1)
                 self.isLoading = false
-                self.showMessage = true
-                self.messageBody = message ?? ""
-
-                self.messageTitle = success ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
                 self.isSuccess = success
+
+                self.showMessage(isSuccessMessage: success, body: message ?? "")
 
                 if !success {
                     print("Error: \(message ?? "Unknown error")")
@@ -93,22 +84,23 @@ class ManageReadingViewModel: ObservableObject {
     }
 
     func deleteMeter() {
-        ReadingService.shared.deleteReading(id: self.reading.id) { [weak self] success, error in
+        ReadingService.shared.deleteReading(id: self.reading.id) { [weak self] success, message in
             DispatchQueue.main.async {
-                sleep(1)
                 self?.isLoading = false
                 self?.isSuccessDeleted = success
-                self?.showMessage = true
 
-                if success {
-                    self?.messageTitle = NSLocalizedString("success", comment: "")
-                    self?.messageBody = NSLocalizedString("reading_deleted", comment: "")
-                }
-                else {
-                    self?.messageTitle = NSLocalizedString("error", comment: "")
-                    self?.messageBody = NSLocalizedString("something_went_wrong", comment: "")
+                self?.showMessage(isSuccessMessage: success, body: message ?? "")
+
+                if !success {
+                    print("Error: \(message ?? "Unknown error")")
                 }
             }
         }
+    }
+
+    func showMessage(isSuccessMessage: Bool, body: String) {
+        self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
+        self.messageBody = body
+        self.showMessage = true
     }
 }

@@ -43,7 +43,7 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .padding()
                                 .foregroundColor(.gray)
-                            
+
                             Text("no_meters_found")
                                 .font(.headline)
                                 .foregroundColor(.gray)
@@ -70,7 +70,7 @@ struct HomeView: View {
                                 .font(.caption)
                             }
                         }
-        
+
                     }
                     .scrollContentBackground(.hidden)
                 }
