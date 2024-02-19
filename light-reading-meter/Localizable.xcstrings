@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld KWH" : {
-
-    },
     "actions" : {
       "localizations" : {
         "en" : {
@@ -162,7 +159,7 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Kwh"
           }
         }
@@ -185,7 +182,6 @@
       }
     },
     "last_billing_period" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -195,7 +191,7 @@
         },
         "es-419" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ultimo corte"
           }
         }
@@ -319,7 +315,6 @@
       }
     },
     "meter_deleted" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -418,7 +413,6 @@
       }
     },
     "new_reading" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -516,7 +510,6 @@
       }
     },
     "reading_deleted" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -58,6 +58,7 @@
 		2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */; };
 		2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */; };
 		2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */; };
+		2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593E2B82E868003D9D3E /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageReadingView.swift; sourceTree = "<group>"; };
 		2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStyle.swift; sourceTree = "<group>"; };
 		2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeResponse.swift; sourceTree = "<group>"; };
+		2AF0593E2B82E868003D9D3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */,
 				2A6FB06E2B7DA6690002F050 /* Constants.swift */,
 				2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */,
+				2AF0593E2B82E868003D9D3E /* ImagePicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 			files = (
 				2A6683892B818CBF009312B7 /* ReadingService.swift in Sources */,
 				2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */,
+				2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */,
 				2A4E0A012B7BC577007161FD /* MeterView.swift in Sources */,
 				2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */,
 				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
