@@ -51,6 +51,9 @@
 		2A7485DA2B7AF02E00E71BF8 /* CreateMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */; };
 		2ADB8EE82B7C598300C6D91E /* NewReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* NewReadingView.swift */; };
 		5D03C3FD2B7BD6530060E506 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03C3FC2B7BD6530060E506 /* LoginView.swift */; };
+		5DF0D41B2B84F44800DA8AFB /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0D41A2B84F44800DA8AFB /* CreateUserView.swift */; };
+		5DF0D41C2B84F44800DA8AFB /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0D41A2B84F44800DA8AFB /* CreateUserView.swift */; };
+		5DF0D41D2B84F44800DA8AFB /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0D41A2B84F44800DA8AFB /* CreateUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,7 @@
 		2A7485D92B7AF02E00E71BF8 /* CreateMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeterView.swift; sourceTree = "<group>"; };
 		2ADB8EE72B7C598300C6D91E /* NewReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReadingView.swift; sourceTree = "<group>"; };
 		5D03C3FC2B7BD6530060E506 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5DF0D41A2B84F44800DA8AFB /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 		2A45981E2B7729760097F974 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5DF0D4182B84F36500DA8AFB /* CreateUser */,
 				2ADB8EE32B7C595700C6D91E /* NewReading */,
 				5D03C3F82B7BD5CB0060E506 /* Login */,
 				2A4E09FC2B7BC45E007161FD /* Meter */,
@@ -422,6 +427,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5DF0D4182B84F36500DA8AFB /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0D4192B84F39400DA8AFB /* Views */,
+			);
+			path = CreateUser;
+			sourceTree = "<group>";
+		};
+		5DF0D4192B84F39400DA8AFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0D41A2B84F44800DA8AFB /* CreateUserView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -564,6 +585,7 @@
 				2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */,
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
+				5DF0D41B2B84F44800DA8AFB /* CreateUserView.swift in Sources */,
 				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A6FB0562B7D22670002F050 /* Meter.swift in Sources */,
 				2A68D2402B72990800DE3359 /* HomeView.swift in Sources */,
@@ -582,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A6FB0682B7D7D1C0002F050 /* MeterService.swift in Sources */,
+				5DF0D41C2B84F44800DA8AFB /* CreateUserView.swift in Sources */,
 				2A68D24F2B72990A00DE3359 /* light_reading_meterTests.swift in Sources */,
 				2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */,
@@ -599,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A0F3E882B768171004DAE71 /* SideMenuView.swift in Sources */,
+				5DF0D41D2B84F44800DA8AFB /* CreateUserView.swift in Sources */,
 				2A6FB0712B7DA6690002F050 /* Constants.swift in Sources */,
 				2A68D25B2B72990A00DE3359 /* light_reading_meterUITestsLaunchTests.swift in Sources */,
 				2A6FB0642B7D709C0002F050 /* MeterWidgetView.swift in Sources */,

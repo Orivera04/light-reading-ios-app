@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%lld KWH" : {
 
     },
@@ -453,6 +456,9 @@
         }
       }
     },
+    "Pick Photo" : {
+
+    },
     "reading" : {
       "localizations" : {
         "en" : {
@@ -484,6 +490,9 @@
           }
         }
       }
+    },
+    "repeat_your_password" : {
+
     },
     "save" : {
       "extractionState" : "manual",
