@@ -1,5 +1,5 @@
 //
-//  NewReadingView.swift
+//  ManageReadingView.swift
 //  light-reading-meter
 //
 //  Created by Oscar Rivera Moreira on 13/2/24.
@@ -7,11 +7,23 @@
 
 import SwiftUI
 
-struct NewReadingView: View {
-    @State private var reading: Int = 0
-    @State private var newCycle: Bool = false
-    @State private var date: Date = Date()
+struct ManageReadingView: View {
+    private var isNewRecord: Bool = false
+    private var meterId: UUID = UUID()
 
+    @State private var redirectToMeter: Bool = false
+    @StateObject private var viewModel: ManageReadingViewModel
+
+    init(reading: Reading?, meterId: UUID, isNewRecord: Bool) {
+        if let reading = reading {
+            _viewModel = StateObject(wrappedValue: ManageReadingViewModel(reading: reading))
+        } else {
+            _viewModel = StateObject(wrappedValue: ManageReadingViewModel(meterId: meterId))
+        }
+
+        self.meterId = meterId
+        self.isNewRecord = isNewRecord
+    }
 
     var body: some View {
         VStack {
@@ -24,7 +36,7 @@ struct NewReadingView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                NavigationLink(destination: CreateMeterView()) {
+                NavigationLink(destination: ManageMeterView(meter: nil, isNewRecord: true)) {
                     Text("open_camera")
                         .padding(.horizontal, 20)
                         .padding(.vertical, 15)
@@ -43,25 +55,24 @@ struct NewReadingView: View {
                         HStack {
                             Image(systemName: "bolt")
                                 .foregroundColor(Color.icon)
-                            TextField("reading", value: $reading, formatter: NumberFormatter())
-                            Text("KWH")
+                            TextField("reading", value: $viewModel.reading.kWhReading, formatter: NumberFormatter())
+                            Text("kwh")
                         }
                         HStack {
                             Image(systemName: "calendar")
                                 .foregroundColor(.icon)
-                            DatePicker(selection: $date, in: ...Date.now, displayedComponents: .date) {
+                            DatePicker(selection: $viewModel.reading.dateOfReading, in: ...Date.now, displayedComponents: .date) {
                                 Text("select_date")
                             }
                         }
                     }
 
                     Section(header: Text("new_billing_cycle")) {
-                        Toggle("save_new_billing_cycle", isOn: $newCycle)
+                        Toggle("save_new_billing_cycle", isOn: $viewModel.reading.isLastCycle)
                     }
                 }
             }
-
-            Button(action: { print("_") }) {
+            Button(action: { viewModel.manageReading(isNewRecord: isNewRecord) }) {
                 Text("save")
                     .padding(.horizontal, 45)
                     .padding(.vertical, 15)
@@ -76,27 +87,35 @@ struct NewReadingView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(.primaryBackground)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Menu {
-                    Button(action: {
-                        print("_")
-                    }) {
-                        Label("edit", systemImage: "pencil")
+            if !self.isNewRecord {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            Button(action: viewModel.deleteMeter) {
+                                Label("delete", systemImage: "trash")
+                            }
+                        }
+                        label: {
+                            Label("actions", systemImage: "ellipsis.circle")
+                        }
                     }
-                    Button(action: {
-                        print("_")
-                    }) {
-                        Label("delete", systemImage: "trash")
-                    }
-                }
-                label: {
-                    Label("actions", systemImage: "ellipsis.circle")
-                }
+            }
+        }
+        .alert(isPresented: $viewModel.showMessage) {
+            Alert(
+               title: Text(viewModel.messageTitle),
+               message: Text(viewModel.messageBody),
+               dismissButton: .default(Text("ok")) {
+                   redirectToMeter = viewModel.isSuccess || viewModel.isSuccessDeleted
+               }
+           )
+        }
+        .navigationDestination(isPresented: $redirectToMeter) {
+            MeterView(id: meterId)
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoaderView()
             }
         }
     }
-}
-
-#Preview {
-    NewReadingView()
 }

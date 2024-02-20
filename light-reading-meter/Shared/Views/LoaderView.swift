@@ -10,14 +10,11 @@ import SwiftUI
 struct LoaderView: View {
     var body: some View {
         ZStack {
-              Color.black.opacity(0.4)
-                  .edgesIgnoringSafeArea(.all)
-              
               VStack {
                   ProgressView()
                       .progressViewStyle(CircularProgressViewStyle(tint: .textColorSecondary))
                       .scaleEffect(2)
-                  
+
                   Text("loading")
                       .foregroundColor(.textColorSecondary)
                       .font(.headline)
@@ -26,7 +23,8 @@ struct LoaderView: View {
               .padding(50)
               .background(
                   RoundedRectangle(cornerRadius: 16)
-                      .foregroundColor(Color.backgrounCardDefault.opacity(0.8))
+                      .foregroundColor(Color.backgrounCardDefault)
+                      .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
               )
         }
     }

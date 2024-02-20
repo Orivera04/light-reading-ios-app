@@ -11,7 +11,7 @@ struct MeterCardView: View {
     let title: String
     let icon: String
     let value: String
-    
+
     var body: some View {
           VStack(alignment: .leading, spacing: 0) {
               HStack {

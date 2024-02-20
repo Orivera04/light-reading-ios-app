@@ -8,25 +8,34 @@
 import SwiftUI
 
 struct MeterView: View {
+    @State private var redirectToMeter: Bool = false
+    @State private var redirectToHome: Bool = false
+    @StateObject var viewModel: MeterViewModel
+
+    init(id: UUID) {
+        _viewModel = StateObject(wrappedValue: MeterViewModel(id: id))
+    }
+
     var body: some View {
         GeometryReader{ geometry in
             VStack {
                 VStack{
-                    MeterWidgetView()
+                    MeterWidgetView(viewModel: viewModel)
                 }
                 VStack {
                     HStack {
-                        MeterCardView(title: NSLocalizedString("last_billing_period", comment: ""), icon: "clock", value: "10/11/1997")
+                        MeterCardView(title: NSLocalizedString("last_invoice", comment: ""), icon: "calendar", value: viewModel.meter.lastInvoiceString)
                             .frame(width: geometry.size.width * 0.31)
-                        MeterCardView(title: NSLocalizedString("last_invoice", comment: ""), icon: "calendar", value: "150 KWH")
+
+                        MeterCardView(title: NSLocalizedString("last_reading", comment: ""), icon: "clock", value: viewModel.meter.lastBillingKwhString)
                             .frame(width: geometry.size.width * 0.31)
-                        MeterCardView(title: NSLocalizedString("current_reading", comment: ""), icon: "bolt", value: "120 KWH")
+                        MeterCardView(title: NSLocalizedString("current_reading", comment: ""), icon: "bolt", value: viewModel.meter.currentReadingString)
                             .frame(width: geometry.size.width * 0.31)
                     }
                     .padding(5)
                     VStack {
                         HStack {
-                            NavigationLink(destination: NewReadingView()) {
+                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true)) {
                                 Text("new_consumption")
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 15)
@@ -48,27 +57,45 @@ struct MeterView: View {
                                     .bold()
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            List {
-                                NavigationLink(destination: NewReadingView()) {
-                                    VStack(alignment: .leading) {
-                                        Text("1675 KWH")
-                                            .font(.headline)
-                                            .padding(.bottom, 10)
-                                        HStack {
-                                            Label("80 KWH", systemImage: "bolt")
-                                                .labelStyle(.titleAndIcon)
-                                                .foregroundColor(.red)
-                                            Spacer()
-                                            Label("14/02/2024", systemImage: "calendar")
-                                                .labelStyle(.titleAndIcon)
-                                                .foregroundColor(.gray)
-                                                .padding(.horizontal, 15)
+                            if let readings = viewModel.meter.lastReadings {
+                                List(readings) { reading in
+                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false)) {
+                                        VStack(alignment: .leading) {
+                                            Text(reading.kilowatsReadingString)
+                                                .font(.headline)
+                                                .padding(.bottom, 10)
+                                            HStack {
+                                                Label(reading.kilowatsAcumulatedReadingString, systemImage: "bolt")
+                                                    .labelStyle(.titleAndIcon)
+                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredMonthlyKWH))
+                                                Spacer()
+                                                Label(reading.dateOfReadingString, systemImage: "calendar")
+                                                    .labelStyle(.titleAndIcon)
+                                                    .foregroundColor(.gray)
+                                                    .padding(.horizontal, 15)
+                                            }
+                                            .font(.caption)
                                         }
-                                        .font(.caption)
+                                    }
+                                }
+                                .scrollContentBackground(.hidden)
+                            }
+                            else {
+                                List {
+                                    HStack {
+                                        Image(systemName: "exclamationmark.triangle")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 50, height: 50)
+                                            .padding()
+                                            .foregroundColor(.gray)
+
+                                        Text("no_readings_found")
+                                            .font(.headline)
+                                            .foregroundColor(.gray)
                                     }
                                 }
                             }
-                            .scrollContentBackground(.hidden)
                         }
                     }
                 }
@@ -78,12 +105,12 @@ struct MeterView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button(action: {
-                                print("_")
+                                redirectToMeter = true
                             }) {
                                 Label("edit", systemImage: "pencil")
                             }
                             Button(action: {
-                                print("_")
+                                viewModel.deleteMeter(id: viewModel.meter.id)
                             }) {
                                 Label("delete", systemImage: "trash")
                             }
@@ -95,10 +122,26 @@ struct MeterView: View {
                 }
             }
             .background(.primaryBackground)
+            .navigationDestination(isPresented: $redirectToMeter) {
+                ManageMeterView(meter: viewModel.meter, isNewRecord: false)
+            }
+            .navigationDestination(isPresented: $redirectToHome) {
+                HomeView()
+            }
+        }
+        .alert(isPresented: $viewModel.showMessage) {
+            Alert(
+               title: Text(viewModel.messageTitle),
+               message: Text(viewModel.messageBody),
+               dismissButton: .default(Text("ok")) {
+                   redirectToHome = viewModel.isSucessDeleted
+               }
+           )
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoaderView()
+            }
         }
     }
-}
-
-#Preview {
-    MeterView()
 }

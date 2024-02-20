@@ -13,23 +13,23 @@ class HomeViewModel: ObservableObject {
     @Published var showErrorAlert = false
     @Published var errorMessage: String?
     @Published var isLoading: Bool = false
-    
+
     init() {
         self.isLoading = true
-        
+
         fetchMeters()
     }
-    
+
     func fetchMeters() {
         MeterService.shared.getMeters { [weak self] success, meters, error in
             DispatchQueue.main.async {
                 self?.isLoading = false
-                
+
                 if success {
                     self?.myMeters = meters
                 } else {
                     print("Error: \(error ?? "Unknown error")")
-                    
+
                     self?.showErrorAlert = true
                     self?.errorMessage = NSLocalizedString("something_went_wrong", comment: "")
                 }
