@@ -1,0 +1,1040 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E852B768171004DAE71 /* SideMenuView.swift */; };
+		2A0F3E872B768171004DAE71 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E852B768171004DAE71 /* SideMenuView.swift */; };
+		2A0F3E882B768171004DAE71 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E852B768171004DAE71 /* SideMenuView.swift */; };
+		2A0F3E8A2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */; };
+		2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */; };
+		2A0F3E8C2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */; };
+		2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45981A2B7724E90097F974 /* NavbarView.swift */; };
+		2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45981A2B7724E90097F974 /* NavbarView.swift */; };
+		2A45981D2B7724E90097F974 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45981A2B7724E90097F974 /* NavbarView.swift */; };
+		2A4E0A012B7BC577007161FD /* MeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E0A002B7BC577007161FD /* MeterView.swift */; };
+		2A4E0A062B7BF77F007161FD /* DigitalNumbers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E0A052B7BF77F007161FD /* DigitalNumbers-Regular.ttf */; };
+		2A6683892B818CBF009312B7 /* ReadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6683882B818CBF009312B7 /* ReadingService.swift */; };
+		2A66838B2B818F71009312B7 /* ManageReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66838A2B818F71009312B7 /* ManageReadingViewModel.swift */; };
+		2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68D23D2B72990800DE3359 /* light_reading_meterApp.swift */; };
+		2A68D2402B72990800DE3359 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68D23F2B72990800DE3359 /* HomeView.swift */; };
+		2A68D2422B72990A00DE3359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A68D2412B72990A00DE3359 /* Assets.xcassets */; };
+		2A68D2452B72990A00DE3359 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A68D2442B72990A00DE3359 /* Preview Assets.xcassets */; };
+		2A6985BE2B7E5A7700715226 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2A6985BD2B7E5A7700715226 /* Staging.xcconfig */; };
+		2A6985C02B7E5A8A00715226 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2A6985BF2B7E5A8A00715226 /* Production.xcconfig */; };
+		2A6985C22B7E615900715226 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C12B7E615900715226 /* LoaderView.swift */; };
+		2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */; };
+		2A6FB0562B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
+		2A6FB0572B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
+		2A6FB0582B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
+		2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */; };
+		2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */; };
+		2A6FB05C2B7D22C40002F050 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */; };
+		2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */; };
+		2A6FB05F2B7D2A2E0002F050 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */; };
+		2A6FB0602B7D2A2E0002F050 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */; };
+		2A6FB0622B7D709C0002F050 /* MeterWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0612B7D709C0002F050 /* MeterWidgetView.swift */; };
+		2A6FB0632B7D709C0002F050 /* MeterWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0612B7D709C0002F050 /* MeterWidgetView.swift */; };
+		2A6FB0642B7D709C0002F050 /* MeterWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0612B7D709C0002F050 /* MeterWidgetView.swift */; };
+		2A6FB0672B7D7D1C0002F050 /* MeterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0662B7D7D1C0002F050 /* MeterService.swift */; };
+		2A6FB0682B7D7D1C0002F050 /* MeterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0662B7D7D1C0002F050 /* MeterService.swift */; };
+		2A6FB0692B7D7D1C0002F050 /* MeterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0662B7D7D1C0002F050 /* MeterService.swift */; };
+		2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB06A2B7D8AFC0002F050 /* MeterCardView.swift */; };
+		2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB06E2B7DA6690002F050 /* Constants.swift */; };
+		2A6FB0702B7DA6690002F050 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB06E2B7DA6690002F050 /* Constants.swift */; };
+		2A6FB0712B7DA6690002F050 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB06E2B7DA6690002F050 /* Constants.swift */; };
+		2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */; };
+		2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */; };
+		2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4ED82B7FD36000957030 /* ContentView.swift */; };
+		2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDA2B8058BA00957030 /* Reading.swift */; };
+		2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */; };
+		2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */; };
+		2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */; };
+		2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */; };
+		2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593E2B82E868003D9D3E /* ImagePicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A68D24B2B72990A00DE3359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A68D2322B72990800DE3359 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A68D2392B72990800DE3359;
+			remoteInfo = "meter-logger";
+		};
+		2A68D2552B72990A00DE3359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A68D2322B72990800DE3359 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A68D2392B72990800DE3359;
+			remoteInfo = "meter-logger";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A0F3E852B768171004DAE71 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewContents.swift; sourceTree = "<group>"; };
+		2A45981A2B7724E90097F974 /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
+		2A4E0A002B7BC577007161FD /* MeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterView.swift; sourceTree = "<group>"; };
+		2A4E0A052B7BF77F007161FD /* DigitalNumbers-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DigitalNumbers-Regular.ttf"; sourceTree = "<group>"; };
+		2A4E0A072B7BF7F4007161FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6683882B818CBF009312B7 /* ReadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingService.swift; sourceTree = "<group>"; };
+		2A66838A2B818F71009312B7 /* ManageReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageReadingViewModel.swift; sourceTree = "<group>"; };
+		2A68D23A2B72990800DE3359 /* MeterLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeterLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A68D23D2B72990800DE3359 /* light_reading_meterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = light_reading_meterApp.swift; sourceTree = "<group>"; };
+		2A68D23F2B72990800DE3359 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2A68D2412B72990A00DE3359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A68D2442B72990A00DE3359 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A68D24A2B72990A00DE3359 /* MeterLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeterLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A68D2542B72990A00DE3359 /* MeterLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeterLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6985B42B7E57DE00715226 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		2A6985BD2B7E5A7700715226 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		2A6985BF2B7E5A8A00715226 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		2A6985C12B7E615900715226 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMeterViewModel.swift; sourceTree = "<group>"; };
+		2A6FB0552B7D22670002F050 /* Meter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
+		2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		2A6FB0612B7D709C0002F050 /* MeterWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterWidgetView.swift; sourceTree = "<group>"; };
+		2A6FB0662B7D7D1C0002F050 /* MeterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterService.swift; sourceTree = "<group>"; };
+		2A6FB06A2B7D8AFC0002F050 /* MeterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterCardView.swift; sourceTree = "<group>"; };
+		2A6FB06E2B7DA6690002F050 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMeterView.swift; sourceTree = "<group>"; };
+		2ACE4ED82B7FD36000957030 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2ACE4EDA2B8058BA00957030 /* Reading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
+		2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterViewModel.swift; sourceTree = "<group>"; };
+		2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageReadingView.swift; sourceTree = "<group>"; };
+		2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStyle.swift; sourceTree = "<group>"; };
+		2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeResponse.swift; sourceTree = "<group>"; };
+		2AF0593E2B82E868003D9D3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A68D2372B72990800DE3359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A68D2472B72990A00DE3359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A68D2512B72990A00DE3359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A0F3E812B767884004DAE71 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2A4598242B772ADD0097F974 /* Models */,
+				2A4598232B772AB40097F974 /* ViewModels */,
+				2A4598222B772A950097F974 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2A45981E2B7729760097F974 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2ADB8EE32B7C595700C6D91E /* ManageReading */,
+				2A4E09FC2B7BC45E007161FD /* Meter */,
+				2A7485D52B7AEFC700E71BF8 /* ManageMeter */,
+				2A0F3E812B767884004DAE71 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2A45981F2B7729CE0097F974 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2AF0593B2B82E13A003D9D3E /* Models */,
+				2A6FB0652B7D7D000002F050 /* Services */,
+				2A4598202B7729F30097F974 /* Views */,
+				2A4598212B772A000097F974 /* Helpers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2A4598202B7729F30097F974 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A0F3E852B768171004DAE71 /* SideMenuView.swift */,
+				2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */,
+				2A45981A2B7724E90097F974 /* NavbarView.swift */,
+				2A6985C12B7E615900715226 /* LoaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A4598212B772A000097F974 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FB05D2B7D2A2E0002F050 /* ApiClient.swift */,
+				2A6FB06E2B7DA6690002F050 /* Constants.swift */,
+				2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */,
+				2AF0593E2B82E868003D9D3E /* ImagePicker.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2A4598222B772A950097F974 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A68D23F2B72990800DE3359 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A4598232B772AB40097F974 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A4598242B772ADD0097F974 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FB0552B7D22670002F050 /* Meter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A4E09FC2B7BC45E007161FD /* Meter */ = {
+			isa = PBXGroup;
+			children = (
+				2A4E09FF2B7BC486007161FD /* Models */,
+				2A4E09FE2B7BC479007161FD /* ViewModels */,
+				2A4E09FD2B7BC471007161FD /* Views */,
+			);
+			path = Meter;
+			sourceTree = "<group>";
+		};
+		2A4E09FD2B7BC471007161FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A4E0A002B7BC577007161FD /* MeterView.swift */,
+				2A6FB0612B7D709C0002F050 /* MeterWidgetView.swift */,
+				2A6FB06A2B7D8AFC0002F050 /* MeterCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A4E09FE2B7BC479007161FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A4E09FF2B7BC486007161FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2ACE4EDA2B8058BA00957030 /* Reading.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A4E0A042B7BF726007161FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2A4E0A052B7BF77F007161FD /* DigitalNumbers-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2A68D2312B72990800DE3359 = {
+			isa = PBXGroup;
+			children = (
+				2A68D23C2B72990800DE3359 /* meter-logger */,
+				2A68D23B2B72990800DE3359 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A68D23B2B72990800DE3359 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A68D23A2B72990800DE3359 /* MeterLogger.app */,
+				2A68D24A2B72990A00DE3359 /* MeterLoggerTests.xctest */,
+				2A68D2542B72990A00DE3359 /* MeterLoggerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A68D23C2B72990800DE3359 /* meter-logger */ = {
+			isa = PBXGroup;
+			children = (
+				2A4E0A072B7BF7F4007161FD /* Info.plist */,
+				2A6985B32B7E578500715226 /* Configs */,
+				2A4E0A042B7BF726007161FD /* Fonts */,
+				2A45981E2B7729760097F974 /* Features */,
+				2A45981F2B7729CE0097F974 /* Shared */,
+				2A68D23D2B72990800DE3359 /* light_reading_meterApp.swift */,
+				2ACE4ED82B7FD36000957030 /* ContentView.swift */,
+				2A68D2412B72990A00DE3359 /* Assets.xcassets */,
+				2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */,
+				2A68D2432B72990A00DE3359 /* Preview Content */,
+			);
+			path = "meter-logger";
+			sourceTree = "<group>";
+		};
+		2A68D2432B72990A00DE3359 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2A68D2442B72990A00DE3359 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A6985B32B7E578500715226 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				2A6985B42B7E57DE00715226 /* Development.xcconfig */,
+				2A6985BD2B7E5A7700715226 /* Staging.xcconfig */,
+				2A6985BF2B7E5A8A00715226 /* Production.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		2A6985C52B7EBC1D00715226 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A6FB0652B7D7D000002F050 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FB0662B7D7D1C0002F050 /* MeterService.swift */,
+				2A6683882B818CBF009312B7 /* ReadingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2A7485D52B7AEFC700E71BF8 /* ManageMeter */ = {
+			isa = PBXGroup;
+			children = (
+				2A6985C52B7EBC1D00715226 /* Models */,
+				2A7485D82B7AF00200E71BF8 /* Views */,
+				2A7485D72B7AEFFC00E71BF8 /* ViewModels */,
+			);
+			path = ManageMeter;
+			sourceTree = "<group>";
+		};
+		2A7485D72B7AEFFC00E71BF8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A7485D82B7AF00200E71BF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2ADB8EE32B7C595700C6D91E /* ManageReading */ = {
+			isa = PBXGroup;
+			children = (
+				2ADB8EE62B7C596C00C6D91E /* Views */,
+				2ADB8EE52B7C596700C6D91E /* ViewModels */,
+				2ADB8EE42B7C596200C6D91E /* Models */,
+			);
+			path = ManageReading;
+			sourceTree = "<group>";
+		};
+		2ADB8EE42B7C596200C6D91E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2ADB8EE52B7C596700C6D91E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A66838A2B818F71009312B7 /* ManageReadingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2ADB8EE62B7C596C00C6D91E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ADB8EE72B7C598300C6D91E /* ManageReadingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AF0593B2B82E13A003D9D3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A68D2392B72990800DE3359 /* MeterLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A68D25E2B72990A00DE3359 /* Build configuration list for PBXNativeTarget "MeterLogger" */;
+			buildPhases = (
+				2A68D2362B72990800DE3359 /* Sources */,
+				2A68D2372B72990800DE3359 /* Frameworks */,
+				2A68D2382B72990800DE3359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeterLogger;
+			productName = "meter-logger";
+			productReference = 2A68D23A2B72990800DE3359 /* MeterLogger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A68D2492B72990A00DE3359 /* MeterLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A68D2612B72990A00DE3359 /* Build configuration list for PBXNativeTarget "MeterLoggerTests" */;
+			buildPhases = (
+				2A68D2462B72990A00DE3359 /* Sources */,
+				2A68D2472B72990A00DE3359 /* Frameworks */,
+				2A68D2482B72990A00DE3359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A68D24C2B72990A00DE3359 /* PBXTargetDependency */,
+			);
+			name = MeterLoggerTests;
+			productName = "meter-loggerTests";
+			productReference = 2A68D24A2B72990A00DE3359 /* MeterLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A68D2532B72990A00DE3359 /* MeterLoggerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A68D2642B72990A00DE3359 /* Build configuration list for PBXNativeTarget "MeterLoggerUITests" */;
+			buildPhases = (
+				2A68D2502B72990A00DE3359 /* Sources */,
+				2A68D2512B72990A00DE3359 /* Frameworks */,
+				2A68D2522B72990A00DE3359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A68D2562B72990A00DE3359 /* PBXTargetDependency */,
+			);
+			name = MeterLoggerUITests;
+			productName = "meter-loggerUITests";
+			productReference = 2A68D2542B72990A00DE3359 /* MeterLoggerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A68D2322B72990800DE3359 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					2A68D2392B72990800DE3359 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					2A68D2492B72990A00DE3359 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 2A68D2392B72990800DE3359;
+					};
+					2A68D2532B72990A00DE3359 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 2A68D2392B72990800DE3359;
+					};
+				};
+			};
+			buildConfigurationList = 2A68D2352B72990800DE3359 /* Build configuration list for PBXProject "MeterLogger" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"es-419",
+			);
+			mainGroup = 2A68D2312B72990800DE3359;
+			productRefGroup = 2A68D23B2B72990800DE3359 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A68D2392B72990800DE3359 /* MeterLogger */,
+				2A68D2492B72990A00DE3359 /* MeterLoggerTests */,
+				2A68D2532B72990A00DE3359 /* MeterLoggerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A68D2382B72990800DE3359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A68D2452B72990A00DE3359 /* Preview Assets.xcassets in Resources */,
+				2A68D2422B72990A00DE3359 /* Assets.xcassets in Resources */,
+				2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */,
+				2A6985BE2B7E5A7700715226 /* Staging.xcconfig in Resources */,
+				2A4E0A062B7BF77F007161FD /* DigitalNumbers-Regular.ttf in Resources */,
+				2A6985C02B7E5A8A00715226 /* Production.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A68D2482B72990A00DE3359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A68D2522B72990A00DE3359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A68D2362B72990800DE3359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A6683892B818CBF009312B7 /* ReadingService.swift in Sources */,
+				2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */,
+				2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */,
+				2A4E0A012B7BC577007161FD /* MeterView.swift in Sources */,
+				2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */,
+				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
+				2A66838B2B818F71009312B7 /* ManageReadingViewModel.swift in Sources */,
+				2A6FB0672B7D7D1C0002F050 /* MeterService.swift in Sources */,
+				2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */,
+				2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
+				2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */,
+				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
+				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
+				2A6FB0562B7D22670002F050 /* Meter.swift in Sources */,
+				2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */,
+				2A68D2402B72990800DE3359 /* HomeView.swift in Sources */,
+				2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */,
+				2A6FB0622B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
+				2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */,
+				2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */,
+				2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */,
+				2A6985C22B7E615900715226 /* LoaderView.swift in Sources */,
+				2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */,
+				2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */,
+				2A0F3E8A2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A68D2462B72990A00DE3359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A6FB0682B7D7D1C0002F050 /* MeterService.swift in Sources */,
+				2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
+				2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */,
+				2A6FB0572B7D22670002F050 /* Meter.swift in Sources */,
+				2A6FB0702B7DA6690002F050 /* Constants.swift in Sources */,
+				2A6FB0632B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
+				2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
+				2A6FB05F2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
+				2A0F3E872B768171004DAE71 /* SideMenuView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A68D2502B72990A00DE3359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0F3E882B768171004DAE71 /* SideMenuView.swift in Sources */,
+				2A6FB0712B7DA6690002F050 /* Constants.swift in Sources */,
+				2A6FB0642B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
+				2A6FB05C2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
+				2A6FB0602B7D2A2E0002F050 /* ApiClient.swift in Sources */,
+				2A6FB0692B7D7D1C0002F050 /* MeterService.swift in Sources */,
+				2A6FB0582B7D22670002F050 /* Meter.swift in Sources */,
+				2A45981D2B7724E90097F974 /* NavbarView.swift in Sources */,
+				2A0F3E8C2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A68D24C2B72990A00DE3359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A68D2392B72990800DE3359 /* MeterLogger */;
+			targetProxy = 2A68D24B2B72990A00DE3359 /* PBXContainerItemProxy */;
+		};
+		2A68D2562B72990A00DE3359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A68D2392B72990800DE3359 /* MeterLogger */;
+			targetProxy = 2A68D2552B72990A00DE3359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A68D25D2B72990A00DE3359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A68D2602B72990A00DE3359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6985BF2B7E5A8A00715226 /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"meter-logger/Preview Content\"";
+				DEVELOPMENT_TEAM = K85QMXV6ZB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "meter-logger/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-logger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A68D2632B72990A00DE3359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-loggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeterLogger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeterLogger";
+			};
+			name = Release;
+		};
+		2A68D2662B72990A00DE3359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-loggerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "meter-logger";
+			};
+			name = Release;
+		};
+		2A6985B52B7E59E300715226 /* Debug(Development) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug(Development)";
+		};
+		2A6985B62B7E59E300715226 /* Debug(Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6985B42B7E57DE00715226 /* Development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"meter-logger/Preview Content\"";
+				DEVELOPMENT_TEAM = K85QMXV6ZB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "meter-logger/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-logger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug(Development)";
+		};
+		2A6985B72B7E59E300715226 /* Debug(Development) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-loggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeterLogger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeterLogger";
+			};
+			name = "Debug(Development)";
+		};
+		2A6985B82B7E59E300715226 /* Debug(Development) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-loggerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "meter-logger";
+			};
+			name = "Debug(Development)";
+		};
+		2A6985B92B7E59F100715226 /* Debug(Staging) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug(Staging)";
+		};
+		2A6985BA2B7E59F100715226 /* Debug(Staging) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6985BD2B7E5A7700715226 /* Staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"meter-logger/Preview Content\"";
+				DEVELOPMENT_TEAM = K85QMXV6ZB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "meter-logger/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-logger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug(Staging)";
+		};
+		2A6985BB2B7E59F100715226 /* Debug(Staging) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-loggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeterLogger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeterLogger";
+			};
+			name = "Debug(Staging)";
+		};
+		2A6985BC2B7E59F100715226 /* Debug(Staging) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "onion-code.meter-loggerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "meter-logger";
+			};
+			name = "Debug(Staging)";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A68D2352B72990800DE3359 /* Build configuration list for PBXProject "MeterLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A6985B52B7E59E300715226 /* Debug(Development) */,
+				2A6985B92B7E59F100715226 /* Debug(Staging) */,
+				2A68D25D2B72990A00DE3359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A68D25E2B72990A00DE3359 /* Build configuration list for PBXNativeTarget "MeterLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A6985B62B7E59E300715226 /* Debug(Development) */,
+				2A6985BA2B7E59F100715226 /* Debug(Staging) */,
+				2A68D2602B72990A00DE3359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A68D2612B72990A00DE3359 /* Build configuration list for PBXNativeTarget "MeterLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A6985B72B7E59E300715226 /* Debug(Development) */,
+				2A6985BB2B7E59F100715226 /* Debug(Staging) */,
+				2A68D2632B72990A00DE3359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A68D2642B72990A00DE3359 /* Build configuration list for PBXNativeTarget "MeterLoggerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A6985B82B7E59E300715226 /* Debug(Development) */,
+				2A6985BC2B7E59F100715226 /* Debug(Staging) */,
+				2A68D2662B72990A00DE3359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A68D2322B72990800DE3359 /* Project object */;
+}
