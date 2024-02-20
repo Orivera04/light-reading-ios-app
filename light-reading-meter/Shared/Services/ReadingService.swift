@@ -11,7 +11,6 @@ class ReadingService {
     private let apiClient = APIClient.shared
     static let shared = ReadingService()
 
-
     func saveReading(reading: Reading, completion: @escaping (Bool, String?) -> ()) {
         let deserializedReading: [String: String] = [
             "kWhReading": reading.kilowatsReadingString,

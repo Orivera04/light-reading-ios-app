@@ -76,7 +76,6 @@ struct Meter: Identifiable, Codable {
             errorMessages.append(NSLocalizedString("invalid_desired_kwh_monthly", comment: ""))
         }
 
-
         return errorMessages
     }
 

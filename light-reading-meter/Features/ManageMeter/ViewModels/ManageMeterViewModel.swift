@@ -26,12 +26,10 @@ class ManageMeterViewModel: ObservableObject {
     func manageMeter(isNewRecord: Bool) {
         if isNewRecord {
             saveNewMeter()
-        }
-        else {
+        } else {
             updateNewMeter()
         }
     }
-
 
     func saveNewMeter() {
         guard self.meter.isValid else {
