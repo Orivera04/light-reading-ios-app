@@ -5,7 +5,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>The camera will be used if the user wants to take a picture of their meter to get the current kWh reading.</string>
 	<key>API_URL</key>
-	<string>$(API_URL)</string>
+	<string>https://$(API_URL)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DigitalNumbers-Regular.ttf</string>

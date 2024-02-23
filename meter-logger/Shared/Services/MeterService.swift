@@ -12,7 +12,7 @@ class MeterService {
     static let shared = MeterService()
 
     func getMeters(completion: @escaping (Bool, [Meter], String?) -> ()) {
-        apiClient.call(endpoint: "todos", method: .GET, params: nil, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "meters", method: .GET, params: nil, httpHeader: .none) { success, data in
             guard success, let data = data else {
                 completion(false, [], "Error: Meter GET Request failed")
                 return
@@ -29,7 +29,7 @@ class MeterService {
     }
 
     func getMeterById(id: UUID, completion: @escaping (Bool, Meter?, String?) -> ()) {
-        apiClient.call(endpoint: "todos/\(id)", method: .GET, params: nil, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "meters/\(id)", method: .GET, params: nil, httpHeader: .none) { success, data in
 
             guard success, let data = data else {
                 completion(false, nil, "Error: Meter GET Request failed")
@@ -54,7 +54,7 @@ class MeterService {
             "desiredMonthlyKWH": String(meter.desiredMonthlyKWH)
         ]
 
-        apiClient.call(endpoint: "todos", method: .POST, params: deserializedMeter, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "meters", method: .POST, params: deserializedMeter, httpHeader: .none) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Meter Post Request failed")
                 return
@@ -78,7 +78,7 @@ class MeterService {
             "desiredMonthlyKWH": String(meter.desiredMonthlyKWH)
         ]
 
-        apiClient.call(endpoint: "todos/\(meter.id)", method: .PUT, params: deserializedMeter, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "meters/\(meter.id)", method: .PUT, params: deserializedMeter, httpHeader: .none) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Meter Put Request failed")
                 return
