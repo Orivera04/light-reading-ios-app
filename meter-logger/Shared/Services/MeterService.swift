@@ -11,37 +11,24 @@ class MeterService {
     private let apiClient = APIClient.shared
     static let shared = MeterService()
 
-    func getMeters(completion: @escaping (Bool, [Meter], String?) -> ()) {
+    func getMeters(completion: @escaping (Bool, ListMeterHome, String?) -> ()) {
         apiClient.call(endpoint: "meters", method: .GET, params: nil, httpHeader: .none) { success, data in
             guard success, let data = data else {
-                completion(false, [], "Error: Meter GET Request failed")
+                completion(false, ListMeterHome(), "Error: Meter GET Request failed")
                 return
             }
 
             do {
-                var meterList: [Meter] = []
-                let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                let meters = (jsonData?["meters"] as? [[String: Any]]) ?? []
-                
-                for meter in meters {
-                    if let name = meter["name"] as? String,
-                       let tag = meter["tag"] as? String,
-                       let currentReading = meter["currentReading"] as? Int,
-                       let desiredMonthlyKWH = meter["desiredKwhMonthly"] as? Int {
-                       let newMeter = Meter(name: name, tag: tag, currentReading: currentReading, desiredMonthlyKWH: desiredMonthlyKWH)
-
-                       meterList.append(newMeter)
-                    }
-                }
-
-                completion(true, meterList, nil)
+                let meters: ListMeterHome = try JSONDecoder().decode(ListMeterHome.self, from: data)
+                completion(true, meters, nil)
             } catch {
-                completion(false, [], "Error: Parsing Meter failed")
+                print("Error: \(error)")
+                completion(false, ListMeterHome(), "Error: Parsing Meter failed")
             }
         }
     }
 
-    func getMeterById(id: UUID, completion: @escaping (Bool, Meter?, String?) -> ()) {
+    func getMeterById(id: String, completion: @escaping (Bool, MeterInformation?, String?) -> ()) {
         apiClient.call(endpoint: "meters/\(id)", method: .GET, params: nil, httpHeader: .none) { success, data in
 
             guard success, let data = data else {
@@ -50,10 +37,10 @@ class MeterService {
             }
 
             do {
-                let meter = try JSONDecoder().decode(Meter.self, from: data)
-
+                let meter = try JSONDecoder().decode(MeterInformation.self, from: data)
                 completion(true, meter, nil)
             } catch {
+                print("Error decoding JSON: \(error)")
                 completion(false, nil, "Error: Parsing Meter failed")
             }
         }
@@ -64,10 +51,10 @@ class MeterService {
         let deserializedMeter: [String: String] = [
             "name": meter.name,
             "tag": meter.tag,
-            "desiredMonthlyKWH": String(meter.desiredKwhMonthly)
+            "desiredKwhMonthly": String(meter.desiredKwhMonthly)
         ]
-
-        apiClient.call(endpoint: "meters", method: .POST, params: deserializedMeter, httpHeader: .none) { success, data in
+        
+        apiClient.call(endpoint: "meters", method: .POST, params: deserializedMeter, httpHeader: .application_json) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Meter Post Request failed")
                 return
@@ -76,7 +63,7 @@ class MeterService {
             do {
                 let response = try JSONDecoder().decode(ServeResponse.self, from: data)
 
-                completion(true, response.message)
+                completion(true, NSLocalizedString(response.translationKey, comment: ""))
             } catch {
                 completion(false, "Error: Parsing Meter failed")
             }
@@ -102,12 +89,13 @@ class MeterService {
 
                 completion(true, response.message)
             } catch {
+                print(error)
                 completion(false, "Error: Parsing Meter failed")
             }
         }
     }
 
-    func deleteMeterById(id: UUID, completion: @escaping (Bool, String?) -> ()) {
+    func deleteMeterById(id: String, completion: @escaping (Bool, String?) -> ()) {
         apiClient.call(endpoint: "todos/\(id)", method: .DELETE, params: nil, httpHeader: .none) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Meter Delete Request failed")

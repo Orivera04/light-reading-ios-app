@@ -13,6 +13,10 @@
 		2A0F3E8A2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */; };
 		2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */; };
 		2A0F3E8C2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */; };
+		2A1B5A012B89B71C0079F4D5 /* MeterHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B5A002B89B71C0079F4D5 /* MeterHome.swift */; };
+		2A1B5A032B89B7890079F4D5 /* ListMeterHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B5A022B89B7890079F4D5 /* ListMeterHome.swift */; };
+		2A1B5A072B89DC5C0079F4D5 /* MeterInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B5A062B89DC5C0079F4D5 /* MeterInformation.swift */; };
+		2A1B5A092B89DC650079F4D5 /* MeterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B5A082B89DC650079F4D5 /* MeterDetail.swift */; };
 		2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45981A2B7724E90097F974 /* NavbarView.swift */; };
 		2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45981A2B7724E90097F974 /* NavbarView.swift */; };
 		2A45981D2B7724E90097F974 /* NavbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A45981A2B7724E90097F974 /* NavbarView.swift */; };
@@ -29,8 +33,6 @@
 		2A6985C22B7E615900715226 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C12B7E615900715226 /* LoaderView.swift */; };
 		2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6985C32B7EB7D500715226 /* ManageMeterViewModel.swift */; };
 		2A6FB0562B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
-		2A6FB0572B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
-		2A6FB0582B7D22670002F050 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0552B7D22670002F050 /* Meter.swift */; };
 		2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */; };
 		2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */; };
 		2A6FB05C2B7D22C40002F050 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB0592B7D22C40002F050 /* HomeViewModel.swift */; };
@@ -78,6 +80,10 @@
 /* Begin PBXFileReference section */
 		2A0F3E852B768171004DAE71 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewContents.swift; sourceTree = "<group>"; };
+		2A1B5A002B89B71C0079F4D5 /* MeterHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterHome.swift; sourceTree = "<group>"; };
+		2A1B5A022B89B7890079F4D5 /* ListMeterHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMeterHome.swift; sourceTree = "<group>"; };
+		2A1B5A062B89DC5C0079F4D5 /* MeterInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterInformation.swift; sourceTree = "<group>"; };
+		2A1B5A082B89DC650079F4D5 /* MeterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterDetail.swift; sourceTree = "<group>"; };
 		2A45981A2B7724E90097F974 /* NavbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarView.swift; sourceTree = "<group>"; };
 		2A4E0A002B7BC577007161FD /* MeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterView.swift; sourceTree = "<group>"; };
 		2A4E0A052B7BF77F007161FD /* DigitalNumbers-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DigitalNumbers-Regular.ttf"; sourceTree = "<group>"; };
@@ -212,7 +218,8 @@
 		2A4598242B772ADD0097F974 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2A6FB0552B7D22670002F050 /* Meter.swift */,
+				2A1B5A002B89B71C0079F4D5 /* MeterHome.swift */,
+				2A1B5A022B89B7890079F4D5 /* ListMeterHome.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,7 +255,9 @@
 		2A4E09FF2B7BC486007161FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2ACE4EDA2B8058BA00957030 /* Reading.swift */,
+				2A6FB0552B7D22670002F050 /* Meter.swift */,
+				2A1B5A062B89DC5C0079F4D5 /* MeterInformation.swift */,
+				2A1B5A082B89DC650079F4D5 /* MeterDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 		2ADB8EE52B7C596700C6D91E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2ACE4EDA2B8058BA00957030 /* Reading.swift */,
 				2A66838A2B818F71009312B7 /* ManageReadingViewModel.swift */,
 			);
 			path = ViewModels;
@@ -532,13 +542,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1B5A092B89DC650079F4D5 /* MeterDetail.swift in Sources */,
 				2A6683892B818CBF009312B7 /* ReadingService.swift in Sources */,
+				2A1B5A032B89B7890079F4D5 /* ListMeterHome.swift in Sources */,
 				2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */,
 				2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */,
 				2A4E0A012B7BC577007161FD /* MeterView.swift in Sources */,
 				2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */,
 				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
 				2A66838B2B818F71009312B7 /* ManageReadingViewModel.swift in Sources */,
+				2A1B5A072B89DC5C0079F4D5 /* MeterInformation.swift in Sources */,
 				2A6FB0672B7D7D1C0002F050 /* MeterService.swift in Sources */,
 				2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */,
 				2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
@@ -546,6 +559,7 @@
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A6FB0562B7D22670002F050 /* Meter.swift in Sources */,
+				2A1B5A012B89B71C0079F4D5 /* MeterHome.swift in Sources */,
 				2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */,
 				2A68D2402B72990800DE3359 /* HomeView.swift in Sources */,
 				2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */,
@@ -567,7 +581,6 @@
 				2A6FB0682B7D7D1C0002F050 /* MeterService.swift in Sources */,
 				2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */,
-				2A6FB0572B7D22670002F050 /* Meter.swift in Sources */,
 				2A6FB0702B7DA6690002F050 /* Constants.swift in Sources */,
 				2A6FB0632B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
@@ -586,7 +599,6 @@
 				2A6FB05C2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A6FB0602B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A6FB0692B7D7D1C0002F050 /* MeterService.swift in Sources */,
-				2A6FB0582B7D22670002F050 /* Meter.swift in Sources */,
 				2A45981D2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2A0F3E8C2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
 			);

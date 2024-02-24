@@ -10,14 +10,14 @@ import Foundation
 struct Reading: Identifiable, Codable {
     // Properties
     var id = UUID()
-    var meterId: UUID
+    var meterId: String
     var kWhReading: Int
     var accumulatedkWhReading: Int
     var dateOfReading: Date
     var isLastCycle: Bool
 
     // Constructor
-    init(meterId: UUID = UUID(),
+    init(meterId: String = "",
             kWhReading: Int = 0,
             accumulatedkWhReading: Int = 0,
             dateOfReading: Date = Date(),

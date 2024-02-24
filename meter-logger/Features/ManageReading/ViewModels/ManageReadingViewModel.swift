@@ -17,7 +17,7 @@ class ManageReadingViewModel: ObservableObject {
     @Published var isSuccessDeleted: Bool = false
 
     // New Record
-    init(meterId: UUID) {
+    init(meterId: String) {
         self.reading = Reading()
     }
 

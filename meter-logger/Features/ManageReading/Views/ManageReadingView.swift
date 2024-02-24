@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ManageReadingView: View {
     private var isNewRecord: Bool = false
-    private var meterId: UUID = UUID()
+    private var meterId: String
 
     @State private var redirectToMeter: Bool = false
     @StateObject private var viewModel: ManageReadingViewModel
 
-    init(reading: Reading?, meterId: UUID, isNewRecord: Bool) {
+    init(reading: Reading?, meterId: String, isNewRecord: Bool) {
         if let reading = reading {
             _viewModel = StateObject(wrappedValue: ManageReadingViewModel(reading: reading))
         } else {

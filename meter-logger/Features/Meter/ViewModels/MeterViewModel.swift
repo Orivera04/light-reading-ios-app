@@ -8,27 +8,27 @@
 import Foundation
 
 class MeterViewModel: ObservableObject {
-    @Published var meter: Meter
+    @Published var meterInformation: MeterInformation
     @Published var showMessage: Bool = false
     @Published var messageTitle: String = ""
     @Published var messageBody: String = ""
     @Published var isLoading: Bool = false
     @Published var isSucessDeleted: Bool = false
 
-    init(id: UUID) {
-        self.meter = Meter()
+    init(id: String) {
+        self.meterInformation = MeterInformation()
 
         fetchMeter(id: id)
     }
 
-    func fetchMeter(id: UUID) {
+    func fetchMeter(id: String) {
         self.isLoading = true
 
         MeterService.shared.getMeterById(id: id) { [weak self] success, meter, error in
             DispatchQueue.main.async {
                 self?.isLoading = false
                 if success {
-                    self?.meter = meter!
+                    self?.meterInformation = meter!
                 } else {
                     print("Error: \(error ?? "Unknown error")")
                     self?.showMessage(isSuccessMessage: false, body: error ?? "")
@@ -38,7 +38,7 @@ class MeterViewModel: ObservableObject {
     }
 
 
-    func deleteMeter(id: UUID) {
+    func deleteMeter(id: String) {
         self.isLoading = true
 
         MeterService.shared.deleteMeterById(id: id) { [weak self] success, message in

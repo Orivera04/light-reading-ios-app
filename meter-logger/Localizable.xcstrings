@@ -168,6 +168,9 @@
         }
       }
     },
+    "KWH" : {
+
+    },
     "kwh_is_not_valid" : {
       "localizations" : {
         "en" : {
@@ -463,6 +466,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se encontraron lecturas."
+          }
+        }
+      }
+    },
+    "not_available" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
           }
         }
       }
