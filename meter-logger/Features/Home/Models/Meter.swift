@@ -15,7 +15,7 @@ struct Meter: Identifiable, Codable {
     var lastBillingKwh: Int?
     var lastInvoice: Date?
     var currentReading: Int?
-    var desiredMonthlyKWH: Int
+    var desiredKwhMonthly: Int
     var lastReadings: [Reading]?
 
     // Constructor
@@ -32,7 +32,7 @@ struct Meter: Identifiable, Codable {
         self.lastBillingKwh = lastBillingKwh
         self.lastInvoice = lastInvoice
         self.currentReading = currentReading
-        self.desiredMonthlyKWH = desiredMonthlyKWH
+        self.desiredKwhMonthly = desiredMonthlyKWH
         self.lastReadings = lastReadings
     }
 
@@ -58,7 +58,7 @@ struct Meter: Identifiable, Codable {
 
     // Validations
     var isValid: Bool {
-        return !name.isEmpty && !tag.isEmpty && desiredMonthlyKWH > 0
+        return !name.isEmpty && !tag.isEmpty && desiredKwhMonthly > 0
     }
 
     var errors: [String] {
@@ -72,7 +72,7 @@ struct Meter: Identifiable, Codable {
             errorMessages.append(NSLocalizedString("tag_is_empty", comment: ""))
         }
 
-        if desiredMonthlyKWH <= 0 {
+        if desiredKwhMonthly <= 0 {
             errorMessages.append(NSLocalizedString("invalid_desired_kwh_monthly", comment: ""))
         }
 

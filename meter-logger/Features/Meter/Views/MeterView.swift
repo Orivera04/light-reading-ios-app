@@ -67,7 +67,7 @@ struct MeterView: View {
                                             HStack {
                                                 Label(reading.kilowatsAcumulatedReadingString, systemImage: "bolt")
                                                     .labelStyle(.titleAndIcon)
-                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredMonthlyKWH))
+                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredKwhMonthly))
                                                 Spacer()
                                                 Label(reading.dateOfReadingString, systemImage: "calendar")
                                                     .labelStyle(.titleAndIcon)

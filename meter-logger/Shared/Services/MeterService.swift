@@ -19,9 +19,22 @@ class MeterService {
             }
 
             do {
-                let meters = try JSONDecoder().decode([Meter].self, from: data)
+                var meterList: [Meter] = []
+                let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                let meters = (jsonData?["meters"] as? [[String: Any]]) ?? []
+                
+                for meter in meters {
+                    if let name = meter["name"] as? String,
+                       let tag = meter["tag"] as? String,
+                       let currentReading = meter["currentReading"] as? Int,
+                       let desiredMonthlyKWH = meter["desiredKwhMonthly"] as? Int {
+                       let newMeter = Meter(name: name, tag: tag, currentReading: currentReading, desiredMonthlyKWH: desiredMonthlyKWH)
 
-                completion(true, meters, nil)
+                       meterList.append(newMeter)
+                    }
+                }
+
+                completion(true, meterList, nil)
             } catch {
                 completion(false, [], "Error: Parsing Meter failed")
             }
@@ -51,7 +64,7 @@ class MeterService {
         let deserializedMeter: [String: String] = [
             "name": meter.name,
             "tag": meter.tag,
-            "desiredMonthlyKWH": String(meter.desiredMonthlyKWH)
+            "desiredMonthlyKWH": String(meter.desiredKwhMonthly)
         ]
 
         apiClient.call(endpoint: "meters", method: .POST, params: deserializedMeter, httpHeader: .none) { success, data in
@@ -75,7 +88,7 @@ class MeterService {
         let deserializedMeter: [String: String] = [
             "name": meter.name,
             "tag": meter.tag,
-            "desiredMonthlyKWH": String(meter.desiredMonthlyKWH)
+            "desiredMonthlyKWH": String(meter.desiredKwhMonthly)
         ]
 
         apiClient.call(endpoint: "meters/\(meter.id)", method: .PUT, params: deserializedMeter, httpHeader: .none) { success, data in
