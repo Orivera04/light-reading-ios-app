@@ -35,7 +35,7 @@ struct MeterView: View {
                     .padding(5)
                     VStack {
                         HStack {
-                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true)) {
+                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true, currentReading: viewModel.meter.currentMeterKwhReading )) {
                                 Text("new_consumption")
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 15)
@@ -59,7 +59,7 @@ struct MeterView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             if let readings = viewModel.meter.readings, !readings.isEmpty {
                                 List(readings) { reading in
-                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false)) {
+                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false, currentReading: 0)) {
                                         VStack(alignment: .leading) {
                                             Text(reading.kilowatsReadingString)
                                                 .font(.headline)

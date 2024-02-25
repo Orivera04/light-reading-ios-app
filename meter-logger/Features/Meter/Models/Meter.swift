@@ -12,10 +12,11 @@ struct Meter: Codable {
     var id: String
     var name: String
     var tag: String
-    let currentReading: Int
+    var currentReading: Int
     var desiredKwhMonthly: Int
     var lastReading: Int
     var lastInvoice: Date?
+    var currentMeterKwhReading: Int
     var readings: [Reading]?
 
     // Constructor
@@ -26,6 +27,7 @@ struct Meter: Codable {
          currentReading: Int = 0,
          lastInvoice: Date = Date(),
          lastReading: Int = 0,
+         currentMeterKwhReading: Int = 0,
          readings: [Reading] = []) {
         self.id = id
         self.name = name
@@ -34,7 +36,39 @@ struct Meter: Codable {
         self.currentReading = currentReading
         self.lastReading = lastReading
         self.lastInvoice = lastInvoice
+        self.currentMeterKwhReading = currentMeterKwhReading
         self.readings = readings
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case name
+        case tag
+        case currentReading
+        case desiredKwhMonthly
+        case lastReading
+        case lastInvoice
+        case currentMeterKwhReading
+        case readings
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        id = try values.decode(String.self, forKey: .id)
+        name = try values.decode(String.self, forKey: .name)
+        tag = try values.decode(String.self, forKey: .tag)
+        currentReading = try values.decode(Int.self, forKey: .currentReading)
+        desiredKwhMonthly = try values.decode(Int.self, forKey: .desiredKwhMonthly)
+        lastReading = try values.decode(Int.self, forKey: .lastReading)
+        currentMeterKwhReading = try values.decode(Int.self, forKey: .currentMeterKwhReading)
+        readings = try values.decodeIfPresent([Reading].self, forKey: .readings)
+
+        if let lastInvoiceValue = try values.decodeIfPresent(String.self, forKey: .lastInvoice), !lastInvoiceValue.isEmpty {
+            lastInvoice = dateFormatter.date(from: lastInvoiceValue)
+        }
     }
 
     // Decorators

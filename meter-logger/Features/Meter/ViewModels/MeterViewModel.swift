@@ -44,6 +44,7 @@ class MeterViewModel: ObservableObject {
         MeterService.shared.deleteMeterById(id: id) { [weak self] success, message in
             DispatchQueue.main.async {
                 self?.isLoading = false
+                self?.isSucessDeleted = success
                 self?.showMessage(isSuccessMessage: success, body: message ?? "")
 
                 if !success {

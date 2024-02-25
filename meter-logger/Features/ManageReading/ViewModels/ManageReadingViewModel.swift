@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ManageReadingViewModel: ObservableObject {
     @Published var reading: Reading
@@ -15,10 +16,11 @@ class ManageReadingViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isSuccess: Bool = false
     @Published var isSuccessDeleted: Bool = false
+    @Published var selectedImage: UIImage?
 
     // New Record
-    init(meterId: String) {
-        self.reading = Reading()
+    init(meterId: String, currentReading: Int) {
+        self.reading = Reading(meterId: meterId, kWhReading: currentReading)
     }
 
     // Previous Record
@@ -97,7 +99,15 @@ class ManageReadingViewModel: ObservableObject {
             }
         }
     }
-
+    
+    func processImage() {
+        if let base64Image = selectedImage?.jpegData(compressionQuality: 1)?.base64EncodedString() {
+            print("Base64 representation of the image:", base64Image)
+        } else {
+            print("Failed to convert image to base64 or selectedImage is nil")
+        }
+    }
+    
     func showMessage(isSuccessMessage: Bool, body: String) {
         self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
         self.messageBody = body
