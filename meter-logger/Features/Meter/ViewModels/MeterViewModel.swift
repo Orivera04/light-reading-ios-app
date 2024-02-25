@@ -8,7 +8,7 @@
 import Foundation
 
 class MeterViewModel: ObservableObject {
-    @Published var meterInformation: MeterInformation
+    @Published var meter: Meter
     @Published var showMessage: Bool = false
     @Published var messageTitle: String = ""
     @Published var messageBody: String = ""
@@ -16,7 +16,7 @@ class MeterViewModel: ObservableObject {
     @Published var isSucessDeleted: Bool = false
 
     init(id: String) {
-        self.meterInformation = MeterInformation()
+        self.meter = Meter()
 
         fetchMeter(id: id)
     }
@@ -28,7 +28,7 @@ class MeterViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self?.isLoading = false
                 if success {
-                    self?.meterInformation = meter!
+                    self?.meter = meter!
                 } else {
                     print("Error: \(error ?? "Unknown error")")
                     self?.showMessage(isSuccessMessage: false, body: error ?? "")

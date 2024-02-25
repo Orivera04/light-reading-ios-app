@@ -12,7 +12,7 @@ struct MeterWidgetView: View {
     var body: some View {
         HStack {
             if isTextVisible {
-                Text(formatedReading(kWh: viewModel.meterInformation.meter.currentReading))
+                Text(formatedReading(kWh: viewModel.meter.currentReading))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .font(.custom("DigitalNumbers-Regular", size: 40))
                     .foregroundColor(.black)

@@ -24,18 +24,18 @@ struct MeterView: View {
                 }
                 VStack {
                     HStack {
-                        MeterCardView(title: NSLocalizedString("last_invoice", comment: ""), icon: "calendar", value: viewModel.meterInformation.meter.lastInvoiceString)
+                        MeterCardView(title: NSLocalizedString("last_invoice", comment: ""), icon: "calendar", value: viewModel.meter.lastInvoiceString)
                             .frame(width: geometry.size.width * 0.31)
 
-                        MeterCardView(title: NSLocalizedString("last_reading", comment: ""), icon: "clock", value: viewModel.meterInformation.meter.lastReadingString)
+                        MeterCardView(title: NSLocalizedString("last_reading", comment: ""), icon: "clock", value: viewModel.meter.lastReadingString)
                             .frame(width: geometry.size.width * 0.31)
-                        MeterCardView(title: NSLocalizedString("current_reading", comment: ""), icon: "bolt", value: viewModel.meterInformation.meter.currentReadingString)
+                        MeterCardView(title: NSLocalizedString("current_reading", comment: ""), icon: "bolt", value: viewModel.meter.currentReadingString)
                             .frame(width: geometry.size.width * 0.31)
                     }
                     .padding(5)
                     VStack {
                         HStack {
-                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meterInformation.meter.id, isNewRecord: true)) {
+                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true)) {
                                 Text("new_consumption")
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 15)
@@ -57,9 +57,9 @@ struct MeterView: View {
                                     .bold()
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            if let readings = viewModel.meterInformation.meter.readings, !readings.isEmpty {
+                            if let readings = viewModel.meter.readings, !readings.isEmpty {
                                 List(readings) { reading in
-                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meterInformation.meter.id, isNewRecord: false)) {
+                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false)) {
                                         VStack(alignment: .leading) {
                                             Text(reading.kilowatsReadingString)
                                                 .font(.headline)
@@ -67,7 +67,7 @@ struct MeterView: View {
                                             HStack {
                                                 Label(reading.kilowatsAcumulatedReadingString, systemImage: "bolt")
                                                     .labelStyle(.titleAndIcon)
-                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meterInformation.meter.desiredKwhMonthly))
+                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredKwhMonthly))
                                                 Spacer()
                                                 Label(reading.dateOfReadingString, systemImage: "calendar")
                                                     .labelStyle(.titleAndIcon)
@@ -110,7 +110,7 @@ struct MeterView: View {
                                 Label("edit", systemImage: "pencil")
                             }
                             Button(action: {
-                                viewModel.deleteMeter(id: viewModel.meterInformation.meter.id)
+                                viewModel.deleteMeter(id: viewModel.meter.id)
                             }) {
                                 Label("delete", systemImage: "trash")
                             }
@@ -123,7 +123,7 @@ struct MeterView: View {
             }
             .background(.primaryBackground)
             .navigationDestination(isPresented: $redirectToMeter) {
-                ManageMeterView(meter: nil, isNewRecord: false)
+                ManageMeterView(meter: viewModel.meter, isNewRecord: false)
             }
             .navigationDestination(isPresented: $redirectToHome) {
                 HomeView()

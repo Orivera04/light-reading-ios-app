@@ -28,7 +28,7 @@ class MeterService {
         }
     }
 
-    func getMeterById(id: String, completion: @escaping (Bool, MeterInformation?, String?) -> ()) {
+    func getMeterById(id: String, completion: @escaping (Bool, Meter?, String?) -> ()) {
         apiClient.call(endpoint: "meters/\(id)", method: .GET, params: nil, httpHeader: .none) { success, data in
 
             guard success, let data = data else {
@@ -37,7 +37,7 @@ class MeterService {
             }
 
             do {
-                let meter = try JSONDecoder().decode(MeterInformation.self, from: data)
+                let meter = try JSONDecoder().decode(Meter.self, from: data)
                 completion(true, meter, nil)
             } catch {
                 print("Error decoding JSON: \(error)")
@@ -75,10 +75,10 @@ class MeterService {
         let deserializedMeter: [String: String] = [
             "name": meter.name,
             "tag": meter.tag,
-            "desiredMonthlyKWH": String(meter.desiredKwhMonthly)
+            "desiredKwhMonthly": String(meter.desiredKwhMonthly)
         ]
 
-        apiClient.call(endpoint: "meters/\(meter.id)", method: .PUT, params: deserializedMeter, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "meters/\(meter.id)", method: .PUT, params: deserializedMeter, httpHeader: .application_json) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Meter Put Request failed")
                 return

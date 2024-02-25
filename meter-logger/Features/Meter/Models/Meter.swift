@@ -12,20 +12,51 @@ struct Meter: Codable {
     var id: String
     var name: String
     var tag: String
+    let currentReading: Int
     var desiredKwhMonthly: Int
+    var lastReading: Int
+    var lastInvoice: Date?
+    var readings: [Reading]?
 
     // Constructor
     init(id: String = "",
          name: String = "",
          tag: String = "",
-         desiredKwhMonthly: Int = 150) {
+         desiredKwhMonthly: Int = 150,
+         currentReading: Int = 0,
+         lastInvoice: Date = Date(),
+         lastReading: Int = 0,
+         readings: [Reading] = []) {
         self.id = id
         self.name = name
         self.tag = tag
         self.desiredKwhMonthly = desiredKwhMonthly
+        self.currentReading = currentReading
+        self.lastReading = lastReading
+        self.lastInvoice = lastInvoice
+        self.readings = readings
     }
 
+    // Decorators
+    var currentReadingString: String {
+        return "\(Int(currentReading)) " + NSLocalizedString("KWH", comment: "")
+    }
 
+    var lastReadingString: String {
+        return "\(Int(lastReading )) " + NSLocalizedString("KWH", comment: "")
+    }
+
+    var lastInvoiceString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        if let lastInvoice = lastInvoice {
+            return dateFormatter.string(from: lastInvoice)
+        } else {
+            return NSLocalizedString("not_available", comment: "")
+        }
+    }
+    
     // Validations
     var isValid: Bool {
         return !name.isEmpty && !tag.isEmpty && desiredKwhMonthly > 0
