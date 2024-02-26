@@ -437,6 +437,9 @@
         }
       }
     },
+    "no_image_supplied" : {
+
+    },
     "no_meters_found" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -469,6 +472,9 @@
           }
         }
       }
+    },
+    "no_text_detected" : {
+
     },
     "not_available" : {
       "localizations" : {
@@ -681,6 +687,12 @@
           }
         }
       }
+    },
+    "text_recognition_failed" : {
+
+    },
+    "unknown_ocr_error" : {
+
     }
   },
   "version" : "1.0"

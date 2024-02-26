@@ -49,6 +49,8 @@
 		2A6FB0712B7DA6690002F050 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FB06E2B7DA6690002F050 /* Constants.swift */; };
 		2A7485D42B7AECA900E71BF8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */; };
 		2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */; };
+		2A9843CE2B8CE8B8000303D8 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9843CD2B8CE8B8000303D8 /* ImageProcessing.swift */; };
+		2A9843D02B8CED90000303D8 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9843CF2B8CED90000303D8 /* StringUtils.swift */; };
 		2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4ED82B7FD36000957030 /* ContentView.swift */; };
 		2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDA2B8058BA00957030 /* Reading.swift */; };
 		2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */; };
@@ -107,6 +109,8 @@
 		2A6FB06E2B7DA6690002F050 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A7485D32B7AECA900E71BF8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2A7485D92B7AF02E00E71BF8 /* ManageMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMeterView.swift; sourceTree = "<group>"; };
+		2A9843CD2B8CE8B8000303D8 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		2A9843CF2B8CED90000303D8 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		2ACE4ED82B7FD36000957030 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2ACE4EDA2B8058BA00957030 /* Reading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
 		2ACE4EDC2B8065F400957030 /* MeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				2A6FB06E2B7DA6690002F050 /* Constants.swift */,
 				2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */,
 				2AF0593E2B82E868003D9D3E /* ImagePicker.swift */,
+				2A9843CD2B8CE8B8000303D8 /* ImageProcessing.swift */,
+				2A9843CF2B8CED90000303D8 /* StringUtils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */,
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
+				2A9843D02B8CED90000303D8 /* StringUtils.swift in Sources */,
 				2A6FB0562B7D22670002F050 /* Meter.swift in Sources */,
 				2A1B5A012B89B71C0079F4D5 /* MeterHome.swift in Sources */,
 				2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */,
@@ -560,6 +567,7 @@
 				2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */,
 				2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */,
 				2A6985C22B7E615900715226 /* LoaderView.swift in Sources */,
+				2A9843CE2B8CE8B8000303D8 /* ImageProcessing.swift in Sources */,
 				2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */,
 				2ACE4EDB2B8058BA00957030 /* Reading.swift in Sources */,
 				2A0F3E8A2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,

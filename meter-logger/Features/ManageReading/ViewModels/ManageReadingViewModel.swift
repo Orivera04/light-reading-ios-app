@@ -101,13 +101,57 @@ class ManageReadingViewModel: ObservableObject {
     }
     
     func processImage() {
-        if let base64Image = selectedImage?.jpegData(compressionQuality: 1)?.base64EncodedString() {
-            print("Base64 representation of the image:", base64Image)
-        } else {
-            print("Failed to convert image to base64 or selectedImage is nil")
+        guard let selectedImage = selectedImage else {
+            self.showMessage(isSuccessMessage: false, body: NSLocalizedString("no_image_supplied", comment: ""))
+            fatalError("No image supplied selectedImage is nil.")
+        }
+
+        self.isLoading = true
+
+        recognizeText(in: selectedImage) { detectedText, success in
+            self.isLoading = false
+
+            if success {
+                self.processDetectedText(detectedText)
+            } else {
+                self.showMessage(isSuccessMessage: false, body: NSLocalizedString("text_recognition_failed", comment: ""))
+                print("Text recognition failed")
+            }
         }
     }
-    
+
+    private func recognizeText(in image: UIImage, completion: @escaping (String?, Bool) -> Void) {
+        let imageProcessor = ImageProcessing(image: image)
+
+        imageProcessor.getImageText { detectedText, success in
+            completion(detectedText, success)
+        }
+    }
+
+    private func processDetectedText(_ detectedText: String?) {
+        guard let detectedText = detectedText else {
+            self.showMessage(isSuccessMessage: false, body: NSLocalizedString("no_text_detected", comment: ""))
+            print("No text detected")
+            return
+        }
+
+        StringUtils.matchNumbersString(inputString: detectedText) { matchedValues, success in
+            if success {
+                DispatchQueue.main.async {
+                    if let intValue = Int(matchedValues) {
+                        self.reading.kWhReading = intValue
+                    } else {
+                        self.showMessage(isSuccessMessage: false, body: NSLocalizedString("unknown_ocr_error", comment: ""))
+                        print("Matched values could not be converted to an integer")
+                    }
+                }
+            } else {
+                self.showMessage(isSuccessMessage: false, body: NSLocalizedString("no_text_detected", comment: ""))
+                print("No match found")
+            }
+        }
+    }
+
     func showMessage(isSuccessMessage: Bool, body: String) {
         self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
         self.messageBody = body
