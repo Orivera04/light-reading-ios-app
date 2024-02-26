@@ -13,11 +13,13 @@ class ReadingService {
 
     func saveReading(reading: Reading, completion: @escaping (Bool, String?) -> ()) {
         let deserializedReading: [String: String] = [
-            "kWhReading": reading.kilowatsReadingString,
-            "dateOfReading": reading.dateOfReadingString
+            "meter": reading.meterId,
+            "KwhReading": String(reading.kWhReading),
+            "dateOfReading": reading.dateOfReadingString,
+            "isCutoffDate": String(reading.isCutoffDate)
         ]
 
-        apiClient.call(endpoint: "todos", method: .POST, params: deserializedReading, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "readings", method: .POST, params: deserializedReading, httpHeader: .application_json) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Reading Post Request failed")
                 return
@@ -25,9 +27,9 @@ class ReadingService {
 
             do {
                 let response = try JSONDecoder().decode(ServeResponse.self, from: data)
-
-                completion(true, response.message)
+                completion(response.ok, NSLocalizedString(response.translationKey, comment: ""))
             } catch {
+                print(error)
                 completion(false, "Error: Parsing Reading failed")
             }
         }
@@ -36,11 +38,13 @@ class ReadingService {
     func updateReading(reading: Reading, completion: @escaping (Bool, String?) -> ()) {
 
         let deserializedReading: [String: String] = [
-            "kWhReading": reading.kilowatsReadingString,
-            "dateOfReading": reading.dateOfReadingString
+            "meter": reading.meterId,
+            "KwhReading": String(reading.kWhReading),
+            "dateOfReading": reading.dateOfReadingString,
+            "isCutoffDate": String(reading.isCutoffDate)
         ]
 
-        apiClient.call(endpoint: "todos/\(reading.id)", method: .PUT, params: deserializedReading, httpHeader: .none) { success, data in
+        apiClient.call(endpoint: "readings/\(reading.id)", method: .PUT, params: deserializedReading, httpHeader: .application_json) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Reading Put Request failed")
                 return
@@ -49,15 +53,15 @@ class ReadingService {
             do {
                 let response = try JSONDecoder().decode(ServeResponse.self, from: data)
 
-                completion(true, response.message)
+                completion(response.ok, NSLocalizedString(response.translationKey, comment: ""))
             } catch {
                 completion(false, "Error: Parsing Reading failed")
             }
         }
     }
 
-    func deleteReading(id: UUID, completion: @escaping (Bool, String?) -> ()) {
-        apiClient.call(endpoint: "todos/\(id)", method: .DELETE, params: nil, httpHeader: .none) { success, data in
+    func deleteReading(id: String, completion: @escaping (Bool, String?) -> ()) {
+        apiClient.call(endpoint: "readings/\(id)", method: .DELETE, params: nil, httpHeader: .none) { success, data in
             guard success, let data = data else {
                 completion(false, "Error: Reading Delete Request failed")
                 return
@@ -66,7 +70,7 @@ class ReadingService {
             do {
                 let response = try JSONDecoder().decode(ServeResponse.self, from: data)
 
-                completion(true, response.message)
+                completion(response.ok, NSLocalizedString(response.translationKey, comment: ""))
             } catch {
                 completion(false, "Error: Parsing Meter failed")
             }

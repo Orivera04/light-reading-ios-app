@@ -15,13 +15,13 @@ class MeterViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isSucessDeleted: Bool = false
 
-    init(id: UUID) {
+    init(id: String) {
         self.meter = Meter()
 
         fetchMeter(id: id)
     }
 
-    func fetchMeter(id: UUID) {
+    func fetchMeter(id: String) {
         self.isLoading = true
 
         MeterService.shared.getMeterById(id: id) { [weak self] success, meter, error in
@@ -38,12 +38,13 @@ class MeterViewModel: ObservableObject {
     }
 
 
-    func deleteMeter(id: UUID) {
+    func deleteMeter(id: String) {
         self.isLoading = true
 
         MeterService.shared.deleteMeterById(id: id) { [weak self] success, message in
             DispatchQueue.main.async {
                 self?.isLoading = false
+                self?.isSucessDeleted = success
                 self?.showMessage(isSuccessMessage: success, body: message ?? "")
 
                 if !success {

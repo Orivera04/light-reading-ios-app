@@ -35,8 +35,8 @@ class APIClient {
         }
 
         let request = buildRequest(url: url, method: method, params: params, httpHeader: httpHeader)
-
         let session = URLSession.shared
+
         session.dataTask(with: request) { [self] data, response, error in
             self.handleResponse(data: data, response: response, error: error, complete: complete)
         }.resume()
@@ -66,17 +66,24 @@ class APIClient {
     }
 
     func handleResponse(data: Data?, response: URLResponse?, error: Error?, complete: @escaping (Bool, Data?) -> ()) {
+        // Debug response from the server
+        let responseString = String(data: data ?? Data(), encoding: .utf8)
+        print("Body Response:")
+        print(responseString ?? "Notice: No feedback from server.")
+
         guard error == nil else {
             print("Error: problem calling")
             print(error!)
             complete(false, nil)
             return
         }
+
         guard let data = data else {
             print("Error: did not receive data")
             complete(false, nil)
             return
         }
+
         guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
             print("Error: HTTP request failed")
             complete(false, nil)

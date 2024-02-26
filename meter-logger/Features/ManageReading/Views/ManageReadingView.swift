@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ManageReadingView: View {
     private var isNewRecord: Bool = false
-    private var meterId: UUID = UUID()
+    private var meterId: String
 
     @State private var redirectToMeter: Bool = false
+    @State private var isShowingImagePicker = false
     @StateObject private var viewModel: ManageReadingViewModel
 
-    init(reading: Reading?, meterId: UUID, isNewRecord: Bool) {
+    init(reading: Reading?, meterId: String, isNewRecord: Bool, currentReading: Int ) {
         if let reading = reading {
             _viewModel = StateObject(wrappedValue: ManageReadingViewModel(reading: reading))
         } else {
-            _viewModel = StateObject(wrappedValue: ManageReadingViewModel(meterId: meterId))
+            _viewModel = StateObject(wrappedValue: ManageReadingViewModel(meterId: meterId, currentReading: currentReading))
         }
 
         self.meterId = meterId
@@ -36,17 +37,20 @@ struct ManageReadingView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                NavigationLink(destination: ManageMeterView(meter: nil, isNewRecord: true)) {
+                Button(action: { isShowingImagePicker.toggle() }) {
                     Text("open_camera")
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 25)
                         .padding(.vertical, 15)
-                        .foregroundColor(Color.textColorPrimary)
+                        .foregroundColor(.white)
                 }
                 .background(
                     RadialGradient(gradient: Gradient(colors: [Color.buttonMain, Color.buttonSecondary]), center: .center, startRadius: 1, endRadius: 100)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                .padding(.horizontal, 15)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .sheet(isPresented: $isShowingImagePicker, onDismiss: viewModel.processImage) {
+                    ImagePicker(selectedImage: $viewModel.selectedImage, sourceType: .camera)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             HStack {
@@ -68,7 +72,7 @@ struct ManageReadingView: View {
                     }
 
                     Section(header: Text("new_billing_cycle")) {
-                        Toggle("save_new_billing_cycle", isOn: $viewModel.reading.isLastCycle)
+                        Toggle("save_new_billing_cycle", isOn: $viewModel.reading.isCutoffDate)
                     }
                 }
             }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct light_reading_meterApp: App {
+struct meter_loggerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

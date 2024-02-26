@@ -12,7 +12,7 @@ struct MeterView: View {
     @State private var redirectToHome: Bool = false
     @StateObject var viewModel: MeterViewModel
 
-    init(id: UUID) {
+    init(id: String) {
         _viewModel = StateObject(wrappedValue: MeterViewModel(id: id))
     }
 
@@ -27,7 +27,7 @@ struct MeterView: View {
                         MeterCardView(title: NSLocalizedString("last_invoice", comment: ""), icon: "calendar", value: viewModel.meter.lastInvoiceString)
                             .frame(width: geometry.size.width * 0.31)
 
-                        MeterCardView(title: NSLocalizedString("last_reading", comment: ""), icon: "clock", value: viewModel.meter.lastBillingKwhString)
+                        MeterCardView(title: NSLocalizedString("last_reading", comment: ""), icon: "clock", value: viewModel.meter.lastReadingString)
                             .frame(width: geometry.size.width * 0.31)
                         MeterCardView(title: NSLocalizedString("current_reading", comment: ""), icon: "bolt", value: viewModel.meter.currentReadingString)
                             .frame(width: geometry.size.width * 0.31)
@@ -35,7 +35,7 @@ struct MeterView: View {
                     .padding(5)
                     VStack {
                         HStack {
-                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true)) {
+                            NavigationLink(destination: ManageReadingView(reading: nil, meterId: viewModel.meter.id, isNewRecord: true, currentReading: viewModel.meter.currentMeterKwhReading )) {
                                 Text("new_consumption")
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 15)
@@ -57,9 +57,9 @@ struct MeterView: View {
                                     .bold()
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            if let readings = viewModel.meter.lastReadings {
+                            if let readings = viewModel.meter.readings, !readings.isEmpty {
                                 List(readings) { reading in
-                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false)) {
+                                    NavigationLink(destination: ManageReadingView(reading: reading, meterId: viewModel.meter.id, isNewRecord: false, currentReading: 0)) {
                                         VStack(alignment: .leading) {
                                             Text(reading.kilowatsReadingString)
                                                 .font(.headline)
@@ -67,7 +67,7 @@ struct MeterView: View {
                                             HStack {
                                                 Label(reading.kilowatsAcumulatedReadingString, systemImage: "bolt")
                                                     .labelStyle(.titleAndIcon)
-                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredMonthlyKWH))
+                                                    .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredKwhMonthly))
                                                 Spacer()
                                                 Label(reading.dateOfReadingString, systemImage: "calendar")
                                                     .labelStyle(.titleAndIcon)

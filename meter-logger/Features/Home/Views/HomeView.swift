@@ -60,7 +60,7 @@ struct HomeView: View {
                                 HStack {
                                     Label(meter.currentReadingString, systemImage: "bolt")
                                         .labelStyle(.titleAndIcon)
-                                        .foregroundColor(ColorsStyle.colorForKWh(kWh: meter.currentReading ?? 0, threshold: meter.desiredMonthlyKWH))
+                                        .foregroundColor(ColorsStyle.colorForKWh(kWh: meter.currentReading, threshold: meter.desiredKwhMonthly))
                                     Spacer()
                                     Label(meter.tag, systemImage: "tag")
                                         .labelStyle(.titleAndIcon)
@@ -70,7 +70,6 @@ struct HomeView: View {
                                 .font(.caption)
                             }
                         }
-
                     }
                     .scrollContentBackground(.hidden)
                 }

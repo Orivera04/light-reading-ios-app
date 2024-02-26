@@ -168,6 +168,9 @@
         }
       }
     },
+    "KWH" : {
+
+    },
     "kwh_is_not_valid" : {
       "localizations" : {
         "en" : {
@@ -434,6 +437,9 @@
         }
       }
     },
+    "no_image_supplied" : {
+
+    },
     "no_meters_found" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -463,6 +469,25 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se encontraron lecturas."
+          }
+        }
+      }
+    },
+    "no_text_detected" : {
+
+    },
+    "not_available" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
           }
         }
       }
@@ -662,6 +687,12 @@
           }
         }
       }
+    },
+    "text_recognition_failed" : {
+
+    },
+    "unknown_ocr_error" : {
+
     }
   },
   "version" : "1.0"

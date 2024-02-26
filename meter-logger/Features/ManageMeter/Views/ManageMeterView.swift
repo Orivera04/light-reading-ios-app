@@ -48,7 +48,7 @@ struct ManageMeterView: View {
                     }
 
                     Section(header: Text("maximum_consumption")) {
-                        Stepper("\(viewModel.meter.desiredMonthlyKWH) KWH", value: $viewModel.meter.desiredMonthlyKWH, in: 0...1000)
+                        Stepper("\(viewModel.meter.desiredKwhMonthly) KWH", value: $viewModel.meter.desiredKwhMonthly, in: 0...1000)
                     }
                 }
             }
