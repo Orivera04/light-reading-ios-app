@@ -8,9 +8,10 @@
 import SwiftUI
 
  struct LoginView: View {
-     @State private var userName = ""
-     @State private var password = ""
-
+     @State private var email: String = ""
+     @State private var password: String = ""
+     @EnvironmentObject var authViewModel: AuthViewModel
+     
      var body: some View {
          GeometryReader { geometry in
              ZStack {
@@ -29,10 +30,10 @@ import SwiftUI
                              .rect(
                                  topTrailingRadius: 160
                              ))
-                         .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height - 100)
+                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                  }
                  .ignoresSafeArea()
-
+                
                  VStack{
                      Spacer()
                          .frame(height: 140)
@@ -59,7 +60,7 @@ import SwiftUI
                                  .padding(.leading, 20)
                                  .frame(width: geometry.size.width, alignment: .leading)
 
-                             TextField("", text: $userName)
+                             TextField("", text: $email)
                                  .padding()
                                  .frame(width: 350, height: 60)
                                  .background(Color.black.opacity(0.05))
@@ -79,17 +80,14 @@ import SwiftUI
                                  .frame(width: 350, height: 60)
                                  .background(Color.black.opacity(0.05))
                                  .cornerRadius(10)
-
-                             Button("forgot_your_password?") {
-                              // TODO: Redirect to forgot your password page.
-                             }
-                             .padding(.trailing, 20)
-                             .frame(width: geometry.size.width, alignment: .trailing)
                          }
                          .padding(.bottom, 40)
 
                          Button("sign_in") {
-                          // TODO: Validate Login
+                             Task {
+                                 // TODO: make async
+                                 authViewModel.login(email: email, password: password)
+                             }
                          }
                          .font(.title3)
                          .bold()
@@ -105,14 +103,15 @@ import SwiftUI
                          )
                          .clipShape(RoundedRectangle(cornerRadius: 10))
                          .padding(.bottom, 30)
-
-                         HStack {
-                             Text("dont_have_an_account?")
-                             Button("create") {
-
+                         
+                         NavigationLink(destination: CreateUserView().navigationBarBackButtonHidden(true)) {
+                             HStack {
+                                 Text("dont_have_an_account?")
+                                 Text("create")
+                                     .bold()
                              }
-                             .fontWeight(.semibold)
                          }
+                         
                      }
                  }
              }

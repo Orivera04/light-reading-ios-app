@@ -1,3 +1,4 @@
+
 //
 //  ContentView.swift
 //  meter-logger
@@ -9,13 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State var presentSideMenu = false
+    @EnvironmentObject var authViewModel: AuthViewModel
 
     var body: some View {
-       NavbarView(presentSideMenu: $presentSideMenu) {
-           NavigationStack {
-               HomeView()
-           }
-       }
+            if true {
+                LoginView()
+            } else {
+            NavbarView(presentSideMenu: $presentSideMenu) {
+                NavigationStack {
+                    HomeView()
+                }
+            }
+        }
     }
 }
 

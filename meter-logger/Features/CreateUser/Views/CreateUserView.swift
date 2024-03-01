@@ -14,76 +14,39 @@ struct CreateUserView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var repeatPassword = ""
-    @State private var shouldShowImagePicker = false
-    @State private var image:UIImage?
-
-    @State private var selectedItems: [PhotosPickerItem] = []
-    @State private var data: Data?
-
+    @StateObject private var viewModel: CreateUserViewModel
+    
+    init() {
+        self.name = ""
+        self.email = ""
+        self.password = ""
+        self.repeatPassword = ""
+        _viewModel = StateObject(wrappedValue: CreateUserViewModel())
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
                     Spacer()
-
+                        .frame(height: 200)
+                    
                     Rectangle()
                         .fill(.white)
                         .clipShape(
                             .rect(
                                 topTrailingRadius: 160
                             ))
-                        .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height - 30)
+                        .frame(maxWidth: geometry.size.width, maxHeight: .infinity)
                         .ignoresSafeArea()
                 }
                 .ignoresSafeArea()
+                
 
                 VStack{
+                    // Only for testing
                     Spacer()
-                        .frame(height: 140)
-
-                    VStack {
-                        VStack {
-                            if let data = data, let uiImage = UIImage(data: data) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 128, height: 128)
-                                    .cornerRadius(64)
-                            } else {
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 64))
-                                    .padding()
-                                    .foregroundColor(Color(.label))
-                            }
-                        }
-                        .overlay(RoundedRectangle(cornerRadius: 64).stroke(Color.black, lineWidth: 3))
-
-                        PhotosPicker(
-                            selection: $selectedItems,
-                            maxSelectionCount: 1,
-                            matching: .images
-                        ) {
-                            Text("Pick Photo")
-                        }
-                        .onChange(of: selectedItems) { newValue in
-                            guard let item = selectedItems.first else {
-                                return
-                            }
-
-                            item.loadTransferable(type: Data.self) { result in
-                                switch result {
-                                case .success(let data):
-                                    if let data = data {
-                                        self.data = data
-                                    } else {
-                                        print("Data is Nil")
-                                    }
-                                case .failure(let failure):
-                                    fatalError("\(failure)")
-                                }
-                            }
-                        }
-                    }
+                        .frame(height: 80)
 
                     VStack {
                         VStack {
@@ -147,7 +110,10 @@ struct CreateUserView: View {
                         .padding(.bottom, 20)
 
                                 Button("create") {
-                                 // TODO: Validate Login
+                                    Task {
+                                        // TODO: make async this function.
+                                        viewModel.createUser(name: name, email: email, password: password)
+                                    }
                                 }
                                 .font(.title3)
                                 .bold()
@@ -163,6 +129,14 @@ struct CreateUserView: View {
                                 )
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .padding(.bottom, 30)
+                        
+                                NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
+                                    HStack {
+                                        Text("you_have_an_account?")
+                                        Text("sign_in")
+                                            .bold()
+                                    }
+                                }
                             }
                         }
                     }

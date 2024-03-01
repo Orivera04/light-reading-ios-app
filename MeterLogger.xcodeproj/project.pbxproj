@@ -58,12 +58,24 @@
 		2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */; };
 		2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */; };
 		2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593E2B82E868003D9D3E /* ImagePicker.swift */; };
+		5D3FDBF52B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
+		5D3FDBF62B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
+		5D3FDBF72B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
+		5D82A1312B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */; };
+		5D82A1322B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */; };
+		5D82A1332B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */; };
+		5D82A1372B8D1986002D0686 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1362B8D1986002D0686 /* User.swift */; };
+		5D82A1382B8D1986002D0686 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1362B8D1986002D0686 /* User.swift */; };
+		5D82A1392B8D1986002D0686 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1362B8D1986002D0686 /* User.swift */; };
 		5D89E8672B88FB330035C77B /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89E8662B88FB330035C77B /* CreateUserView.swift */; };
 		5D89E8682B88FB330035C77B /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89E8662B88FB330035C77B /* CreateUserView.swift */; };
 		5D89E8692B88FB330035C77B /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89E8662B88FB330035C77B /* CreateUserView.swift */; };
 		5D89E86D2B88FBC10035C77B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89E86C2B88FBC10035C77B /* LoginView.swift */; };
 		5D89E86E2B88FBC10035C77B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89E86C2B88FBC10035C77B /* LoginView.swift */; };
 		5D89E86F2B88FBC10035C77B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D89E86C2B88FBC10035C77B /* LoginView.swift */; };
+		5D93FF7B2B922E2B001F2FA8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93FF7A2B922E2B001F2FA8 /* UserService.swift */; };
+		5D93FF7C2B922E2B001F2FA8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93FF7A2B922E2B001F2FA8 /* UserService.swift */; };
+		5D93FF7D2B922E2B001F2FA8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93FF7A2B922E2B001F2FA8 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,8 +136,12 @@
 		2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStyle.swift; sourceTree = "<group>"; };
 		2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeResponse.swift; sourceTree = "<group>"; };
 		2AF0593E2B82E868003D9D3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
+		5D82A1362B8D1986002D0686 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D89E8662B88FB330035C77B /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		5D89E86C2B88FBC10035C77B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5D93FF7A2B922E2B001F2FA8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +361,7 @@
 			children = (
 				2A6FB0662B7D7D1C0002F050 /* MeterService.swift */,
 				2A6683882B818CBF009312B7 /* ReadingService.swift */,
+				5D93FF7A2B922E2B001F2FA8 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -417,9 +434,35 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5D3FDBEF2B90EF1800B262C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D82A12F2B8D0A72002D0686 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5D82A1352B8D1967002D0686 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D82A1362B8D1986002D0686 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5D89E8632B88FAE70035C77B /* CreateUser */ = {
 			isa = PBXGroup;
 			children = (
+				5D82A1352B8D1967002D0686 /* Model */,
+				5D82A12F2B8D0A72002D0686 /* ViewModels */,
 				5D89E8642B88FAFB0035C77B /* Views */,
 			);
 			path = CreateUser;
@@ -436,6 +479,7 @@
 		5D89E86A2B88FB910035C77B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5D3FDBEF2B90EF1800B262C8 /* ViewModel */,
 				5D89E86B2B88FB9C0035C77B /* Views */,
 			);
 			path = Login;
@@ -593,9 +637,12 @@
 				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
 				2A66838B2B818F71009312B7 /* ManageReadingViewModel.swift in Sources */,
 				2A6FB0672B7D7D1C0002F050 /* MeterService.swift in Sources */,
+				5D82A1372B8D1986002D0686 /* User.swift in Sources */,
 				2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */,
 				2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */,
+				5D82A1312B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */,
+				5D93FF7B2B922E2B001F2FA8 /* UserService.swift in Sources */,
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A9843D02B8CED90000303D8 /* StringUtils.swift in Sources */,
@@ -606,6 +653,7 @@
 				2A68D23E2B72990800DE3359 /* meter_loggerApp.swift in Sources */,
 				2A68D23E2B72990800DE3359 /* light_reading_meterApp.swift in Sources */,
 				5D89E8672B88FB330035C77B /* CreateUserView.swift in Sources */,
+				5D3FDBF52B90EFB900B262C8 /* AuthViewModel.swift in Sources */,
 				2A6FB0622B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */,
@@ -623,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D82A1382B8D1986002D0686 /* User.swift in Sources */,
 				2A6FB0682B7D7D1C0002F050 /* MeterService.swift in Sources */,
 				5D89E8682B88FB330035C77B /* CreateUserView.swift in Sources */,
 				2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
@@ -631,8 +680,11 @@
 				2A6FB0632B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
 				5D89E86E2B88FBC10035C77B /* LoginView.swift in Sources */,
+				5D3FDBF62B90EFB900B262C8 /* AuthViewModel.swift in Sources */,
+				5D93FF7C2B922E2B001F2FA8 /* UserService.swift in Sources */,
 				2A6FB05F2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A0F3E872B768171004DAE71 /* SideMenuView.swift in Sources */,
+				5D82A1322B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D82A1392B8D1986002D0686 /* User.swift in Sources */,
 				2A0F3E882B768171004DAE71 /* SideMenuView.swift in Sources */,
 				5D89E8692B88FB330035C77B /* CreateUserView.swift in Sources */,
 				2A6FB0712B7DA6690002F050 /* Constants.swift in Sources */,
@@ -649,8 +702,11 @@
 				2A6FB0692B7D7D1C0002F050 /* MeterService.swift in Sources */,
 				2A6FB0582B7D22670002F050 /* Meter.swift in Sources */,
 				5D89E86F2B88FBC10035C77B /* LoginView.swift in Sources */,
+				5D3FDBF72B90EFB900B262C8 /* AuthViewModel.swift in Sources */,
+				5D93FF7D2B922E2B001F2FA8 /* UserService.swift in Sources */,
 				2A45981D2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2A0F3E8C2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
+				5D82A1332B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
