@@ -10,17 +10,9 @@ import SwiftUI
 import PhotosUI
 
 struct CreateUserView: View {
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
-    @State private var repeatPassword = ""
     @StateObject private var viewModel: CreateUserViewModel
-    
+       
     init() {
-        self.name = ""
-        self.email = ""
-        self.password = ""
-        self.repeatPassword = ""
         _viewModel = StateObject(wrappedValue: CreateUserViewModel())
     }
     
@@ -56,7 +48,7 @@ struct CreateUserView: View {
                                 .padding(.leading, 20)
                                 .frame(width: geometry.size.width, alignment: .leading)
 
-                            TextField("", text: $name)
+                            TextField("", text: $viewModel.user.name)
                                 .padding()
                                 .frame(width: 350, height: 60)
                                 .background(Color.black.opacity(0.05))
@@ -71,7 +63,7 @@ struct CreateUserView: View {
                                 .padding(.leading, 20)
                                 .frame(width: geometry.size.width, alignment: .leading)
 
-                            TextField("", text: $email)
+                            TextField("", text: $viewModel.user.email)
                                 .padding()
                                 .frame(width: 350, height: 60)
                                 .background(Color.black.opacity(0.05))
@@ -86,7 +78,7 @@ struct CreateUserView: View {
                                 .padding(.leading, 20)
                                 .frame(width: geometry.size.width, alignment: .leading)
 
-                            SecureField("", text: $password)
+                            SecureField("", text: $viewModel.user.password)
                                 .padding()
                                 .frame(width: 350, height: 60)
                                 .background(Color.black.opacity(0.05))
@@ -101,18 +93,18 @@ struct CreateUserView: View {
                                 .padding(.leading, 20)
                                 .frame(width: geometry.size.width, alignment: .leading)
 
-                            SecureField("", text: $repeatPassword)
-                                .padding()
-                                .frame(width: 350, height: 60)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
+                            //SecureField("", text: $repeatPassword)
+                                //  .padding()
+                                //.frame(width: 350, height: 60)
+                                // .background(Color.black.opacity(0.05))
+                                // .cornerRadius(10)
                         }
                         .padding(.bottom, 20)
 
                                 Button("create") {
                                     Task {
                                         // TODO: make async this function.
-                                        viewModel.createUser(name: name, email: email, password: password)
+                                        viewModel.createUser()
                                     }
                                 }
                                 .font(.title3)

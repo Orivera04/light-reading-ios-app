@@ -60,7 +60,7 @@ import SwiftUI
                                  .padding(.leading, 20)
                                  .frame(width: geometry.size.width, alignment: .leading)
 
-                             TextField("", text: $email)
+                             TextField("", text: $authViewModel.user.email)
                                  .padding()
                                  .frame(width: 350, height: 60)
                                  .background(Color.black.opacity(0.05))
@@ -75,7 +75,7 @@ import SwiftUI
                                  .padding(.leading, 20)
                                  .frame(width: geometry.size.width, alignment: .leading)
 
-                             TextField("", text: $password)
+                             TextField("", text: $authViewModel.user.password)
                                  .padding()
                                  .frame(width: 350, height: 60)
                                  .background(Color.black.opacity(0.05))
@@ -86,7 +86,7 @@ import SwiftUI
                          Button("sign_in") {
                              Task {
                                  // TODO: make async
-                                 authViewModel.login(email: email, password: password)
+                                 authViewModel.login()
                              }
                          }
                          .font(.title3)

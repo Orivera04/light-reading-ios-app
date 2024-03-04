@@ -9,24 +9,75 @@ import Foundation
 
 //@MainActor
 class AuthViewModel: ObservableObject {
-    // session
-    // singIn
-    // logOut
-    @Published var userSession: User?
+    // @Published var token_valid: Bool
+    @Published var tokenValid: Bool
+    @Published var token: String
+    @Published var user: User
+    @Published var showMessage: Bool = false
+    @Published var messageTitle: String = ""
+    @Published var messageBody: String = ""
+    @Published var isLoading: Bool = false
+    @Published var isSuccess: Bool = false
     
-    func login(email: String, password: String) {
+    init() {
+        // TODO:
+        // add token in globar variable
+        // * create user session
+        // decoding token
+        // * agregar token en la cabezera de cada petición
+
+        self.user = User()
+        self.token = ""
+        self.tokenValid = false
+    }
+    
+    func login() {
+        UserService.shared.login(user: self.user) { success, message, response in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                self.isSuccess = success
+                
+                if success {
+
+                    
+                    if let jwt = response?.token {
+                        self.token = jwt
+                        let payloadData = self.decoding_token(jwtToken: jwt)
+                        if let expirationDate = payloadData["exp"] as? Int {
+                            self.tokenValid = self.tokenValid(tokenExp: expirationDate)
+                        }
+                    }
+                } else {
+                    print("Error: \(message ?? "Unknown error")")
+                }
+            }
+        }
+    }
+    
+    func tokenValid(tokenExp: Int) -> Bool {
+        let currentDate = Date()
+        let tokenDate = Date(timeIntervalSince1970: TimeInterval(tokenExp))
         
-        if let userSession = userSession {
-            print("que verga?")
-            self.userSession = User(name: "Kender", email: email, password: password)
-        } else {
-            print("the final")
-            self.userSession = User(name: "Kender", email: email, password: password)
+        return currentDate <= tokenDate
+    }
+    
+    func decoding_token(jwtToken: String) -> [String: Any] {
+        let tokenParts = jwtToken.components(separatedBy: ".")
+        guard tokenParts.count >= 2,
+              let payloadData = Data(base64Encoded: tokenParts[1]),
+              let payloadJson = try? JSONSerialization.jsonObject(with: payloadData, options: []) as? [String: Any] else {
+            
+            print("Invalid JWT token format")
+            return [:]
         }
         
-        print("Loging testing ...")
-        print(email)
-        print(password)
-        print("Testing ...")
+        return payloadJson
+    }
+    
+
+    func showMessage(isSuccessMessage: Bool, body: String) {
+        self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
+        self.messageBody = body
+        self.showMessage = true
     }
 }
