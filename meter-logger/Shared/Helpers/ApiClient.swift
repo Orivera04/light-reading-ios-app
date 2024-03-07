@@ -54,6 +54,8 @@ class APIClient {
         case .none: break
         }
 
+        request.setValue(AuthTokenManager.shared.getToken(), forHTTPHeaderField: "x-token")
+
         if let params = params {
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)

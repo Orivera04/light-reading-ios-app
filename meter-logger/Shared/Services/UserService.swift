@@ -11,7 +11,7 @@ class UserService {
     private let apiClient = APIClient.shared
     static let shared = UserService()
     
-    func login(user: User, completion: @escaping (Bool, String, ServeLoginResponse?) -> ()) {
+    func login(user: User, completion: @escaping (Bool, String, ServerLoginResponse?) -> ()) {
         let deserializedUser: [String: String] = [
             "email": user.email,
             "password": user.password
@@ -26,7 +26,26 @@ class UserService {
             guard success, let data = data else { completion(false, "Error: User Post request failed", nil); return }
             
             do {
-                let response = try JSONDecoder().decode(ServeLoginResponse.self, from: data)
+                let response = try JSONDecoder().decode(ServerLoginResponse.self, from: data)
+                
+                completion(response.ok, NSLocalizedString(response.translationKey, comment: ""), response)
+            } catch {
+                completion(false, "Error: Parsing User failed", nil)
+            }
+        }
+    }
+    
+    func refreshToken(completion: @escaping (Bool, String, ServerLoginResponse?) -> ()) {
+        apiClient.call(
+            endpoint: "auth/renew",
+            method: .GET,
+            params: nil,
+            httpHeader: .application_json
+        ) { success, data in
+            guard success, let data = data else { completion(false, "Error: User Post request failed", nil); return }
+            
+            do {
+                let response = try JSONDecoder().decode(ServerLoginResponse.self, from: data)
                 
                 completion(response.ok, NSLocalizedString(response.translationKey, comment: ""), response)
             } catch {

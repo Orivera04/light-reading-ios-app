@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ServeLoginResponse: Codable {
+struct ServerLoginResponse: Codable {
     var message: String?
     var error: String?
     var translationKey: String

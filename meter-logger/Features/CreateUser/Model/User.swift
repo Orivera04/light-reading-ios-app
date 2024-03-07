@@ -7,16 +7,14 @@
 
 import Foundation
 
-struct User: Identifiable, Codable {
-    // id, name, email, password
-    
-    var id: UUID
+struct User: Codable {
+    var id: String
     var name: String
     var email: String
     var password: String
-    
+
     init(
-        id: UUID = UUID(),
+        id: String = "",
         name: String = "",
         email: String = "",
         password: String = ""
@@ -26,7 +24,7 @@ struct User: Identifiable, Codable {
         self.email = email
         self.password = password
     }
-    
+
     var isValid: Bool {
         return !(name.isEmpty && password.isEmpty && email.isEmpty)
     }
