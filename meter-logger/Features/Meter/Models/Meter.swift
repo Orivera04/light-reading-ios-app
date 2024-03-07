@@ -55,7 +55,7 @@ struct Meter: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
 
         id = try values.decode(String.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
@@ -77,7 +77,13 @@ struct Meter: Codable {
     }
 
     var lastReadingString: String {
-        return "\(Int(lastReading )) " + NSLocalizedString("KWH", comment: "")
+        if lastReading == 0
+        {
+            return NSLocalizedString("not_available", comment: "")
+        }
+        else {
+            return "\(Int(lastReading )) " + NSLocalizedString("KWH", comment: "")
+        }
     }
 
     var lastInvoiceString: String {

@@ -2,7 +2,20 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%lld KWH" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld KWH"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld KWH"
+          }
+        }
+      }
     },
     "actions" : {
       "localizations" : {
@@ -65,6 +78,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crear usuario"
+          }
+        }
+      }
+    },
+    "billing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Billing"
           }
         }
       }
@@ -251,7 +275,20 @@
       }
     },
     "KWH" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KWH"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KWH"
+          }
+        }
+      }
     },
     "kwh_is_not_valid" : {
       "localizations" : {
@@ -420,6 +457,40 @@
         }
       }
     },
+    "meter_saved_successfully" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meter saved successfully"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El medidor fue guardado con éxito"
+          }
+        }
+      }
+    },
+    "meter_updated_successfully" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "meter was updated successfully"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El medidor fue actualizado exitosamente."
+          }
+        }
+      }
+    },
     "my_meters" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -520,7 +591,20 @@
       }
     },
     "no_image_supplied" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have to supplied an image, please try again."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tienes que proporcionar una imagen, inténtalo de nuevo."
+          }
+        }
+      }
     },
     "no_meters_found" : {
       "extractionState" : "manual",
@@ -556,7 +640,20 @@
       }
     },
     "no_text_detected" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No text was detected on the photo, please try again."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se detectó ningún texto en la foto, inténtalo de nuevo."
+          }
+        }
+      }
     },
     "not_available" : {
       "localizations" : {
@@ -838,10 +935,36 @@
       }
     },
     "text_recognition_failed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong when decoding the text of the image, please try again later."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal al decodificar el texto de la imagen, inténtalo de nuevo más tarde."
+          }
+        }
+      }
     },
     "unknown_ocr_error" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an unknown error when trying to analyze the image, please try again."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se produjo un error desconocido al intentar analizar la imagen, inténtalo de nuevo."
+          }
+        }
+      }
     },
     "you_have_an_account?" : {
       "localizations" : {

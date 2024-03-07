@@ -69,6 +69,12 @@ struct MeterView: View {
                                                     .labelStyle(.titleAndIcon)
                                                     .foregroundColor(ColorsStyle.colorForKWh(kWh: reading.accumulatedkWhReading, threshold: viewModel.meter.desiredKwhMonthly))
                                                 Spacer()
+                                                if reading.isCutoffDate {
+                                                    Label("billing", systemImage: "checkmark.seal")
+                                                        .labelStyle(.titleAndIcon)
+                                                        .foregroundColor(.blue)
+                                                        .padding(.horizontal, 15)
+                                                }
                                                 Label(reading.dateOfReadingString, systemImage: "calendar")
                                                     .labelStyle(.titleAndIcon)
                                                     .foregroundColor(.gray)
@@ -77,6 +83,9 @@ struct MeterView: View {
                                             .font(.caption)
                                         }
                                     }
+                                }
+                                .refreshable {
+                                    viewModel.fetchMeter(id: viewModel.meter.id)
                                 }
                                 .scrollContentBackground(.hidden)
                             }
