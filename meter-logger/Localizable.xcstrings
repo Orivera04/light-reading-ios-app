@@ -37,6 +37,12 @@
         }
       }
     },
+    "create" : {
+
+    },
+    "create_user" : {
+
+    },
     "current_reading" : {
       "localizations" : {
         "en" : {
@@ -68,6 +74,9 @@
           }
         }
       }
+    },
+    "dont_have_an_account?" : {
+
     },
     "edit" : {
       "localizations" : {
@@ -116,6 +125,9 @@
           }
         }
       }
+    },
+    "hellow" : {
+
     },
     "invalid_data" : {
       "extractionState" : "stale",
@@ -622,6 +634,12 @@
         }
       }
     },
+    "sign_in" : {
+
+    },
+    "sign_in_to_your_account" : {
+
+    },
     "something_went_wrong" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -692,6 +710,9 @@
 
     },
     "unknown_ocr_error" : {
+
+    },
+    "you_have_an_account?" : {
 
     }
   },

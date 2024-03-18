@@ -40,7 +40,7 @@ class UserService {
             endpoint: "auth/renew",
             method: .GET,
             params: nil,
-            httpHeader: .application_json
+            httpHeader: .none
         ) { success, data in
             guard success, let data = data else { completion(false, "Error: User Post request failed", nil); return }
             

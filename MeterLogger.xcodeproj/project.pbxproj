@@ -58,9 +58,16 @@
 		2AF0593A2B82B1F6003D9D3E /* ColorsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */; };
 		2AF0593D2B82E14E003D9D3E /* ServeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */; };
 		2AF0593F2B82E868003D9D3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0593E2B82E868003D9D3E /* ImagePicker.swift */; };
+		5D1F48A72BA4B69B0099BC5A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */; };
+		5D1F48A82BA4B69B0099BC5A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */; };
+		5D1F48A92BA4B69B0099BC5A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */; };
+		5D1F48AC2BA4C0770099BC5A /* FormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48AB2BA4C0770099BC5A /* FormProtocol.swift */; };
 		5D3FDBF52B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
 		5D3FDBF62B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
 		5D3FDBF72B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
+		5D4A13ED2BA3693400836101 /* BackGroundElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A13EC2BA3693400836101 /* BackGroundElementsView.swift */; };
+		5D4A13EE2BA3693400836101 /* BackGroundElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A13EC2BA3693400836101 /* BackGroundElementsView.swift */; };
+		5D4A13EF2BA3693400836101 /* BackGroundElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A13EC2BA3693400836101 /* BackGroundElementsView.swift */; };
 		5D82A1312B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */; };
 		5D82A1322B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */; };
 		5D82A1332B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */; };
@@ -82,6 +89,9 @@
 		5DB083FC2B92581C00F1A570 /* ServerLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB083FB2B92581C00F1A570 /* ServerLoginResponse.swift */; };
 		5DB083FD2B92581C00F1A570 /* ServerLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB083FB2B92581C00F1A570 /* ServerLoginResponse.swift */; };
 		5DB083FE2B92581C00F1A570 /* ServerLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB083FB2B92581C00F1A570 /* ServerLoginResponse.swift */; };
+		5DC21E3B2B9B7E15008FFBEC /* inputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC21E3A2B9B7E15008FFBEC /* inputView.swift */; };
+		5DC21E3C2B9B7E15008FFBEC /* inputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC21E3A2B9B7E15008FFBEC /* inputView.swift */; };
+		5DC21E3D2B9B7E15008FFBEC /* inputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC21E3A2B9B7E15008FFBEC /* inputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +152,10 @@
 		2AF059392B82B1F6003D9D3E /* ColorsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsStyle.swift; sourceTree = "<group>"; };
 		2AF0593C2B82E14D003D9D3E /* ServeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServeResponse.swift; sourceTree = "<group>"; };
 		2AF0593E2B82E868003D9D3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		5D1F48AB2BA4C0770099BC5A /* FormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormProtocol.swift; sourceTree = "<group>"; };
 		5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		5D4A13EC2BA3693400836101 /* BackGroundElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundElementsView.swift; sourceTree = "<group>"; };
 		5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
 		5D82A1362B8D1986002D0686 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D89E8662B88FB330035C77B /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
@@ -150,6 +163,7 @@
 		5D93FF7A2B922E2B001F2FA8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5D9BCB112B977AAA003D1A83 /* AuthTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenManager.swift; sourceTree = "<group>"; };
 		5DB083FB2B92581C00F1A570 /* ServerLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLoginResponse.swift; sourceTree = "<group>"; };
+		5DC21E3A2B9B7E15008FFBEC /* inputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +217,7 @@
 		2A45981F2B7729CE0097F974 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5D1F48AA2BA4C0350099BC5A /* Interfaces */,
 				2AF0593B2B82E13A003D9D3E /* Models */,
 				2A6FB0652B7D7D000002F050 /* Services */,
 				2A4598202B7729F30097F974 /* Views */,
@@ -218,6 +233,9 @@
 				2A0F3E892B76844E004DAE71 /* SideMenuViewContents.swift */,
 				2A45981A2B7724E90097F974 /* NavbarView.swift */,
 				2A6985C12B7E615900715226 /* LoaderView.swift */,
+				5DC21E3A2B9B7E15008FFBEC /* inputView.swift */,
+				5D4A13EC2BA3693400836101 /* BackGroundElementsView.swift */,
+				5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +462,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5D1F48AA2BA4C0350099BC5A /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				5D1F48AB2BA4C0770099BC5A /* FormProtocol.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		5D3FDBEF2B90EF1800B262C8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,12 +672,15 @@
 				2A7485DA2B7AF02E00E71BF8 /* ManageMeterView.swift in Sources */,
 				2A6FB06B2B7D8AFC0002F050 /* MeterCardView.swift in Sources */,
 				2A66838B2B818F71009312B7 /* ManageReadingViewModel.swift in Sources */,
+				5D1F48A72BA4B69B0099BC5A /* ButtonView.swift in Sources */,
 				2A6FB0672B7D7D1C0002F050 /* MeterService.swift in Sources */,
 				5D82A1372B8D1986002D0686 /* User.swift in Sources */,
 				2A6985C42B7EB7D500715226 /* ManageMeterViewModel.swift in Sources */,
 				2A6FB05E2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
+				5DC21E3B2B9B7E15008FFBEC /* inputView.swift in Sources */,
 				2A6FB06F2B7DA6690002F050 /* Constants.swift in Sources */,
 				5D82A1312B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */,
+				5D4A13ED2BA3693400836101 /* BackGroundElementsView.swift in Sources */,
 				5D93FF7B2B922E2B001F2FA8 /* UserService.swift in Sources */,
 				2A0F3E862B768171004DAE71 /* SideMenuView.swift in Sources */,
 				2A6FB05A2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
@@ -664,6 +693,7 @@
 				2A68D23E2B72990800DE3359 /* meter_loggerApp.swift in Sources */,
 				5D89E8672B88FB330035C77B /* CreateUserView.swift in Sources */,
 				5D3FDBF52B90EFB900B262C8 /* AuthViewModel.swift in Sources */,
+				5D1F48AC2BA4C0770099BC5A /* FormProtocol.swift in Sources */,
 				2A6FB0622B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				5D9BCB122B977AAA003D1A83 /* AuthTokenManager.swift in Sources */,
 				2A45981B2B7724E90097F974 /* NavbarView.swift in Sources */,
@@ -689,14 +719,17 @@
 				2A6FB05B2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
 				2A45981C2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2A6FB0702B7DA6690002F050 /* Constants.swift in Sources */,
+				5DC21E3C2B9B7E15008FFBEC /* inputView.swift in Sources */,
 				5DB083FD2B92581C00F1A570 /* ServerLoginResponse.swift in Sources */,
 				2A6FB0632B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				2A0F3E8B2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
 				5D89E86E2B88FBC10035C77B /* LoginView.swift in Sources */,
 				5D3FDBF62B90EFB900B262C8 /* AuthViewModel.swift in Sources */,
 				5D93FF7C2B922E2B001F2FA8 /* UserService.swift in Sources */,
+				5D4A13EE2BA3693400836101 /* BackGroundElementsView.swift in Sources */,
 				2A6FB05F2B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A0F3E872B768171004DAE71 /* SideMenuView.swift in Sources */,
+				5D1F48A82BA4B69B0099BC5A /* ButtonView.swift in Sources */,
 				5D82A1322B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */,
 				5D9BCB132B977AAA003D1A83 /* AuthTokenManager.swift in Sources */,
 			);
@@ -712,14 +745,17 @@
 				2A6FB0712B7DA6690002F050 /* Constants.swift in Sources */,
 				2A6FB0642B7D709C0002F050 /* MeterWidgetView.swift in Sources */,
 				2A6FB05C2B7D22C40002F050 /* HomeViewModel.swift in Sources */,
+				5DC21E3D2B9B7E15008FFBEC /* inputView.swift in Sources */,
 				5DB083FE2B92581C00F1A570 /* ServerLoginResponse.swift in Sources */,
 				2A6FB0602B7D2A2E0002F050 /* ApiClient.swift in Sources */,
 				2A6FB0692B7D7D1C0002F050 /* MeterService.swift in Sources */,
 				5D89E86F2B88FBC10035C77B /* LoginView.swift in Sources */,
 				5D3FDBF72B90EFB900B262C8 /* AuthViewModel.swift in Sources */,
 				5D93FF7D2B922E2B001F2FA8 /* UserService.swift in Sources */,
+				5D4A13EF2BA3693400836101 /* BackGroundElementsView.swift in Sources */,
 				2A45981D2B7724E90097F974 /* NavbarView.swift in Sources */,
 				2A0F3E8C2B76844E004DAE71 /* SideMenuViewContents.swift in Sources */,
+				5D1F48A92BA4B69B0099BC5A /* ButtonView.swift in Sources */,
 				5D82A1332B8D0AE6002D0686 /* CreateUserViewModel.swift in Sources */,
 				5D9BCB142B977AAA003D1A83 /* AuthTokenManager.swift in Sources */,
 			);

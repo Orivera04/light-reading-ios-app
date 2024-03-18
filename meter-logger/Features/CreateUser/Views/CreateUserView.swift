@@ -7,142 +7,90 @@
 
 
 import SwiftUI
-import PhotosUI
 
 struct CreateUserView: View {
     @StateObject private var viewModel: CreateUserViewModel
-       
+    @State private var redirectToHome: Bool = false
+    
     init() {
         _viewModel = StateObject(wrappedValue: CreateUserViewModel())
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                VStack {
-                    Spacer()
-                        .frame(height: 200)
-                    
-                    Rectangle()
-                        .fill(.white)
-                        .clipShape(
-                            .rect(
-                                topTrailingRadius: 160
-                            ))
-                        .frame(maxWidth: geometry.size.width, maxHeight: .infinity)
-                        .ignoresSafeArea()
-                }
-                .ignoresSafeArea()
+        ZStack {
+            BackGroundElementsView()
+
+            VStack(alignment: .leading){
+                Spacer()
                 
-
-                VStack{
-                    // Only for testing
-                    Spacer()
-                        .frame(height: 80)
-
-                    VStack {
-                        VStack {
-                            Text("name")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 20)
-                                .frame(width: geometry.size.width, alignment: .leading)
-
-                            TextField("", text: $viewModel.user.name)
-                                .padding()
-                                .frame(width: 350, height: 60)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
-                        }
-                        .padding(.bottom, 20)
-
-                        VStack {
-                            Text("email")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 20)
-                                .frame(width: geometry.size.width, alignment: .leading)
-
-                            TextField("", text: $viewModel.user.email)
-                                .padding()
-                                .frame(width: 350, height: 60)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
-                        }
-                        .padding(.bottom, 20)
-
-                        VStack {
-                            Text("password")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 20)
-                                .frame(width: geometry.size.width, alignment: .leading)
-
-                            SecureField("", text: $viewModel.user.password)
-                                .padding()
-                                .frame(width: 350, height: 60)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
-                        }
-                        .padding(.bottom, 20)
-
-                        VStack {
-                            Text("repeat_your_password")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 20)
-                                .frame(width: geometry.size.width, alignment: .leading)
-
-                            //SecureField("", text: $repeatPassword)
-                                //  .padding()
-                                //.frame(width: 350, height: 60)
-                                // .background(Color.black.opacity(0.05))
-                                // .cornerRadius(10)
-                        }
-                        .padding(.bottom, 20)
-
-                                Button("create") {
-                                    Task {
-                                        // TODO: make async this function.
-                                        viewModel.createUser()
-                                    }
-                                }
-                                .font(.title3)
+                Text("create_user")
+                    .foregroundStyle(.primary)
+                    .font(.title2)
+                    .padding(.bottom, 24)
+                
+                VStack(spacing: 24) {
+                    inputView(text: $viewModel.user.name,
+                              title: "name",
+                              placeholder: "")
+                    
+                    inputView(text: $viewModel.user.email,
+                              title: "email",
+                              placeholder: "")
+                    
+                    inputView(text: $viewModel.user.password,
+                              title: "password",
+                              placeholder: "",
+                              isSecureField: true)
+                    
+                    inputView(text: $viewModel.repeat_password,
+                              title: "repeat_your_password",
+                              placeholder: "",
+                              isSecureField: true)
+                    
+                    ButtonView(text: "create",
+                               disabled: viewModel.formIsValid,
+                               width: UIScreen.main.bounds.width / 2,
+                               trigger: { viewModel.createUser() })
+                               .padding(.top, 28)
+                    
+                    NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
+                        HStack {
+                            Text("you_have_an_account?")
+                            Text("sign_in")
                                 .bold()
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(
-                                    RadialGradient(
-                                        gradient: Gradient(colors: [Color.navbarColorPrimary, Color.navbarColorSecondary]),
-                                        center: .center,
-                                        startRadius: 1,
-                                        endRadius: 50
-                                    )
-                                )
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .padding(.bottom, 30)
-                        
-                                NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true)) {
-                                    HStack {
-                                        Text("you_have_an_account?")
-                                        Text("sign_in")
-                                            .bold()
-                                    }
-                                }
-                            }
                         }
                     }
-                    .background(
-                        RadialGradient(
-                            gradient: Gradient(colors: [Color.navbarColorPrimary, Color.navbarColorSecondary]),
-                            center: .center,
-                            startRadius: 1,
-                            endRadius: 200
-                        )
-                    )
+                    .padding(.top, 48)
                 }
             }
         }
+        .background(
+            RadialGradient(
+                gradient: Gradient(colors: [Color.navbarColorPrimary, Color.navbarColorSecondary]),
+                center: .center,
+                startRadius: 1,
+                endRadius: 200
+            )
+        )
+        .alert(isPresented: $viewModel.showMessage) {
+            Alert(
+               title: Text(viewModel.messageTitle),
+               message: Text(viewModel.messageBody),
+               dismissButton: .default(Text("ok")) {
+                   redirectToHome = viewModel.isSuccess
+               }
+           )
+        }
+        .navigationDestination(isPresented: $redirectToHome) {
+            HomeView().navigationBarBackButtonHidden(true)
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoaderView()
+            }
+        }
+    }
+}
 
 #Preview {
     CreateUserView()
