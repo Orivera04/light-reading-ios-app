@@ -16,7 +16,7 @@ struct ButtonView: View {
     
     var body: some View {
         VStack {
-            Button(text) {
+            Button(NSLocalizedString(text, comment: "input \(text)").capitalized) {
                 trigger()
             }
             .fontWeight(.semibold)

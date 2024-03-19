@@ -18,12 +18,12 @@ import SwiftUI
 
              VStack (alignment: .leading) {
                  VStack {
-                     Text("hellow")
+                     Text("hellow".capitalized)
                          .foregroundStyle(.primary)
                          .font(Font.system(size: 90))
                          .bold()
 
-                     Text("sign_in_to_your_account")
+                     Text("sign_in_to_your_account".capitalized)
                          .foregroundStyle(.primary)
                          .font(.title2)
                  }
@@ -41,7 +41,7 @@ import SwiftUI
                                placeholder: "",
                                isSecureField: true)
 
-                     ButtonView(text: "sing_in",
+                     ButtonView(text: "sign_in",
                                 disabled: authViewModel.formIsValid,
                                 width: UIScreen.main.bounds.width / 2,
                                 trigger: { authViewModel.login() })
