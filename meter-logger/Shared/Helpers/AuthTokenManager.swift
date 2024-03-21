@@ -43,10 +43,10 @@ class AuthTokenManager {
     }
     
     private func setPayloadDecoded() {
-        self.payloadDecoded = self.decoddingPayloadToken()
+        self.payloadDecoded = self.decodingPayloadToken()
     }
             
-    private func decoddingPayloadToken() -> [String: Any] {
+    private func decodingPayloadToken() -> [String: Any] {
         let jwtPayload = self.cleanPayloadToken()
         
         guard let payloadData = Data(base64Encoded: jwtPayload, options: .ignoreUnknownCharacters),

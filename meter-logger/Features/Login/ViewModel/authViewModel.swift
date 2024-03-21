@@ -9,7 +9,7 @@ import Foundation
 
 class AuthViewModel: ObservableObject {
     @Published var user: User
-    @Published var userHaveSession: Bool = false
+    @Published var userHasSession: Bool = false
     @Published var showMessage: Bool = false
     @Published var messageTitle: String = ""
     @Published var messageBody: String = ""
@@ -21,7 +21,7 @@ class AuthViewModel: ObservableObject {
         
         if let jwt = UserDefaults.standard.string(forKey: "x-token") {
             AuthTokenManager.shared.setToken(token: jwt)
-            self.userHaveSession = AuthTokenManager.shared.tokenValid()
+            self.userHasSession = AuthTokenManager.shared.tokenValid()
 
             if self.isTokenExpiringSoon() { self.refreshToken() }
         }
@@ -39,7 +39,7 @@ class AuthViewModel: ObservableObject {
                     if let jwt = response?.token {
                         AuthTokenManager.shared.setToken(token: jwt)
                         UserDefaults.standard.set(jwt, forKey: "x-token")
-                        self.userHaveSession = AuthTokenManager.shared.tokenValid()
+                        self.userHasSession = AuthTokenManager.shared.tokenValid()
                     }
                 } else {
                     print("Error: \(message ?? "Unknown error")")
@@ -55,7 +55,6 @@ class AuthViewModel: ObservableObject {
     }
 
     private func refreshToken() {
-        print("si entro a refrescarlo")
         UserService.shared.refreshToken() { success, message, response in
             DispatchQueue.main.async {
                 self.isLoading = false
@@ -65,7 +64,7 @@ class AuthViewModel: ObservableObject {
                     if let jwt = response?.token {
                         AuthTokenManager.shared.setToken(token: jwt)
                         UserDefaults.standard.set(jwt, forKey: "x-token")
-                        self.userHaveSession = AuthTokenManager.shared.tokenValid()
+                        self.userHasSession = AuthTokenManager.shared.tokenValid()
                     }
                 } else {
                     print("Error: \(message ?? "Unknown error")")
@@ -73,7 +72,6 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
-    
     
     private func isTokenExpiringSoon() -> Bool {
         let tokenPayload = AuthTokenManager.shared.getPayloadDecoded()
