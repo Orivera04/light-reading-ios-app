@@ -432,6 +432,7 @@
 		2ADB8EE42B7C596200C6D91E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2ACE4EDA2B8058BA00957030 /* Reading.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,7 +440,6 @@
 		2ADB8EE52B7C596700C6D91E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2ACE4EDA2B8058BA00957030 /* Reading.swift */,
 				2A66838A2B818F71009312B7 /* ManageReadingViewModel.swift */,
 			);
 			path = ViewModels;

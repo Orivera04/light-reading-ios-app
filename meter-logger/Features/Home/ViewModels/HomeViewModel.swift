@@ -15,12 +15,12 @@ class HomeViewModel: ObservableObject {
     @Published var isLoading: Bool = false
 
     init() {
-        self.isLoading = true
-
         fetchMeters()
     }
 
     func fetchMeters() {
+        self.isLoading = true
+        
         MeterService.shared.getMeters { [weak self] success, meterLists, error in
             DispatchQueue.main.async {
                 self?.isLoading = false

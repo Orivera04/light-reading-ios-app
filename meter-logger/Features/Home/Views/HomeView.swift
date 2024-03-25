@@ -71,6 +71,9 @@ struct HomeView: View {
                             }
                         }
                     }
+                    .refreshable {
+                        viewModel.fetchMeters()
+                    }
                     .scrollContentBackground(.hidden)
                 }
             }

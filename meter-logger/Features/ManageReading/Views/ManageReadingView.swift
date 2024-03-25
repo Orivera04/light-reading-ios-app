@@ -60,6 +60,7 @@ struct ManageReadingView: View {
                             Image(systemName: "bolt")
                                 .foregroundColor(Color.icon)
                             TextField("reading", value: $viewModel.reading.kWhReading, formatter: NumberFormatter())
+                                .keyboardType(.decimalPad)
                             Text("kwh")
                         }
                         HStack {
