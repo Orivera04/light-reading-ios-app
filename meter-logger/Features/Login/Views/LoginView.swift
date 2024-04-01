@@ -66,6 +66,13 @@ import SwiftUI
                  endRadius: 200
              )
          )
+         .alert(isPresented: $authViewModel.showMessage) {
+             Alert(
+                title: Text(authViewModel.messageTitle),
+                message: Text(authViewModel.messageBody),
+                dismissButton: .default(Text("ok"))
+             )
+         }
 
      }
  }

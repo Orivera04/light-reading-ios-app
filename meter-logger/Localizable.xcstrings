@@ -223,6 +223,23 @@
         }
       }
     },
+    "invalid_credentials" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid credentials"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credenciales inválidas"
+          }
+        }
+      }
+    },
     "invalid_data" : {
       "extractionState" : "stale",
       "localizations" : {

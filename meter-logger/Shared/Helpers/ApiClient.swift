@@ -88,7 +88,7 @@ class APIClient {
 
         guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
             print("Error: HTTP request failed")
-            complete(false, nil)
+            complete(false, data)
             return
         }
 

@@ -12,7 +12,7 @@ struct ServerLoginResponse: Codable {
     var error: String?
     var translationKey: String
     var ok: Bool
-    var uid: String
-    var name: String
-    var token: String
+    var uid: String?
+    var name: String?
+    var token: String?
 }

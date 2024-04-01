@@ -12,14 +12,14 @@ struct inputView: View {
     let title: String
     let placeholder: String
     var isSecureField = false
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(NSLocalizedString(title, comment: "input \(title)").capitalized)
                 .foregroundStyle(.primary)
                 .fontWeight(.semibold)
                 .font(.system(size: 16))
-            
+
             if isSecureField {
                 SecureField(placeholder, text: $text)
                     .padding(10)
