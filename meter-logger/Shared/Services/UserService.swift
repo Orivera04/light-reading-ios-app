@@ -23,8 +23,8 @@ class UserService {
             params: deserializedUser,
             httpHeader: .application_json
         ) { success, data in
-            guard success, let data = data else { completion(false, "Error: User Post request failed", nil); return }
-            
+            guard let data = data else { completion(false, "Error: User Post request failed", nil); return }
+                
             do {
                 let response = try JSONDecoder().decode(ServerLoginResponse.self, from: data)
                 

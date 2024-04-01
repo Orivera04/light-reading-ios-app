@@ -204,6 +204,7 @@
 		2A45981E2B7729760097F974 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5D04EFA62BB1F9DE004BE602 /* Configuration */,
 				5D89E86A2B88FB910035C77B /* Login */,
 				5D89E8632B88FAE70035C77B /* CreateUser */,
 				2ADB8EE32B7C595700C6D91E /* ManageReading */,
@@ -460,6 +461,37 @@
 				5DB083FB2B92581C00F1A570 /* ServerLoginResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5D04EFA62BB1F9DE004BE602 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				5D04EFAA2BB1FB2B004BE602 /* Model */,
+				5D04EFA92BB1FAFF004BE602 /* Views */,
+				5D04EFA72BB1FAD9004BE602 /* ViewModel */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		5D04EFA72BB1FAD9004BE602 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D04EFA92BB1FAFF004BE602 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D04EFAA2BB1FB2B004BE602 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5D1F48AA2BA4C0350099BC5A /* Interfaces */ = {

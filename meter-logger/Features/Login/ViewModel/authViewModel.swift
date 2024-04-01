@@ -15,10 +15,10 @@ class AuthViewModel: ObservableObject {
     @Published var messageBody: String = ""
     @Published var isLoading: Bool = false
     @Published var isSuccess: Bool = false
-    
+
     init() {
         self.user = User()
-        
+
         if let jwt = UserDefaults.standard.string(forKey: "x-token") {
             AuthTokenManager.shared.setToken(token: jwt)
             self.userHasSession = AuthTokenManager.shared.tokenValid()
@@ -29,7 +29,7 @@ class AuthViewModel: ObservableObject {
 
     func login() {
         guard formIsValid else { return }
-        
+
         UserService.shared.login(user: self.user) { success, message, response in
             DispatchQueue.main.async {
                 self.isLoading = false
@@ -43,13 +43,15 @@ class AuthViewModel: ObservableObject {
                     }
                 } else {
                     print("Error: \(message ?? "Unknown error")")
+                    self.showMessage(isSuccessMessage: false, body: message)
                 }
             }
         }
     }
-    
+
     func showMessage(isSuccessMessage: Bool, body: String) {
-        self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "") : NSLocalizedString("error", comment: "")
+        self.messageTitle = isSuccessMessage ? NSLocalizedString("success", comment: "")
+                                             : NSLocalizedString("error", comment: "")
         self.messageBody = body
         self.showMessage = true
     }
@@ -72,20 +74,20 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
-    
+
     private func isTokenExpiringSoon() -> Bool {
         let tokenPayload = AuthTokenManager.shared.getPayloadDecoded()
         guard let tokenPayloadExpiration = tokenPayload["exp"] else { return false }
-        
+
         if let expirationTime = tokenPayloadExpiration as? Int {
             let currentDate = Date()
             let expirationDate = Date(timeIntervalSince1970: TimeInterval(expirationTime))
-        
+
             guard currentDate <= expirationDate else { return false }
-            
+
             let timeIntervalUntilExpiration = expirationDate.timeIntervalSince(currentDate)
             let twoDaysInSeconds: TimeInterval = (2 * 24 * 60 * 60)
-            
+
             return timeIntervalUntilExpiration <= twoDaysInSeconds ? true : false
         } else {
             return false
@@ -100,4 +102,3 @@ extension AuthViewModel: FormProtocol {
             user.password.count > 8
     }
 }
-
