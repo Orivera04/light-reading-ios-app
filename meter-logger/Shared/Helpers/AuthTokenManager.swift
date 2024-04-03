@@ -11,6 +11,7 @@ class AuthTokenManager {
     static let shared = AuthTokenManager()
     private var authToken: String?
     private var payloadDecoded: [String: Any] = [:]
+    private var userName: String = ""
     
     private init() {}
     
@@ -30,16 +31,26 @@ class AuthTokenManager {
     func getPayloadDecoded() -> [String: Any] {
         return self.payloadDecoded
     }
+    
+    func getUserName() -> String {
+        return self.userName
+    }
         
     func tokenValid() -> Bool {
-        if let expDate = self.payloadDecoded["exp"] as? Int {
-            let currentDate = Date()
-            let tokenDate = Date(timeIntervalSince1970: TimeInterval(expDate))
-            
-            return currentDate <= tokenDate
-        }
+        guard let expDate = self.payloadDecoded["exp"] as? Int else { return false }
         
-        return false
+        let currentDate = Date()
+        let tokenDate = Date(timeIntervalSince1970: TimeInterval(expDate))
+        self.setUserName()
+        
+        return currentDate <= tokenDate
+
+    }
+    
+    private func setUserName() {
+        guard let name = self.payloadDecoded["name"] as? String else { return }
+        
+        self.userName = name
     }
     
     private func setPayloadDecoded() {
@@ -61,17 +72,15 @@ class AuthTokenManager {
     }
     
     private func cleanPayloadToken() -> String {
-        if let jwToken = self.authToken {
-            let tokenParts = jwToken.components(separatedBy: ".")
-            let payload = tokenParts[1]
-            let cleanedToken = payload.trimmingCharacters(in: .whitespacesAndNewlines)
-            let paddedToken = cleanedToken.padding(toLength: ((cleanedToken.count + 3) / 4) * 4, withPad: "=", startingAt: 0)
-            
-            return paddedToken
-        } else {
-            print("Error: The JWT don't exist")
-            
-            return ""
-        }
+        guard let jwToken = self.authToken else { return "" }
+        let tokenParts = jwToken.components(separatedBy: ".")
+        guard tokenParts.count > 2 else { return "" }
+        
+        let payload = tokenParts[1]
+        let cleanedToken = payload.trimmingCharacters(in: .whitespacesAndNewlines)
+        let paddedToken = cleanedToken.padding(toLength: ((cleanedToken.count + 3) / 4) * 4, withPad: "=", startingAt: 0)
+        
+        return paddedToken
+        
     }
 }

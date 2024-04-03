@@ -4,6 +4,9 @@
     "%lld KWH" : {
 
     },
+    "Account" : {
+
+    },
     "actions" : {
       "localizations" : {
         "en" : {
@@ -181,6 +184,9 @@
           }
         }
       }
+    },
+    "General" : {
+
     },
     "hellow" : {
       "extractionState" : "stale",

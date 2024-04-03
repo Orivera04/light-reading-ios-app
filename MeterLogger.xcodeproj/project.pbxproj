@@ -62,6 +62,8 @@
 		5D1F48A82BA4B69B0099BC5A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */; };
 		5D1F48A92BA4B69B0099BC5A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */; };
 		5D1F48AC2BA4C0770099BC5A /* FormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F48AB2BA4C0770099BC5A /* FormProtocol.swift */; };
+		5D2F9DC42BBC68BA003717FB /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F9DC32BBC68BA003717FB /* ConfigView.swift */; };
+		5D2F9DC62BBC743D003717FB /* RowMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F9DC52BBC743C003717FB /* RowMenuView.swift */; };
 		5D3FDBF52B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
 		5D3FDBF62B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
 		5D3FDBF72B90EFB900B262C8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */; };
@@ -154,6 +156,8 @@
 		2AF0593E2B82E868003D9D3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5D1F48A62BA4B69B0099BC5A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		5D1F48AB2BA4C0770099BC5A /* FormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormProtocol.swift; sourceTree = "<group>"; };
+		5D2F9DC32BBC68BA003717FB /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		5D2F9DC52BBC743C003717FB /* RowMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMenuView.swift; sourceTree = "<group>"; };
 		5D3FDBF42B90EFB900B262C8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5D4A13EC2BA3693400836101 /* BackGroundElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundElementsView.swift; sourceTree = "<group>"; };
 		5D82A1302B8D0AE6002D0686 /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 		2A45981E2B7729760097F974 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F9DC12BBC6866003717FB /* Config */,
 				5D89E86A2B88FB910035C77B /* Login */,
 				5D89E8632B88FAE70035C77B /* CreateUser */,
 				2ADB8EE32B7C595700C6D91E /* ManageReading */,
@@ -470,6 +475,23 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		5D2F9DC12BBC6866003717FB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F9DC22BBC688C003717FB /* Views */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5D2F9DC22BBC688C003717FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F9DC32BBC68BA003717FB /* ConfigView.swift */,
+				5D2F9DC52BBC743C003717FB /* RowMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5D3FDBEF2B90EF1800B262C8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2F9DC62BBC743D003717FB /* RowMenuView.swift in Sources */,
 				2A6683892B818CBF009312B7 /* ReadingService.swift in Sources */,
 				2A1B5A032B89B7890079F4D5 /* ListMeterHome.swift in Sources */,
 				2ACE4EDD2B8065F400957030 /* MeterViewModel.swift in Sources */,
@@ -701,6 +724,7 @@
 				5D89E86D2B88FBC10035C77B /* LoginView.swift in Sources */,
 				2ACE4ED92B7FD36000957030 /* ContentView.swift in Sources */,
 				5DB083FC2B92581C00F1A570 /* ServerLoginResponse.swift in Sources */,
+				5D2F9DC42BBC68BA003717FB /* ConfigView.swift in Sources */,
 				2A6985C22B7E615900715226 /* LoaderView.swift in Sources */,
 				2A9843CE2B8CE8B8000303D8 /* ImageProcessing.swift in Sources */,
 				2ADB8EE82B7C598300C6D91E /* ManageReadingView.swift in Sources */,
